@@ -144,6 +144,8 @@ def main():
         files = sum(repo_stats[n]["files"] for n in mine)
         daily = sum(repo_stats[n]["daily"] for n in mine)
         output = sum(repo_stats[n]["output"] for n in mine)
+        code = sum(repo_stats[n]["code"] for n in mine)
+        images = sum(repo_stats[n]["images"] for n in mine)
         ev = {}
         for k, _, _ in INDICATORS:
             ev[k] = any(repo_stats[n]["evidence"].get(k) for n in mine)
@@ -172,9 +174,11 @@ def main():
 
         people.append({
             "name": p.get("name", ""), "group": g,
-            "code": p.get("code", ""), "status": status,
+            "code": p.get("code", ""), "topic": p.get("topic", ""),
+            "status": status,
             "repos": len(mine), "files": files, "daily": daily, "output": output,
-            "evidence": sum(1 for v in ev.values() if v),
+            "code_files": code, "images": images,
+            "ev": ev, "evidence": sum(1 for v in ev.values() if v),
             "pushed": pushed[:16].replace("T", " "),
         })
 

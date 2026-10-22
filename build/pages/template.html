@@ -70,6 +70,31 @@ input[type=search]:focus{border-color:var(--blue)}
 .p .meta b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
 .empty{color:var(--mute);font-size:13px;padding:18px 0;text-align:center}
 footer{color:var(--mute);font-size:11.5px;line-height:1.9;border-top:1px solid var(--line);padding-top:16px}
+.p{cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.p:hover{border-color:#c6d2ea;box-shadow:0 3px 12px rgba(30,50,90,.07)}
+.p .go{font-size:11px;color:var(--blue);margin-top:8px;opacity:0;transition:opacity .15s}
+.p:hover .go{opacity:1}
+.ov{position:fixed;inset:0;background:rgba(18,24,38,.42);opacity:0;pointer-events:none;transition:opacity .18s;z-index:50}
+.ov.on{opacity:1;pointer-events:auto}
+.dr{position:fixed;top:0;right:0;height:100%;width:min(460px,92vw);background:#fff;z-index:51;
+  transform:translateX(102%);transition:transform .22s ease;overflow-y:auto;box-shadow:-8px 0 30px rgba(20,30,50,.16)}
+.dr.on{transform:none}
+.dr .hd{padding:22px 22px 14px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:2}
+.dr .hd h3{margin:0;font-size:17px}
+.dr .hd .g{color:var(--mute);font-size:12.5px;margin-top:4px;line-height:1.5}
+.dr .bd{padding:18px 22px 48px}
+.x{position:absolute;top:16px;right:18px;border:0;background:#f0f1f4;width:28px;height:28px;
+  border-radius:50%;cursor:pointer;font-size:14px;color:var(--mute)}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
+.kv div{background:#f8f9fb;border-radius:9px;padding:10px 11px}
+.kv b{display:block;font-size:19px;font-variant-numeric:tabular-nums;line-height:1.2}
+.kv span{font-size:11px;color:var(--mute)}
+.ev{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ev div{display:flex;align-items:center;gap:7px;font-size:12px;padding:6px 9px;border-radius:7px;background:#fafbfc}
+.ev i{width:7px;height:7px;border-radius:50%;background:#d6dae1;flex:none}
+.ev div.yes i{background:var(--green)}
+.ev div.no{color:#a3aab8}
+.dr h4{font-size:12px;color:var(--mute);font-weight:500;margin:0 0 9px;letter-spacing:.3px}
 @media(max-width:860px){
   .kpis{grid-template-columns:repeat(2,1fr)}
   .grid12{grid-template-columns:repeat(2,1fr)}
@@ -128,6 +153,14 @@ footer{color:var(--mute);font-size:11.5px;line-height:1.9;border-top:1px solid v
 
   <footer id="foot"></footer>
 </div>
+
+<div class="ov" id="ov"></div>
+<aside class="dr" id="dr">
+  <button class="x" id="x" aria-label="关闭">✕</button>
+  <div class="hd"><h3 id="dn"></h3><div class="g" id="dg"></div></div>
+  <div class="bd" id="db"></div>
+</aside>
+
 <script>
 const DATA = /*__DATA__*/;
 
@@ -183,11 +216,12 @@ function renderPeople(){
     return (p.name+p.group+p.code).toLowerCase().includes(q);
   });
   document.getElementById('people').innerHTML = list.length ? list.map(p=>
-    `<div class="p"><div class="top"><span class="nm">${p.name}</span>
+    `<div class="p" data-i="${DATA.people.indexOf(p)}"><div class="top"><span class="nm">${p.name}</span>
       <span class="s ${p.status}">${STATUS[p.status]}</span></div>
      <div class="gp">${p.group}${p.code?' · '+p.code:''}</div>
      <div class="meta"><span>文件 <b>${p.files}</b></span><span>日报 <b>${p.daily}</b></span>
-      <span>证据 <b>${p.evidence}/12</b></span></div></div>`).join('')
+      <span>证据 <b>${p.evidence}/12</b></span></div>
+     <div class="go">查看详情 ›</div></div>`).join('')
     : '<div class="empty">没有符合条件的学员</div>';
 }
 document.getElementById('q').addEventListener('input', renderPeople);
@@ -196,6 +230,41 @@ document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
   b.classList.add('on'); filter = b.dataset.f; renderPeople();
 }));
 renderPeople();
+
+const dr = document.getElementById('dr'), ov = document.getElementById('ov');
+function openDetail(p){
+  document.getElementById('dn').textContent = p.name;
+  document.getElementById('dg').textContent =
+    [p.group, p.code, p.topic].filter(Boolean).join(' · ');
+  const evItems = DATA.indicators.map(i=>{
+    const has = p.ev && p.ev[i.key];
+    return `<div class="${has?'yes':'no'}"><i></i><span>${i.key} ${i.label}</span></div>`;
+  }).join('');
+  document.getElementById('db').innerHTML = `
+    <div class="kv">
+      <div><b>${p.files}</b><span>文件</span></div>
+      <div><b>${p.daily}</b><span>日报</span></div>
+      <div><b>${p.output}</b><span>产出包</span></div>
+      <div><b>${p.code_files}</b><span>代码文件</span></div>
+      <div><b>${p.images}</b><span>图片</span></div>
+      <div><b>${p.repos}</b><span>仓库</span></div>
+    </div>
+    <h4>近况</h4>
+    <p style="margin:0 0 20px;font-size:12.5px;color:var(--mute);line-height:1.8">
+      最近推送：${p.pushed || '—'}<br>当前状态：${STATUS[p.status]}
+    </p>
+    <h4>12 项证据 · 有候选 <b style="color:var(--ink)">${p.evidence}</b> / 12</h4>
+    <div class="ev">${evItems}</div>`;
+  dr.classList.add('on'); ov.classList.add('on');
+}
+function closeDetail(){ dr.classList.remove('on'); ov.classList.remove('on'); }
+document.getElementById('x').onclick = closeDetail;
+ov.onclick = closeDetail;
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeDetail(); });
+document.getElementById('people').addEventListener('click', e=>{
+  const c = e.target.closest('.p');
+  if (c) openDetail(DATA.people[+c.dataset.i]);
+});
 
 document.getElementById('foot').innerHTML =
   `数据来源：GitHub 组织 <b>${DATA.org}</b> 的成员、邀请、仓库与目录树，每 10 分钟自动采集并重建本页。<br>
