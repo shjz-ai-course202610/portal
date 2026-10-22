@@ -1,0 +1,44 @@
+name: refresh-portal
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: portal-refresh
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build index.html
+        env:
+          GH_TOKEN: ${{ secrets.PORTAL_TOKEN }}
+          ROSTER_JSON: ${{ secrets.ROSTER_JSON }}
+          PORTAL_ORG: shjz-ai-course202610
+        run: python build/pages/build.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "portal-bot"
+          git config user.email "portal-bot@users.noreply.github.com"
+          if [ -n "$(git status --porcelain index.html)" ]; then
+            git add index.html
+            git commit -m "refresh $(TZ=Asia/Shanghai date '+%F %H:%M')"
+            git push
+          else
+            echo "no change, skip commit"
+          fi

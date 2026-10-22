@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>上海精智 AI 开发实训营 · 成果门户</title>
+<style>
+:root{
+  --bg:#f5f6f8; --card:#fff; --line:#e6e8ec; --ink:#1c2333; --mute:#7b8496;
+  --blue:#2f6feb; --green:#17a673; --amber:#e0a02e; --red:#d9534f; --purple:#7b61ff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:14px/1.6 "PingFang SC","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+h1{font-size:21px;margin:0 0 4px;letter-spacing:.2px}
+.sub{color:var(--mute);font-size:12.5px}
+.live{display:inline-flex;align-items:center;gap:6px;background:#eaf7f1;color:#12795a;
+  border:1px solid #cfeade;border-radius:999px;padding:4px 11px;font-size:12px;white-space:nowrap}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:p 2s infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.25}}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 16px}
+.kpi .n{font-size:26px;font-weight:600;letter-spacing:-.5px;line-height:1.15}
+.kpi .l{font-size:12px;color:var(--mute);margin-top:3px}
+.kpi .d{font-size:11.5px;color:var(--mute);margin-top:6px}
+section{margin-bottom:26px}
+h2{font-size:14px;font-weight:600;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+h2 small{font-weight:400;color:var(--mute);font-size:12px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.funnel{display:flex;flex-direction:column;gap:11px}
+.frow{display:grid;grid-template-columns:96px 1fr 58px;align-items:center;gap:12px;font-size:12.5px}
+.ftrack{height:9px;background:#eef0f4;border-radius:6px;overflow:hidden}
+.fbar{height:100%;border-radius:6px;transition:width .5s ease}
+.fnum{text-align:right;color:var(--mute);font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:9px 8px;text-align:left;border-bottom:1px solid #f0f1f4;white-space:nowrap}
+th{color:var(--mute);font-weight:500;font-size:11.5px}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:none}
+.grid12{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ind{border:1px solid var(--line);border-radius:10px;padding:12px 13px;background:#fcfcfd}
+.ind .k{font-size:11px;color:var(--mute);letter-spacing:.4px}
+.ind .t{font-size:12.5px;margin:2px 0 8px}
+.ind .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.ind .v span{font-size:11.5px;color:var(--mute);font-weight:400;margin-left:3px}
+.bar{height:5px;background:#eef0f4;border-radius:4px;margin-top:9px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--blue);border-radius:4px}
+.tools{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:12px}
+input[type=search]{flex:1;min-width:180px;padding:9px 12px;border:1px solid var(--line);
+  border-radius:9px;font-size:13px;background:#fff;outline:none}
+input[type=search]:focus{border-color:var(--blue)}
+.chip{border:1px solid var(--line);background:#fff;color:var(--mute);border-radius:999px;
+  padding:7px 13px;font-size:12px;cursor:pointer}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:10px}
+.p{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:13px 14px}
+.p .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.p .nm{font-weight:600;font-size:13.5px}
+.p .gp{font-size:11.5px;color:var(--mute);margin-top:2px}
+.s{font-size:11px;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.s.in_org{background:#eaf7f1;color:#12795a}
+.s.invited{background:#fff5e3;color:#9a6a12}
+.s.check{background:#fdeceb;color:#a33b38}
+.s.no_account{background:#f0f1f4;color:#7b8496}
+.p .meta{display:flex;gap:12px;margin-top:10px;padding-top:9px;border-top:1px solid #f2f3f6;
+  font-size:11.5px;color:var(--mute)}
+.p .meta b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.empty{color:var(--mute);font-size:13px;padding:18px 0;text-align:center}
+footer{color:var(--mute);font-size:11.5px;line-height:1.9;border-top:1px solid var(--line);padding-top:16px}
+@media(max-width:860px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .grid12{grid-template-columns:repeat(2,1fr)}
+  .frow{grid-template-columns:78px 1fr 46px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>上海精智 AI 开发实训营 · 成果门户</h1>
+      <div class="sub" id="sub">—</div>
+    </div>
+    <div class="live"><span class="dot"></span><span id="live">数据同步中</span></div>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <section>
+    <h2>参与漏斗 <small>每一步都是上一层的子集</small></h2>
+    <div class="panel"><div class="funnel" id="funnel"></div></div>
+  </section>
+
+  <section>
+    <h2>分组进度 <small>按人数排序</small></h2>
+    <div class="panel" style="overflow-x:auto">
+      <table id="gtab">
+        <thead><tr>
+          <th>分组</th><th class="num">人数</th><th class="num">已入组织</th>
+          <th class="num">已建仓</th><th class="num">有产出</th>
+          <th class="num">日报</th><th class="num">文件</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>12 项评分证据齐备度 <small>只统计「有候选文件」的人数，不代表质量</small></h2>
+    <div class="grid12" id="inds"></div>
+  </section>
+
+  <section>
+    <h2>学员进度 <small>姓名缩写 · 不含账号与仓库名</small></h2>
+    <div class="tools">
+      <input type="search" id="q" placeholder="搜索姓名、分组…">
+      <button class="chip on" data-f="all">全部</button>
+      <button class="chip" data-f="in_org">已入组织</button>
+      <button class="chip" data-f="invited">待接受</button>
+      <button class="chip" data-f="no_account">未交账号</button>
+      <button class="chip" data-f="has_repo">已建仓</button>
+    </div>
+    <div class="people" id="people"></div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+<script>
+const DATA = {"org":"shjz-ai-course202610","snapshot_at":"2026-10-22 18:40","totals":{"roster":76,"has_account":58,"in_org":31,"invited":23,"check":4,"no_account":18,"has_repo":1,"has_output":0,"has_daily":0,"files":0},"groups":[{"name":"人力资源与员工服务","people":8,"in_org":5,"has_repo":0,"has_output":0,"files":0,"daily":0},{"name":"研发设计与工艺技术","people":8,"in_org":3,"has_repo":0,"has_output":0,"files":0,"daily":0},{"name":"营销管理","people":8,"in_org":1,"has_repo":0,"has_output":0,"files":0,"daily":0},{"name":"项目管理","people":8,"in_org":2,"has_repo":0,"has_output":0,"files":0,"daily":0},{"name":"APS排产优化","people":7,"in_org":5,"has_repo":1,"has_output":0,"files":0,"daily":0},{"name":"投资合规","people":7,"in_org":3,"has_repo":0,"has_output":0,"files":0,"daily":0},{"name":"财务","people":7,"in_org":3,"has_repo":0,"has_output":0,"files":0,"daily":0},{"name":"质量管理","people":7,"in_org":3,"has_repo":0,"has_output":0,"files":0,"daily":0},{"name":"物料","people":6,"in_org":4,"has_repo":0,"has_output":0,"files":0,"daily":0},{"name":"供应链采购","people":5,"in_org":1,"has_repo":0,"has_output":0,"files":0,"daily":0},{"name":"集团运营与经营决策","people":5,"in_org":1,"has_repo":0,"has_output":0,"files":0,"daily":0}],"indicators":[{"key":"V1","label":"问题真实性","people":0},{"key":"V2","label":"可量化收益","people":0},{"key":"V3","label":"边界与克制","people":0},{"key":"I1","label":"参考与借鉴","people":0},{"key":"I2","label":"技术路线取舍","people":0},{"key":"I3","label":"企业约束适配","people":0},{"key":"Q1","label":"测试完整性","people":0},{"key":"Q2","label":"可复现性","people":0},{"key":"Q3","label":"诚实度与异常","people":0},{"key":"E1","label":"五条标准覆盖","people":0},{"key":"E2","label":"界面四要素","people":0},{"key":"E3","label":"30秒可懂","people":0}],"people":[{"name":"李C","group":"质量管理","code":"P7","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"金Y","group":"质量管理","code":"P5","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"梅WJ","group":"质量管理","code":"P50","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"蒋YS","group":"质量管理","code":"P4","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"赵ST","group":"质量管理","code":"P5","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"金F","group":"质量管理","code":"P4","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"叶Y","group":"质量管理","code":"P4","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"周T","group":"营销管理","code":"P26","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"于WY","group":"营销管理","code":"P37","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"王QF","group":"营销管理","code":"P30","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"陈CW","group":"营销管理","code":"P35","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"李JH","group":"营销管理","code":"P36","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"沈TQ","group":"营销管理","code":"P21","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"陈P","group":"营销管理","code":"P35","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"张XL","group":"营销管理","code":"","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"夏WJ","group":"研发设计与工艺技术","code":"P53","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"钱Y","group":"研发设计与工艺技术","code":"P33","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"张CH","group":"研发设计与工艺技术","code":"P10","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"何JT","group":"研发设计与工艺技术","code":"P51","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"王W","group":"研发设计与工艺技术","code":"P8","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"凌JY","group":"研发设计与工艺技术","code":"P9","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"李T","group":"研发设计与工艺技术","code":"P55","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"于X","group":"研发设计与工艺技术","code":"","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"张MT","group":"项目管理","code":"P44","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"叶W","group":"项目管理","code":"P23","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"陈SH","group":"项目管理","code":"P22","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"孙YW","group":"项目管理","code":"P22","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"徐B","group":"项目管理","code":"P45","status":"check","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"严X","group":"项目管理","code":"P27","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"肖HG","group":"项目管理","code":"P3","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"鲁ZJ","group":"项目管理","code":"P24","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"何SH","group":"物料","code":"P52","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"张Y","group":"物料","code":"P13","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"竹YJ","group":"物料","code":"P52","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"傅DX","group":"物料","code":"P42","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"陈WY","group":"物料","code":"P42","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"淳ZX","group":"物料","code":"P13","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"李Y","group":"投资合规","code":"P47","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"高SQ","group":"投资合规","code":"P48","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"林DL","group":"投资合规","code":"P47","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"窦ZY","group":"投资合规","code":"P17","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"郑YZ","group":"投资合规","code":"P25","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"郭ZW","group":"投资合规","code":"P25","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"刘YY","group":"投资合规","code":"P58","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"何B","group":"人力资源与员工服务","code":"P54","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"邵CK","group":"人力资源与员工服务","code":"P54","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"肖Y","group":"人力资源与员工服务","code":"","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"柴Y","group":"人力资源与员工服务","code":"P18","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"郝JB","group":"人力资源与员工服务","code":"","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"杨QR","group":"人力资源与员工服务","code":"","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"周S","group":"人力资源与员工服务","code":"P31","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"韩W","group":"人力资源与员工服务","code":"","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"郑L","group":"集团运营与经营决策","code":"P38","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"成K","group":"集团运营与经营决策","code":"","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"刘C","group":"集团运营与经营决策","code":"P38","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"汪J","group":"集团运营与经营决策","code":"P38","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"黄XZ","group":"集团运营与经营决策","code":"P38","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"陈ZR","group":"供应链采购","code":"P12","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"陈JY","group":"供应链采购","code":"P14","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"韩L","group":"供应链采购","code":"P43","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"张X","group":"供应链采购","code":"P11","status":"check","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"朱ZP","group":"供应链采购","code":"P43","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"李B","group":"财务","code":"P15","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"陈L","group":"财务","code":"P46","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"吕YX","group":"财务","code":"P39","status":"check","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"赵Q","group":"财务","code":"P16","status":"check","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"潘QH","group":"财务","code":"P39","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"严ZL","group":"财务","code":"P39","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"黄J","group":"财务","code":"P15","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"哈YK","group":"APS排产优化","code":"P49","status":"invited","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"李XK","group":"APS排产优化","code":"P1","status":"no_account","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"杨H","group":"APS排产优化","code":"P49","status":"in_org","repos":1,"files":0,"daily":0,"output":0,"evidence":0,"pushed":"2026-10-21 12:48"},{"name":"左KL","group":"APS排产优化","code":"P49","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"郭H","group":"APS排产优化","code":"P49","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"杜K","group":"APS排产优化","code":"P49","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""},{"name":"张JC","group":"APS排产优化","code":"P49","status":"in_org","repos":0,"files":0,"daily":0,"output":0,"evidence":0,"pushed":""}]};
+
+const STATUS = {in_org:'已入组织', invited:'已邀待接受', check:'待核查', no_account:'未交账号'};
+const fmt = n => (n||0).toLocaleString('zh-CN');
+
+document.getElementById('sub').textContent =
+  `组织 ${DATA.org} · 快照 ${DATA.snapshot_at}（北京时间） · 每 10 分钟自动采集`;
+document.getElementById('live').textContent = '自动更新中 · 快照 ' + DATA.snapshot_at.slice(11);
+
+const T = DATA.totals;
+const kpis = [
+  ['报名人数', T.roster, '定稿名单'],
+  ['已交账号', T.has_account, `${T.no_account} 人未交`],
+  ['已入组织', T.in_org, `${T.invited} 人待接受`],
+  ['已建仓', T.has_repo, T.has_repo ? `共 ${fmt(T.files)} 个文件` : '开营后开始'],
+  ['有产出', T.has_output, `${T.has_daily} 人有日报`],
+];
+document.getElementById('kpis').innerHTML = kpis.map(([l,n,d],i)=>
+  `<div class="kpi"><div class="n" style="color:${['','','','var(--blue)','var(--green)'][i]||'inherit'}">${fmt(n)}</div>
+   <div class="l">${l}</div><div class="d">${d}</div></div>`).join('');
+
+const steps = [
+  ['报名', T.roster, 'var(--ink)'],
+  ['已交账号', T.has_account, '#5b6b8c'],
+  ['已入组织', T.in_org, 'var(--blue)'],
+  ['已建仓', T.has_repo, 'var(--purple)'],
+  ['有产出', T.has_output, 'var(--green)'],
+];
+const maxv = Math.max(...steps.map(s=>s[1]), 1);
+document.getElementById('funnel').innerHTML = steps.map(([l,v,c])=>
+  `<div class="frow"><span>${l}</span>
+   <div class="ftrack"><div class="fbar" style="width:${v/maxv*100}%;background:${c}"></div></div>
+   <span class="fnum">${fmt(v)}</span></div>`).join('');
+
+document.querySelector('#gtab tbody').innerHTML = DATA.groups.map(g=>
+  `<tr><td>${g.name}</td><td class="num">${g.people}</td><td class="num">${g.in_org}</td>
+   <td class="num">${g.has_repo||'—'}</td><td class="num">${g.has_output||'—'}</td>
+   <td class="num">${g.daily||'—'}</td><td class="num">${fmt(g.files)}</td></tr>`).join('');
+
+const maxInd = Math.max(...DATA.indicators.map(i=>i.people), 1);
+document.getElementById('inds').innerHTML = DATA.indicators.map(i=>
+  `<div class="ind"><div class="k">${i.key}</div><div class="t">${i.label}</div>
+   <div class="v">${i.people}<span>/ ${T.roster} 人</span></div>
+   <div class="bar"><i style="width:${i.people/maxInd*100}%"></i></div></div>`).join('');
+
+let filter = 'all';
+function renderPeople(){
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const list = DATA.people.filter(p=>{
+    if (filter === 'has_repo' ? !p.repos : filter !== 'all' && p.status !== filter) return false;
+    if (!q) return true;
+    return (p.name+p.group+p.code).toLowerCase().includes(q);
+  });
+  document.getElementById('people').innerHTML = list.length ? list.map(p=>
+    `<div class="p"><div class="top"><span class="nm">${p.name}</span>
+      <span class="s ${p.status}">${STATUS[p.status]}</span></div>
+     <div class="gp">${p.group}${p.code?' · '+p.code:''}</div>
+     <div class="meta"><span>文件 <b>${p.files}</b></span><span>日报 <b>${p.daily}</b></span>
+      <span>证据 <b>${p.evidence}/12</b></span></div></div>`).join('')
+    : '<div class="empty">没有符合条件的学员</div>';
+}
+document.getElementById('q').addEventListener('input', renderPeople);
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); filter = b.dataset.f; renderPeople();
+}));
+renderPeople();
+
+document.getElementById('foot').innerHTML =
+  `数据来源：GitHub 组织 <b>${DATA.org}</b> 的成员、邀请、仓库与目录树，每 10 分钟自动采集并重建本页。<br>
+   本页只展示进度与证据存在性，<b>不展示任何评分、GitHub 账号或仓库名称</b>；质量判断由评审人工完成。<br>
+   快照时间 ${DATA.snapshot_at}（北京时间）。`;
+</script>
+</body>
+</html>
