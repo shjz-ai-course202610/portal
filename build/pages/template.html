@@ -134,11 +134,6 @@ footer{color:var(--mute);font-size:11.5px;line-height:1.9;border-top:1px solid v
   </section>
 
   <section>
-    <h2>12 项评分证据齐备度 <small>只统计「有候选文件」的人数，不代表质量</small></h2>
-    <div class="grid12" id="inds"></div>
-  </section>
-
-  <section>
     <h2>学员进度 <small>姓名缩写 · 不含账号与仓库名</small></h2>
     <div class="tools">
       <input type="search" id="q" placeholder="搜索姓名、分组…">
@@ -201,12 +196,6 @@ document.querySelector('#gtab tbody').innerHTML = DATA.groups.map(g=>
    <td class="num">${g.has_repo||'—'}</td><td class="num">${g.has_output||'—'}</td>
    <td class="num">${g.daily||'—'}</td><td class="num">${fmt(g.files)}</td></tr>`).join('');
 
-const maxInd = Math.max(...DATA.indicators.map(i=>i.people), 1);
-document.getElementById('inds').innerHTML = DATA.indicators.map(i=>
-  `<div class="ind"><div class="k">${i.key}</div><div class="t">${i.label}</div>
-   <div class="v">${i.people}<span>/ ${T.roster} 人</span></div>
-   <div class="bar"><i style="width:${i.people/maxInd*100}%"></i></div></div>`).join('');
-
 let filter = 'all';
 function renderPeople(){
   const q = document.getElementById('q').value.trim().toLowerCase();
@@ -220,7 +209,7 @@ function renderPeople(){
       <span class="s ${p.status}">${STATUS[p.status]}</span></div>
      <div class="gp">${p.group}${p.code?' · '+p.code:''}</div>
      <div class="meta"><span>文件 <b>${p.files}</b></span><span>日报 <b>${p.daily}</b></span>
-      <span>证据 <b>${p.evidence}/12</b></span></div>
+      <span>产出 <b>${p.output}</b></span></div>
      <div class="go">查看详情 ›</div></div>`).join('')
     : '<div class="empty">没有符合条件的学员</div>';
 }
@@ -236,10 +225,6 @@ function openDetail(p){
   document.getElementById('dn').textContent = p.name;
   document.getElementById('dg').textContent =
     [p.group, p.code, p.topic].filter(Boolean).join(' · ');
-  const evItems = DATA.indicators.map(i=>{
-    const has = p.ev && p.ev[i.key];
-    return `<div class="${has?'yes':'no'}"><i></i><span>${i.key} ${i.label}</span></div>`;
-  }).join('');
   document.getElementById('db').innerHTML = `
     <div class="kv">
       <div><b>${p.files}</b><span>文件</span></div>
@@ -252,9 +237,7 @@ function openDetail(p){
     <h4>近况</h4>
     <p style="margin:0 0 20px;font-size:12.5px;color:var(--mute);line-height:1.8">
       最近推送：${p.pushed || '—'}<br>当前状态：${STATUS[p.status]}
-    </p>
-    <h4>12 项证据 · 有候选 <b style="color:var(--ink)">${p.evidence}</b> / 12</h4>
-    <div class="ev">${evItems}</div>`;
+    </p>`;
   dr.classList.add('on'); ov.classList.add('on');
 }
 function closeDetail(){ dr.classList.remove('on'); ov.classList.remove('on'); }
@@ -268,7 +251,7 @@ document.getElementById('people').addEventListener('click', e=>{
 
 document.getElementById('foot').innerHTML =
   `数据来源：GitHub 组织 <b>${DATA.org}</b> 的成员、邀请、仓库与目录树，每 10 分钟自动采集并重建本页。<br>
-   本页只展示进度与证据存在性，<b>不展示任何评分、GitHub 账号或仓库名称</b>；质量判断由评审人工完成。<br>
+   本页只展示开发进度，<b>不展示评分、GitHub 账号或仓库名称</b>；质量判断由评审人工完成。<br>
    快照时间 ${DATA.snapshot_at}（北京时间）。`;
 </script>
 </body>

@@ -178,7 +178,6 @@ def main():
             "status": status,
             "repos": len(mine), "files": files, "daily": daily, "output": output,
             "code_files": code, "images": images,
-            "ev": ev, "evidence": sum(1 for v in ev.values() if v),
             "pushed": pushed[:16].replace("T", " "),
         })
 
@@ -190,7 +189,6 @@ def main():
                    "has_account": sum(1 for p in roster if p.get("user")),
                    **tot},
         "groups": sorted(groups.values(), key=lambda x: (-x["people"], x["name"])),
-        "indicators": [{"key": k, "label": l, "people": ind_count[k]} for k, l, _ in INDICATORS],
         "people": people,
     }
 
