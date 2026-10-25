@@ -1,6 +1,6 @@
 {
  "collected_at": "2026-10-25 12:35",
- "snapshot_at": "2026-10-25 13:00",
+ "snapshot_at": "2026-10-25 13:09",
  "kpi": {
   "topics": 52,
   "people": 76,
@@ -10,7 +10,7 @@
   "with_output": 32,
   "zero_topics": 20,
   "median": 97,
-  "today_push": 66,
+  "today_push": 65,
   "unmapped": 25,
   "unmapped_files": 4163,
   "multi": 16,
