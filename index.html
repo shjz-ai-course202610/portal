@@ -4,22 +4,785 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>上海精智 AI 开发实训营</title>
+<title>全班成果总览 · 上海精智 AI 开发实训营</title>
 <style>
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-    background:#f5f6f8;color:#1c2333;
-    font:14px/1.7 "PingFang SC","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  .box{text-align:center;padding:40px 28px;max-width:420px}
-  h1{font-size:18px;font-weight:600;margin:0 0 10px;letter-spacing:.2px}
-  p{color:#7b8496;font-size:13px;margin:0}
-  .line{width:36px;height:2px;background:#e6e8ec;margin:20px auto 0;border-radius:2px}
+:root{
+  --bg:#f5f6f8; --card:#fff; --line:#e6e8ec; --ink:#1c2333; --mute:#7b8496;
+  --blue:#2f6feb; --green:#17a673; --amber:#e0a02e; --purple:#7b61ff; --teal:#3d9bb5;
+  --none:#d8dce4;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:14px/1.65 "PingFang SC","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 20px 64px}
+h1{font-size:23px;margin:0 0 6px;letter-spacing:-.2px}
+h2{font-size:14.5px;font-weight:600;margin:0 0 3px;letter-spacing:-.1px}
+.eyebrow{font-size:11.5px;color:var(--mute);letter-spacing:.4px;margin-bottom:7px;
+  display:flex;align-items:center;gap:8px}
+.live{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;color:#12795a;
+  background:#eaf7f1;border-radius:999px;padding:1px 8px;letter-spacing:0;
+  transition:background .35s}
+.live i{width:6px;height:6px;border-radius:50%;background:#17a673;animation:pulse 2s infinite}
+.live.flash{background:#c9f0df}
+.live.off{color:#8a6d1f;background:#fffbe8}
+.live.off i{background:#e0a02e;animation:none}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.sub{color:var(--mute);font-size:12.5px}
+.sub b{color:#5b6475;font-weight:500;font-variant-numeric:tabular-nums}
+
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 12px}
+.kpi{position:relative;background:linear-gradient(180deg,#fff 0%,#fbfcfe 100%);
+  border:1px solid var(--line);border-radius:14px;padding:17px 18px 15px;
+  box-shadow:0 1px 2px rgba(16,24,40,.04);overflow:hidden;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.kpi:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;
+  background:linear-gradient(90deg,#d5dfee,#eaf0f8)}
+.kpi b{display:block;font-size:34px;line-height:1.02;letter-spacing:-1.4px;
+  font-variant-numeric:tabular-nums;font-weight:650;color:#1b2333}
+.kpi b small{font-size:14px;color:var(--mute);letter-spacing:0;font-weight:500}
+.kpi span{display:block;font-size:11.5px;color:var(--mute);margin-top:7px;letter-spacing:.3px}
+.kpi.go{cursor:pointer}
+.kpi.go:before{background:linear-gradient(90deg,#2f6feb,#8fb2f7)}
+.kpi.go b{color:#2457b8}
+.kpi.go:hover{transform:translateY(-2px);border-color:#cfdcf5;
+  box-shadow:0 10px 22px -12px rgba(47,111,235,.45)}
+.kpi.hi b{color:var(--blue)}
+.kpi.warn b{color:var(--amber)}
+
+.lead{background:#fff;border:1px solid var(--line);border-left:3px solid var(--blue);
+  border-radius:10px;padding:13px 16px;font-size:13.5px;line-height:1.8;color:#3d4557;margin-bottom:22px}
+.lead b{color:var(--ink);font-weight:600}
+.lead em{font-style:normal;color:var(--amber);font-weight:600}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:16px}
+.cap{font-size:12px;color:var(--mute);margin:0 0 16px;line-height:1.7}
+.cap b{color:#5b6475;font-weight:500}
+
+/* 漏斗 */
+.fun{display:flex;flex-direction:column;gap:7px}
+.fr{display:grid;grid-template-columns:88px 1fr 46px;align-items:center;gap:11px}
+.fr .lb{font-size:12.5px;color:#4a5160}
+.fr .tk{height:26px;background:#f3f5f8;border-radius:6px;overflow:hidden;position:relative}
+.fr .tk i{display:block;height:100%;border-radius:6px;transition:width .4s ease}
+.fr .n{text-align:right;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
+.fr .drop{font-size:11px;color:#b08a2e;margin-left:6px;font-weight:400}
+.fr:last-child .n{color:var(--green)}
+
+/* 构成条 */
+.mixbar{display:flex;height:34px;border-radius:8px;overflow:hidden;margin-bottom:13px}
+.mixbar i{display:flex;align-items:center;justify-content:center;color:#fff;font-size:11.5px;
+  font-variant-numeric:tabular-nums;min-width:0;overflow:hidden;white-space:nowrap}
+.mixleg{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:#5b6475}
+.mixleg span{display:flex;align-items:center;gap:6px}
+.mixleg em{width:9px;height:9px;border-radius:3px;display:inline-block}
+.mixleg b{font-variant-numeric:tabular-nums}
+
+/* 交付物覆盖 */
+.dl{display:flex;flex-direction:column;gap:6px}
+.dr{display:grid;grid-template-columns:80px 1fr 74px 46px;align-items:center;gap:10px}
+.dr .lb{font-size:12.5px;color:#4a5160;white-space:nowrap}
+.dr .tk{height:19px;background:#f3f5f8;border-radius:5px;overflow:hidden}
+.dr .tk i{display:block;height:100%;border-radius:5px;background:var(--blue);transition:width .45s ease}
+.dr .n{font-size:12px;color:#7b8496;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.dr .n b{color:var(--ink);font-weight:600}
+.dr .pc{font-size:11.5px;color:var(--mute);text-align:right;font-variant-numeric:tabular-nums}
+.dr.zero .tk i{background:#e3e7ee}
+.dl+.cap,.subh{font-size:11.5px;color:var(--mute);margin:16px 0 7px;letter-spacing:.2px}
+.dl+.subh{margin-top:16px}
+.tagline{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.tag{font-size:11.5px;background:#eaf7f1;color:#12795a;border-radius:5px;padding:2px 8px}
+.tag.need{background:#fffbe8;color:#8a6d1f}
+
+/* 学习手册任务清单 */
+.ckkpi{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:var(--mute);
+  padding:1px 0 13px;margin-bottom:4px;border-bottom:1px solid #f2f3f6}
+.ckkpi span{display:flex;align-items:baseline;gap:5px}
+.ckkpi b{font-size:16px;color:#3d4557;font-variant-numeric:tabular-nums;line-height:1}
+.ckkpi b.a{color:#a5761c}
+.ckg{padding:10px 0 3px}
+.ckg+.ckg{border-top:1px solid #f2f3f6;margin-top:5px;padding-top:13px}
+.ckg .gh{display:flex;align-items:baseline;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.ckg .gh b{font-size:12.5px;letter-spacing:.2px}
+.ckg .gh .gd{font-size:10.5px;color:#9aa3b2;background:#f4f5f8;border-radius:4px;padding:1px 5px}
+.ckg .gh .gc{margin-left:auto;font-size:11px;color:var(--mute);font-variant-numeric:tabular-nums}
+.ckt{display:grid;grid-template-columns:20px 96px 1fr 62px 50px;align-items:center;
+  gap:9px;padding:3px 0;font-size:12px}
+.ckt .no{color:#b6bcc8;font-size:10.5px;text-align:right;font-variant-numeric:tabular-nums}
+.ckt .lb{color:#4a5160;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ckt .tk{height:15px;background:#f3f5f8;border-radius:4px;overflow:hidden;display:flex}
+.ckt .tk i{height:100%;display:block;transition:width .45s ease}
+.ckt .tk .g{background:#2fa77a}
+.ckt .tk .u{background:#ecc35c}
+.ckt .n{font-size:11px;color:#7b8496;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.ckt .n b{color:var(--ink);font-weight:600}
+.ckt .pc{font-size:11px;color:var(--mute);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ckt.zero .lb{color:#98a0ae}
+.ckgap{display:flex;align-items:center;gap:10px;margin:15px 0 1px;
+  font-size:10.5px;color:#a5761c;letter-spacing:.3px;white-space:nowrap}
+.ckgap:before,.ckgap:after{content:"";flex:1;height:1px;
+  background:repeating-linear-gradient(90deg,#e8ddc4 0 4px,transparent 4px 8px)}
+
+/* GitHub 活跃度 · 逐小时柱 */
+.hrkpi{display:grid;grid-template-columns:repeat(6,1fr);background:#fff;
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(16,24,40,.04);margin:0 0 16px}
+.hrkpi span{display:flex;flex-direction:column;gap:5px;padding:15px 16px 14px;
+  border-left:1px solid #f1f3f7;min-width:0}
+.hrkpi span:first-child{border-left:0;background:linear-gradient(180deg,#f6f9ff,#fff)}
+.hrkpi b{font-size:24px;color:#232b3d;font-variant-numeric:tabular-nums;
+  line-height:1.04;font-weight:650;letter-spacing:-.8px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hrkpi span:first-child b{color:#2457b8}
+.hrkpi em{font-style:normal;font-size:11px;color:var(--mute);letter-spacing:.2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:880px){
+  .hrkpi{grid-template-columns:repeat(3,1fr)}
+  .hrkpi span:nth-child(4){border-left:0}
+  .hrkpi span:nth-child(n+4){border-top:1px solid #f1f3f7}
+}
+.hrchart{position:relative}
+.hrbars{display:flex;align-items:flex-end;gap:3px;height:148px;
+  border-bottom:1px solid #e7eaf0;padding-bottom:1px}
+.hrbars i{flex:1;min-width:0;background:#cfd8e6;border-radius:2px 2px 0 0;
+  display:block;transition:height .5s ease;position:relative}
+.hrbars i.on{background:#4a7fb5}
+.hrbars i.pk{background:#2f6d4f}
+.hrbars i.night{background:#e3e7ef}
+.hrbars i.night.on{background:#8ba7c9}
+.hrbars i.night.pk{background:#2f6d4f}
+.hrbars i:hover{filter:brightness(.9)}
+/* 窗口尚未走到的小时：斜纹，别当成「零提交」 */
+.hrbars i.future{background:repeating-linear-gradient(45deg,#f7f8fb 0 4px,#edf0f5 4px 8px);
+  border-radius:0;opacity:.75}
+.hrsep{width:5px;flex:none}
+.hrx{display:flex;gap:2px;margin-top:5px;font-size:9.5px;color:#aeb5c1;
+  font-variant-numeric:tabular-nums}
+.hrx span{flex:1;text-align:center;white-space:nowrap;overflow:hidden}
+.hrx .hrsep{flex:none;width:5px}
+.hrx .dx{color:#6d7688;font-weight:600;overflow:visible;text-align:left;padding-left:1px}
+.hrkey{display:flex;gap:16px;flex-wrap:wrap;margin-top:9px;font-size:10.5px;color:#98a0ae}
+.hrkey b{display:inline-block;width:8px;height:8px;border-radius:2px;
+  margin-right:4px;vertical-align:-1px}
+
+/* 个人页同步数字条 */
+.syncrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#eef0f4;
+  border-radius:10px;overflow:hidden;margin:14px 0 16px}
+.syncrow .sq{background:#fff;padding:13px 14px}
+.syncrow .sq b{display:block;font-size:19px;font-variant-numeric:tabular-nums;line-height:1.15;
+  color:#2b3242}
+.syncrow .sq span{display:block;font-size:11px;color:var(--mute);margin-top:3px}
+@media (max-width:640px){
+  .syncrow{grid-template-columns:repeat(2,1fr)}
+  .hrbars{height:88px}
+}
+
+/* 双栏 */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.grid2 .card{margin-bottom:0}
+
+/* 柱状 */
+.bars{display:flex;align-items:flex-end;gap:12px;height:118px;padding:0 2px}
+.bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:5px}
+.bar u{display:block;width:100%;background:var(--blue);border-radius:5px 5px 2px 2px;
+  text-decoration:none;min-height:2px;opacity:.85}
+.bar.zero u{background:var(--none)}
+.bar b{font-size:13px;font-variant-numeric:tabular-nums}
+.bar span{font-size:11px;color:var(--mute);white-space:nowrap}
+
+/* 组表 */
+table{width:100%;border-collapse:collapse}
+th{font-size:11px;color:var(--mute);font-weight:500;text-align:left;padding:0 8px 8px;
+  border-bottom:1px solid var(--line);white-space:nowrap}
+th.num{text-align:center}
+td{padding:9px 8px;border-bottom:1px solid #f4f5f8;font-size:12.5px;vertical-align:middle}
+tr:last-child td{border-bottom:0}
+td.num{text-align:center;font-variant-numeric:tabular-nums;color:#5b6475}
+td.g{font-weight:500}
+th.seg,td.seg{text-align:center;width:170px}
+.stack{display:flex;height:7px;border-radius:4px;overflow:hidden;background:#f3f5f8;
+  min-width:96px;max-width:150px;margin:0 auto}
+.stack i{height:100%}
+
+/* 线索 */
+.clues{width:100%}
+.cl{display:grid;grid-template-columns:46px 1fr 64px 96px 1fr 62px;gap:10px;
+  align-items:center;padding:9px 0;border-bottom:1px solid #f4f5f8}
+.cl:last-child{border-bottom:0}
+.cl .code{font-size:11px;color:#5b6b8c;font-variant-numeric:tabular-nums}
+.cl .name{font-size:12.8px;font-weight:500;line-height:1.4;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.cl .cnt{font-size:11.5px;color:var(--mute);font-variant-numeric:tabular-nums;line-height:1.45}
+.cl .cnt b{color:#3d4557;font-weight:600;font-size:12.5px}
+.cl .sub2{font-size:10.5px;color:#a3aab8}
+.cl .ev{display:flex;gap:4px;overflow:hidden}
+.cl .ev span{font-size:10.5px;background:#f4f5f8;color:#6b7486;border-radius:4px;
+  padding:1px 6px;white-space:nowrap;max-width:118px;overflow:hidden;text-overflow:ellipsis}
+.cl .t{font-size:11px;color:var(--mute);text-align:right;font-variant-numeric:tabular-nums}
+.st{font-size:10.5px;padding:1px 8px;border-radius:999px;white-space:nowrap;text-align:center}
+.st-doc{background:#eef1f6;color:#5b6b8c}
+.st-proto{background:#e8f0ff;color:#2f6feb}
+.st-goal{background:#eaf7f1;color:#12795a}
+.st-none{background:#f6f7f9;color:#aab0bc}
+
+/* 学员子页面 */
+.kpi{position:relative}
+.kpi.go{cursor:pointer;transition:border-color .2s,background .2s}
+.kpi.go:hover{border-color:#c9d6ee;background:#fbfcfe}
+.kpi.go::after{content:'›';position:absolute;top:8px;right:11px;font-size:14px;
+  color:#c2cad8;line-height:1}
+
+.subpage{position:fixed;inset:0;z-index:60;background:var(--bg);overflow-y:auto;
+  -webkit-overflow-scrolling:touch}
+.subpage[hidden]{display:none}
+.subpage .wrap{max-width:1120px;margin:0 auto;padding:26px 20px 64px}
+.subbar{display:flex;align-items:center;gap:9px;margin-bottom:15px;font-size:12.5px}
+.subbar a{color:var(--blue);text-decoration:none;cursor:pointer}
+.subbar a:hover{text-decoration:underline}
+.subbar .path{color:var(--mute)}
+.subbar .path b{color:#5b6475;font-weight:500}
+
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:10px}
+.scard{background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px 13px 11px;
+  cursor:pointer;transition:border-color .18s,box-shadow .18s}
+.scard:hover{border-color:#c9d6ee;box-shadow:0 2px 10px rgba(47,111,235,.07)}
+.scard .top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:5px}
+.scard .cd{font-size:10.5px;color:#5b6b8c;font-variant-numeric:tabular-nums;letter-spacing:.2px}
+.scard .nm{font-size:12.8px;font-weight:500;line-height:1.45;margin-bottom:8px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.scard .bot{display:flex;align-items:center;justify-content:space-between;gap:8px;
+  font-size:11px;color:var(--mute);font-variant-numeric:tabular-nums}
+.scard .bot b{color:#3d4557;font-weight:600}
+.dots{display:flex;gap:3px}
+.dots i{width:7px;height:7px;border-radius:50%;background:#e3e7ee;display:block}
+.dots i.on{background:var(--blue)}
+.dots i.ok{background:var(--green)}
+
+.shero{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+  margin-bottom:14px}
+.shero .h{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.shero .h b{font-size:19px;letter-spacing:-.2px}
+.shero .t{font-size:14px;color:#4a5160;margin-bottom:15px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.step{background:#f6f7f9;border-radius:9px;padding:10px 12px;border:1px solid transparent}
+.step.on{background:#eaf7f1;border-color:#c8e9db}
+.step.now{background:#e8f0ff;border-color:#c9daf8}
+.step i{display:block;width:7px;height:7px;border-radius:50%;background:#d8dce4;margin-bottom:7px}
+.step.on i{background:var(--green)}
+.step.now i{background:var(--blue)}
+.step span{font-size:12px;color:#7b8496}
+.step.now span,.step.on span{color:#3d4557;font-weight:500}
+.srow{display:grid;grid-template-columns:88px 1fr 62px;align-items:center;gap:10px;padding:5px 0}
+.srow .lb{font-size:12.5px;color:#4a5160}
+.srow .tk{height:17px;background:#f3f5f8;border-radius:5px;overflow:hidden}
+.srow .tk i{display:block;height:100%;border-radius:5px}
+.srow .v{font-size:12px;color:var(--mute);text-align:right;font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:11.5px;border-radius:5px;padding:2px 8px;background:#f4f5f8;color:#8a93a5}
+.chip.on{background:#eaf7f1;color:#12795a}
+.chip.no{background:#f6f7f9;color:#b3bac6}
+.smeta{display:flex;gap:20px;flex-wrap:wrap;font-size:11.5px;color:var(--mute);
+  margin-top:15px;padding-top:13px;border-top:1px solid #f2f3f6}
+.smeta b{color:#5b6475;font-weight:500;font-variant-numeric:tabular-nums}
+.smeta code{font-size:11px;background:#f4f5f8;padding:1px 5px;border-radius:4px}
+
+/* 学习手册任务清单 */
+.ckg{padding:11px 0;border-top:1px solid #f2f3f6}
+.ckg:first-of-type{border-top:0;padding-top:2px}
+.ckg .gh{display:flex;align-items:baseline;gap:8px;margin-bottom:7px;flex-wrap:wrap}
+.ckg .gh b{font-size:13px;letter-spacing:.2px}
+.ckg .gd{font-size:10.5px;color:#9aa3b2;background:#f4f5f8;border-radius:4px;padding:1px 5px}
+.ckg .gc{margin-left:auto;font-size:11.5px;color:var(--mute);font-variant-numeric:tabular-nums}
+.cis{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:5px}
+.ci{display:flex;align-items:center;gap:5px;font-size:12px;border-radius:6px;
+  padding:4px 8px;background:#f7f8fa;color:#9aa3b2}
+.ci i{font-style:normal;font-size:11px;width:12px;text-align:center;flex:none}
+.ci.yes{background:#eaf7f1;color:#12795a}
+.ci.q{background:#fdf6e7;color:#a5761c}
+.ckstat{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--mute);margin-bottom:8px}
+.ckstat b{font-variant-numeric:tabular-nums;color:#3d4557}
+.ckstat .y{color:#12795a}.ckstat .q{color:#a5761c}
+.gline{display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid #f2f3f6;flex-wrap:wrap}
+.gline:first-of-type{border-top:0}
+.gline .gcd{font-size:12.5px;font-weight:500;color:#3d4557;min-width:100px}
+.gline .gday{font-size:10.5px;color:#9aa3b2;background:#f4f5f8;border-radius:4px;padding:1px 5px}
+.cps{display:flex;flex-wrap:wrap;gap:5px}
+.cp{font-size:11px;border-radius:5px;padding:2px 7px;background:#f7f8fa;color:#8a93a5;
+  font-variant-numeric:tabular-nums}
+.cp b{font-weight:600;color:#5b6475}
+.cp.hi{background:#eaf7f1;color:#12795a}.cp.hi b{color:#12795a}
+.cp.mid{background:#eef2fa;color:#4a6ba8}.cp.mid b{color:#33527f}
+.cp em{font-style:normal;color:#a5761c;margin-left:4px;font-size:10px}
+
+footer{color:var(--mute);font-size:11.5px;line-height:1.95;border-top:1px solid var(--line);
+  margin-top:26px;padding-top:16px}
+footer b{color:#5b6475;font-weight:500}
+footer .warnline{color:#a5761c}
+
+@media(max-width:900px){
+  .kpis{grid-template-columns:repeat(3,1fr)}
+  .grid2{grid-template-columns:1fr}
+  .cl{grid-template-columns:42px 1fr 56px 70px}
+  .cl .ev{display:none}
+  .cl .t{display:none}
+}
 </style>
 </head>
 <body>
-  <div class="box">
-    <h1>上海精智 AI 开发实训营</h1>
-    <p>成果门户正在准备中，开营前开放。</p>
-    <div class="line"></div>
-  </div>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">上海精智 · AI 开发实训营
+      <span class="live" id="live"><i></i><span id="livetext">实时监控</span></span>
+    </div>
+    <h1>全班成果总览</h1>
+    <div class="sub">数据采集于 <b id="snap"></b><span id="ago"></span> · 每小时自动采集，数据变了页面自己换 · 只读仓库里的文件与路径，不读内容、不读私有代码</div>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+  <div class="hrkpi" id="hrkpi"></div>
+  <div class="lead" id="lead"></div>
+
+  <section class="card">
+    <h2>GitHub 活跃度 · 按小时</h2>
+    <p class="cap" id="hrcap"></p>
+    <div class="hrchart" id="hrchart"></div>
+  </section>
+
+  <section class="card">
+    <h2>推进漏斗</h2>
+    <p class="cap">按学习手册的任务顺序看每一件产出物有多少课题做到了。各级<b>独立统计、不要求逐级包含</b>——先写代码后补文档的课题，会让后一级高于前一级。含待核项。</p>
+    <div class="fun" id="funnel"></div>
+  </section>
+
+  <section class="card">
+    <h2>学习手册任务清单 · 全班进度</h2>
+    <p class="cap" id="delivcap"></p>
+    <div class="ckkpi" id="ckkpi"></div>
+    <div id="ckfull"></div>
+  </section>
+
+  <section class="card">
+    <h2>11 个业务组</h2>
+    <p class="cap">右侧色条为该组课题的段位构成：<b>灰</b>未开始 · <b>蓝灰</b>文档 · <b>蓝</b>原型 · <b>绿</b>可演示。</p>
+    <table>
+      <thead><tr>
+        <th>业务组</th><th class="num">课题</th><th class="num">人数</th>
+        <th class="num">有产出</th><th class="num">产出件数</th><th class="num">有代码</th>
+        <th class="seg">段位构成</th>
+      </tr></thead>
+      <tbody id="groups"></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>成果线索 · 有产出的课题</h2>
+    <p class="cap">按产出件数从多到少排。每行是一道题：产出件数（文/图/HTML/码/数）、触发判定的文件名、最后同步时间。<b>文件名可以直接在 GitHub 上搜到对应的仓。</b>注意件数高不等于质量高——图片多往往是截图堆。</p>
+    <div class="clues" id="clues"></div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<!-- 学员子页面：hash 路由控制显隐，不新增后端路由 -->
+<div class="subpage" id="sub" hidden></div>
+
+<script>
+let DATA = {"collected_at":"2026-10-25 11:35","snapshot_at":"2026-10-25 12:00","kpi":{"topics":52,"people":76,"repos":75,"org_files":20090,"topic_files":16028,"with_output":32,"zero_topics":20,"median":94,"today_push":66,"unmapped":25,"unmapped_files":4062,"multi":16,"partial":6},"funnel":[{"k":"topic","label":"班级课题","n":52},{"k":"out","label":"已有产出","n":32},{"k":"idea","label":"有立项包","n":26},{"k":"design","label":"有方案与原型","n":25},{"k":"build","label":"有可运行系统","n":27}],"stages":{"none":20,"doc":3,"proto":4,"goal":25},"mix":{"doc":2967,"img":4161,"html":422,"code":2083,"data":4707},"buckets":[{"k":"0","n":20},{"k":"1-3","n":1},{"k":"4-10","n":1},{"k":"11-30","n":3},{"k":"30+","n":27}],"groups":[{"g":"物料","n":3,"people":6,"with_out":3,"files":3444,"none":0,"doc":0,"proto":0,"goal":3,"code":3},{"g":"财务","n":4,"people":7,"with_out":2,"files":3374,"none":2,"doc":0,"proto":0,"goal":2,"code":2},{"g":"研发设计与工艺技术","n":8,"people":8,"with_out":4,"files":2403,"none":4,"doc":0,"proto":0,"goal":4,"code":3},{"g":"投资合规","n":5,"people":7,"with_out":4,"files":1826,"none":2,"doc":0,"proto":1,"goal":2,"code":3},{"g":"营销管理","n":7,"people":9,"with_out":6,"files":1496,"none":1,"doc":1,"proto":0,"goal":5,"code":5},{"g":"供应链采购","n":4,"people":5,"with_out":2,"files":825,"none":2,"doc":0,"proto":1,"goal":1,"code":2},{"g":"APS排产优化","n":2,"people":7,"with_out":1,"files":750,"none":1,"doc":0,"proto":0,"goal":1,"code":1},{"g":"质量管理","n":4,"people":7,"with_out":3,"files":729,"none":1,"doc":0,"proto":0,"goal":3,"code":3},{"g":"项目管理","n":7,"people":8,"with_out":4,"files":650,"none":3,"doc":1,"proto":0,"goal":3,"code":3},{"g":"人力资源与员工服务","n":7,"people":8,"with_out":3,"files":531,"none":3,"doc":1,"proto":2,"goal":1,"code":3},{"g":"集团运营与经营决策","n":1,"people":4,"with_out":0,"files":0,"none":1,"doc":0,"proto":0,"goal":0,"code":0}],"gaps":{"partial":[{"code":"P38","topic":"经营驾驶舱","people":4,"repos":1},{"code":"P4","topic":"8D报告辅助生成","people":3,"repos":1},{"code":"P39","topic":"投资管理工作台","people":3,"repos":1},{"code":"P43","topic":"齐套管家·项目制采购履约协同","people":2,"repos":0},{"code":"P47","topic":"投资者全流程管理","people":2,"repos":1},{"code":"P52","topic":"呆滞库存处置Agent","people":2,"repos":1}],"unmapped":25,"unmapped_files":4062,"zero_repos":11},"clues":[{"code":"P15","topic":"开票对账自动核对","group":"财务","stage":"goal","files":3213,"doc":373,"html":11,"code_n":529,"data":1556,"img":558,"evidence":["prototype.html","wireframe.html","客户对账系统PRD-v001.docx"],"last":"10-25 11:23"},{"code":"P42","topic":"生产物料到货智能预警与自动跟催","group":"物料","stage":"goal","files":2986,"doc":392,"html":36,"code_n":293,"data":966,"img":1105,"evidence":["用户流程图.html","线框图.html","发布会大纲.md"],"last":"10-25 11:25"},{"code":"P8","topic":"非标方案辅助生成","group":"研发设计与工艺技术","stage":"goal","files":1810,"doc":298,"html":26,"code_n":145,"data":346,"img":654,"evidence":["ui_dom_0.7.0.html","ui_dom_confirm_0.8.0.html","2026-10-24-环境自检.md"],"last":"10-25 11:29"},{"code":"P48","topic":"对外宣传资料审核","group":"投资合规","stage":"none","files":1612,"doc":298,"html":73,"code_n":99,"data":859,"img":186,"evidence":[],"last":"10-25 09:32"},{"code":"P49","topic":"APS排产优化","group":"APS排产优化","stage":"goal","files":750,"doc":131,"html":23,"code_n":206,"data":169,"img":130,"evidence":["index.html","APS排产优化_方案_v1.pptx","APS系统_PRD_v1.md"],"last":"10-25 11:26"},{"code":"","topic":"自定义课题：企业AI中台·Agent调用与监控","group":"营销管理","stage":"goal","files":743,"doc":39,"html":14,"code_n":43,"data":112,"img":216,"evidence":["index.html","桥接原型-v0.1.md","PRD.md"],"last":"10-25 11:33"},{"code":"P14","topic":"申购单汇总与重复审核","group":"供应链采购","stage":"proto","files":662,"doc":83,"html":10,"code_n":255,"data":293,"img":0,"evidence":["index.html","CHANGELOG.md","RELEASE.md"],"last":"10-25 09:20"},{"code":"P35","topic":"细分市场洞察与线索挖掘","group":"营销管理","stage":"goal","files":613,"doc":361,"html":17,"code_n":44,"data":107,"img":48,"evidence":["原型_v001.html","原型_v002.html","PRD_v001.md"],"last":"10-25 11:33"},{"code":"P33","topic":"专利通·专利申报助手","group":"研发设计与工艺技术","stage":"goal","files":533,"doc":177,"html":13,"code_n":134,"data":87,"img":91,"evidence":["index.html","线框图.html","发布方案大纲.md"],"last":"10-25 10:35"},{"code":"P7","topic":"检验数据判异与SPC预警","group":"质量管理","stage":"goal","files":487,"doc":85,"html":3,"code_n":23,"data":11,"img":339,"evidence":["demo-data.md","index.html","sync-chain-test.md"],"last":"10-25 10:54"},{"code":"P13","topic":"库存健康度与呆滞分析","group":"物料","stage":"goal","files":397,"doc":57,"html":20,"code_n":15,"data":12,"img":65,"evidence":["template.html","UI界面样例_v001.html","冒烟记录.md"],"last":"10-25 11:26"},{"code":"P22","topic":"项目主计划拆解与甘特图","group":"项目管理","stage":"goal","files":349,"doc":97,"html":10,"code_n":23,"data":27,"img":180,"evidence":["index.html","可点击原型说明.md","DESIGN.md"],"last":"10-25 11:33"},{"code":"P44","topic":"项目全生命周期管控","group":"项目管理","stage":"goal","files":243,"doc":78,"html":13,"code_n":33,"data":36,"img":56,"evidence":["index.html","architecture.html","P44_明日落地演示方案_20261024.md"],"last":"10-25 11:04"},{"code":"P54","topic":"行政服务一体化与接待驾驶舱","group":"人力资源与员工服务","stage":"proto","files":240,"doc":45,"html":8,"code_n":64,"data":18,"img":95,"evidence":["index.html","design_spec.md","智迎one-产品发布-5页-v001.md"],"last":"10-25 11:29"},{"code":"P31","topic":"精小智·新员工入职搭子","group":"人力资源与员工服务","stage":"proto","files":216,"doc":33,"html":4,"code_n":5,"data":14,"img":133,"evidence":["index.html","GitHub可借鉴代码清单-v1.0.md","PPT大纲.md"],"last":"10-25 10:06"},{"code":"P12","topic":"报价单OCR与比价","group":"供应链采购","stage":"goal","files":163,"doc":60,"html":6,"code_n":53,"data":4,"img":37,"evidence":["m0_wireframe.html","03_用户流程图.html","Must完成记录_2026-10-24.md"],"last":"10-25 10:12"},{"code":"P39","topic":"投资管理工作台","group":"财务","stage":"goal","files":161,"doc":53,"html":18,"code_n":3,"data":44,"img":31,"evidence":["WebReportTemplate.html","probe_b1c26cefe5a740d28ac5ccaad435e1d8.html","MVP-1.1网页版范围与DoD.md"],"last":"10-25 11:23"},{"code":"P4","topic":"8D报告辅助生成","group":"质量管理","stage":"goal","files":149,"doc":70,"html":13,"code_n":24,"data":2,"img":36,"evidence":["editor.html","index.html","8D辅助生成系统_产品定义_V1.0.docx"],"last":"10-24 23:40"},{"code":"P47","topic":"投资者全流程管理","group":"投资合规","stage":"goal","files":146,"doc":32,"html":13,"code_n":38,"data":5,"img":51,"evidence":["index.html","交付1-用户流程图-V1.0.html","安全扫描报告.md"],"last":"10-25 11:27"},{"code":"P5","topic":"月度质量分析报告","group":"质量管理","stage":"goal","files":93,"doc":39,"html":9,"code_n":6,"data":1,"img":33,"evidence":["index.html","技术路线_v002.html","MVP_SCOPE.md"],"last":"10-25 11:09"},{"code":"","topic":"自定义课题：战略解码·人岗匹配·绩效贯通","group":"人力资源与员工服务","stage":"goal","files":75,"doc":16,"html":7,"code_n":3,"data":0,"img":48,"evidence":["index.html","01_端到端旅程.html","01_产品定义与PPT大纲.md"],"last":"10-25 11:32"},{"code":"P17","topic":"合同条款比对与风险提示","group":"投资合规","stage":"proto","files":64,"doc":37,"html":26,"code_n":1,"data":0,"img":0,"evidence":["审计报告-体验设计与原型_v001.md","审计报告-体验设计与原型_v002.md","00_索引.md"],"last":"10-24 20:12"},{"code":"P52","topic":"呆滞库存处置Agent","group":"物料","stage":"goal","files":61,"doc":24,"html":3,"code_n":2,"data":2,"img":29,"evidence":["01-用户流程图-v1.html","02-线框图-v1.html","00-交付说明-v1.md"],"last":"10-25 11:16"},{"code":"P23","topic":"项目台账更新与报告生成","group":"项目管理","stage":"goal","files":57,"doc":16,"html":2,"code_n":20,"data":3,"img":13,"evidence":["index.html","交互原型.html","PRD-MoSCoW-DoD.md"],"last":"10-24 21:22"},{"code":"P37","topic":"丢单分析与复盘","group":"营销管理","stage":"goal","files":55,"doc":18,"html":21,"code_n":0,"data":0,"img":14,"evidence":["index.html","丢单原因字典_V1.html","商务丢单复盘_发布会_3页_V1.pdf"],"last":"10-25 11:09"},{"code":"P36","topic":"成本核算与报价助手","group":"营销管理","stage":"goal","files":44,"doc":19,"html":6,"code_n":2,"data":17,"img":0,"evidence":["05-线框图-v0.1.html","05-线框图-v0.2.html","04-用户流程图-v0.1.md"],"last":"10-24 21:27"},{"code":"P10","topic":"器件参数比对与替代推荐","group":"研发设计与工艺技术","stage":"goal","files":38,"doc":12,"html":3,"code_n":4,"data":13,"img":6,"evidence":["交互原型.html","线框图.html","ldo_extraction_notes.md"],"last":"10-25 11:23"},{"code":"P21","topic":"招投标方案辅助撰写与风险词检查","group":"营销管理","stage":"goal","files":29,"doc":8,"html":2,"code_n":13,"data":3,"img":0,"evidence":["index.html","PRD-v0.1.md","PRD-v0.2.md"],"last":"10-25 10:32"},{"code":"","topic":"自定义课题：数据安全监控平台","group":"研发设计与工艺技术","stage":"goal","files":22,"doc":11,"html":11,"code_n":0,"data":0,"img":0,"evidence":["DoD-一天版.html","MoSCoW-一天版.html","DoD-一天版.md"],"last":"10-24 23:37"},{"code":"P26","topic":"营销日周动态汇总与风险预警","group":"营销管理","stage":"doc","files":12,"doc":2,"html":0,"code_n":3,"data":0,"img":7,"evidence":["营销日周动态汇总与风险预警_2026-10-24.pdf","营销日周动态汇总与风险预警_2026-10-24.pptx"],"last":"10-25 08:53"},{"code":"P25","topic":"企业知识库与智能检索","group":"投资合规","stage":"goal","files":4,"doc":2,"html":1,"code_n":0,"data":0,"img":0,"evidence":["final_quality_check.py","finalize_inputs.py","test_access.py"],"last":"10-24 20:06"},{"code":"P3","topic":"生产日报汇总与异常播报","group":"项目管理","stage":"doc","files":1,"doc":1,"html":0,"code_n":0,"data":0,"img":0,"evidence":["PRD.md"],"last":"10-24 14:03"}],"students":[{"uid":"a06a9ab58e17","mask":"ch***04","code":"P22","topic":"项目主计划拆解与甘特图","known":true,"stage":"goal","sync":182,"docf":110,"lines":11443,"trunc":false,"n":288,"kinds":{"doc":81,"html":2,"code":20,"data":16,"img":161},"deliv":["news","prd","design","wireframe","mvp","userflow","testcase","qa","selfcheck"],"day1":5,"ck":{"eval":"yes","news":"yes","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"no","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"yes","reflect":"?","safety":"?","selftest":"?"},"ck_yes":11,"ck_unk":11,"groups":6,"evidence":["index.html","可点击原型说明.md","DESIGN.md"],"last":"10-25 11:33"},{"uid":"dd19add4079b","mask":"bo***78","code":"P15","topic":"开票对账自动核对","known":true,"stage":"goal","sync":171,"docf":87,"lines":20015,"trunc":true,"n":2946,"kinds":{"doc":311,"html":9,"code":495,"data":1493,"img":458},"deliv":["prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"yes","reflect":"?","safety":"no","selftest":"no"},"ck_yes":10,"ck_unk":9,"groups":6,"evidence":["prototype.html","wireframe.html","客户对账系统PRD-v001.docx"],"last":"10-25 11:23"},{"uid":"2f1171dcb5cd","mask":"ke***mt","code":"P44","topic":"项目全生命周期管控","known":true,"stage":"goal","sync":168,"docf":173,"lines":19634,"trunc":true,"n":243,"kinds":{"doc":78,"html":13,"code":33,"data":36,"img":56},"deliv":["prd","design","wireframe","mvp","userflow","testcase","qa","selfcheck"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"?","selftest":"?"},"ck_yes":9,"ck_unk":10,"groups":6,"evidence":["index.html","architecture.html","P44_明日落地演示方案_20261024.md"],"last":"10-25 11:04"},{"uid":"31c224599edd","mask":"wa***ai","code":"","topic":"未定","known":false,"stage":"goal","sync":71,"docf":175,"lines":2852,"trunc":true,"n":52,"kinds":{"doc":28,"html":3,"code":7,"data":8,"img":6},"deliv":["news","prd","design","wireframe","mvp","userflow","testcase","qa","selfcheck"],"day1":5,"ck":{"eval":"no","news":"yes","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"no","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"yes","reflect":"?","safety":"?","selftest":"?"},"ck_yes":9,"ck_unk":11,"groups":6,"evidence":["数字孪生驾驶舱MVP.html","03-经营数据驾驶舱原型.html","00-README.md"],"last":"10-25 11:02"},{"uid":"83df9489b5c5","mask":"qq***00","code":"P33","topic":"专利通·专利申报助手","known":true,"stage":"goal","sync":59,"docf":122,"lines":2489,"trunc":true,"n":533,"kinds":{"doc":177,"html":13,"code":134,"data":87,"img":91},"deliv":["news","prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":5,"ck":{"eval":"no","news":"yes","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"?","selftest":"?"},"ck_yes":9,"ck_unk":10,"groups":6,"evidence":["index.html","线框图.html","发布方案大纲.md"],"last":"10-25 10:35"},{"uid":"d76221ca49a9","mask":"1s***o1","code":"P35","topic":"细分市场洞察与线索挖掘","known":true,"stage":"goal","sync":245,"docf":358,"lines":13948,"trunc":true,"n":484,"kinds":{"doc":288,"html":17,"code":44,"data":98,"img":7},"deliv":["prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"?","selftest":"?"},"ck_yes":9,"ck_unk":10,"groups":6,"evidence":["原型_v001.html","原型_v002.html","PRD_v001.md"],"last":"10-25 11:33"},{"uid":"818e180a43c4","mask":"ch***23","code":"P13","topic":"库存健康度与呆滞分析","known":true,"stage":"goal","sync":152,"docf":98,"lines":6986,"trunc":false,"n":394,"kinds":{"doc":54,"html":20,"code":15,"data":12,"img":65},"deliv":["prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"yes","reflect":"?","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":9,"groups":6,"evidence":["template.html","UI界面样例_v001.html","冒烟记录.md"],"last":"10-25 11:26"},{"uid":"b339a3a54974","mask":"ja***26","code":"","topic":"未定","known":false,"stage":"goal","sync":96,"docf":214,"lines":11758,"trunc":true,"n":368,"kinds":{"doc":193,"html":59,"code":63,"data":15,"img":22},"deliv":["prd","design","wireframe","mvp","userflow","testcase","selfcheck"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"?","selftest":"?"},"ck_yes":8,"ck_unk":10,"groups":6,"evidence":["acceptance-harness.html","index.html","自检记录.md"],"last":"10-25 11:21"},{"uid":"10e8f58a5f09","mask":"so***10","code":"P42","topic":"生产物料到货智能预警与自动跟催","known":true,"stage":"goal","sync":468,"docf":323,"lines":56104,"trunc":true,"n":2723,"kinds":{"doc":339,"html":32,"code":289,"data":932,"img":955},"deliv":["news","prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":5,"ck":{"eval":"no","news":"yes","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":10,"ck_unk":8,"groups":5,"evidence":["P42-用户流程与线框图.html","P42用户流程与线框图.html","PPT大纲.md"],"last":"10-25 11:25"},{"uid":"8ccc9384b45c","mask":"qi***73","code":"","topic":"未定","known":false,"stage":"goal","sync":25,"docf":46,"lines":8024,"trunc":true,"n":94,"kinds":{"doc":36,"html":5,"code":16,"data":21,"img":12},"deliv":["news","prd","design","wireframe","mvp","userflow","testcase","selfcheck"],"day1":5,"ck":{"eval":"no","news":"yes","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":10,"ck_unk":8,"groups":5,"evidence":["index.html","architecture-diagram.html","FAQ_PPT大纲.md"],"last":"10-24 23:26"},{"uid":"05e57879c335","mask":"ee***11","code":"","topic":"未定","known":false,"stage":"goal","sync":12,"docf":212,"lines":2701,"trunc":true,"n":300,"kinds":{"doc":123,"html":52,"code":18,"data":26,"img":70},"deliv":["news","prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":5,"ck":{"eval":"yes","news":"yes","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":9,"ck_unk":8,"groups":5,"evidence":["汇报4.4_原型与系统开发计划_20261024_v1.md","template.html","00-README.md"],"last":"10-25 10:51"},{"uid":"9d688d39aaf9","mask":"su***yu","code":"P15","topic":"开票对账自动核对","known":true,"stage":"goal","sync":146,"docf":354,"lines":24731,"trunc":true,"n":267,"kinds":{"doc":62,"html":2,"code":34,"data":63,"img":100},"deliv":["prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":9,"ck_unk":8,"groups":5,"evidence":["index.html","体验设计与原型说明-v001.md","PRD-Round3-v001.md"],"last":"10-25 11:11"},{"uid":"35a20e34fbda","mask":"zk***28","code":"P49","topic":"APS排产优化","known":true,"stage":"goal","sync":76,"docf":326,"lines":8271,"trunc":true,"n":287,"kinds":{"doc":79,"html":11,"code":49,"data":96,"img":38},"deliv":["prd","design","wireframe","mvp","userflow","testcase","selfcheck"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"?","selftest":"?"},"ck_yes":8,"ck_unk":7,"groups":5,"evidence":["APS用户流程图与线框图-v0.1.html","APS网页版原型-v0.1.html","APS用户体验设计-v0.1.md"],"last":"10-25 11:00"},{"uid":"6765146fd326","mask":"he***26","code":"P39","topic":"投资管理工作台","known":true,"stage":"goal","sync":202,"docf":101,"lines":8457,"trunc":false,"n":161,"kinds":{"doc":53,"html":18,"code":3,"data":44,"img":31},"deliv":["prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"no","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":8,"groups":5,"evidence":["WebReportTemplate.html","probe_b1c26cefe5a740d28ac5ccaad435e1d8.html","MVP-1.1网页版范围与DoD.md"],"last":"10-25 11:23"},{"uid":"b18b1a93edb1","mask":"xu***01","code":"","topic":"未定","known":false,"stage":"proto","sync":186,"docf":334,"lines":2678,"trunc":true,"n":851,"kinds":{"doc":195,"html":73,"code":4,"data":238,"img":259},"deliv":["prd","design","wireframe","mvp","userflow","testcase"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"?","failist":"?","bounds":"?","devsum":"yes","reflect":"?","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":6,"groups":5,"evidence":["flowtest-dom.html","selftest-dom.html","ACCEPTANCE-REPORT.md"],"last":"10-25 11:26"},{"uid":"f4d5b0f99fe8","mask":"ya***ng","code":"","topic":"未定","known":false,"stage":"goal","sync":207,"docf":281,"lines":33154,"trunc":true,"n":685,"kinds":{"doc":99,"html":5,"code":91,"data":107,"img":370},"deliv":["prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":8,"groups":5,"evidence":["architecture.html","technology-roadmap.html","MVP验收与测试记录.md"],"last":"10-25 10:41"},{"uid":"2cdbbd1249f8","mask":"en***ia","code":"P22","topic":"项目主计划拆解与甘特图","known":true,"stage":"goal","sync":75,"docf":46,"lines":5545,"trunc":false,"n":61,"kinds":{"doc":16,"html":8,"code":3,"data":11,"img":19},"deliv":["prd","design","wireframe","mvp","userflow","testcase"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":8,"groups":5,"evidence":["index.html","自动化测试.html","MoSCoW.md"],"last":"10-25 11:32"},{"uid":"4b9dff032f9f","mask":"d1***60","code":"P47","topic":"投资者全流程管理","known":true,"stage":"goal","sync":184,"docf":70,"lines":12348,"trunc":false,"n":146,"kinds":{"doc":32,"html":13,"code":38,"data":5,"img":51},"deliv":["prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":8,"groups":5,"evidence":["index.html","交付1-用户流程图-V1.0.html","安全扫描报告.md"],"last":"10-25 11:27"},{"uid":"562e898b57ca","mask":"th***na","code":"P48","topic":"对外宣传资料审核","known":true,"stage":"goal","sync":177,"docf":365,"lines":4255,"trunc":true,"n":1612,"kinds":{"doc":298,"html":73,"code":99,"data":859,"img":186},"deliv":["prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"no","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":8,"groups":5,"evidence":["index.html","MVP范围与验收_v024.md","CODEX_v024.md"],"last":"10-25 09:32"},{"uid":"93078f0d2073","mask":"en***ao","code":"P7","topic":"检验数据判异与SPC预警","known":true,"stage":"goal","sync":20,"docf":62,"lines":12233,"trunc":true,"n":487,"kinds":{"doc":85,"html":3,"code":23,"data":11,"img":339},"deliv":["prd","design","wireframe","mvp","userflow","testcase"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":8,"groups":5,"evidence":["demo-data.md","index.html","sync-chain-test.md"],"last":"10-25 10:54"},{"uid":"b93515cb6713","mask":"ch***91","code":"P49","topic":"APS排产优化","known":true,"stage":"goal","sync":16,"docf":3,"lines":358,"trunc":true,"n":230,"kinds":{"doc":24,"html":2,"code":26,"data":68,"img":77},"deliv":["design","wireframe","mvp","userflow","testcase"],"day1":3,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"no","moscow":"no","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":7,"groups":5,"evidence":["index.html","APS交互原型_v001.html","candidate.pptx"],"last":"10-25 10:49"},{"uid":"f81c6e19e376","mask":"lv***25","code":"","topic":"未定","known":false,"stage":"goal","sync":216,"docf":148,"lines":3376,"trunc":true,"n":319,"kinds":{"doc":48,"html":115,"code":18,"data":55,"img":60},"deliv":["prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"no","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":8,"groups":5,"evidence":["index.html","00_PRD.md","01_竞品分析报告.md"],"last":"10-25 11:21"},{"uid":"0286c10f3b42","mask":"ye***hi","code":"P23","topic":"项目台账更新与报告生成","known":true,"stage":"goal","sync":71,"docf":24,"lines":4072,"trunc":false,"n":57,"kinds":{"doc":16,"html":2,"code":20,"data":3,"img":13},"deliv":["news","prd","design","wireframe","mvp","userflow"],"day1":5,"ck":{"eval":"no","news":"yes","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":10,"ck_unk":5,"groups":4,"evidence":["index.html","交互原型.html","PRD-MoSCoW-DoD.md"],"last":"10-24 21:22"},{"uid":"f3c16161e149","mask":"wi***-v","code":"P8","topic":"非标方案辅助生成","known":true,"stage":"goal","sync":415,"docf":404,"lines":15716,"trunc":true,"n":1810,"kinds":{"doc":298,"html":26,"code":145,"data":346,"img":654},"deliv":["news","prd","design","wireframe","mvp","userflow","testcase","qa","selfcheck"],"day1":5,"ck":{"eval":"no","news":"yes","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":9,"ck_unk":5,"groups":4,"evidence":["ui_dom_0.7.0.html","ui_dom_confirm_0.8.0.html","2026-10-24-环境自检.md"],"last":"10-25 11:29"},{"uid":"368074e3a904","mask":"fl***00","code":"P42","topic":"生产物料到货智能预警与自动跟催","known":true,"stage":"goal","sync":141,"docf":31,"lines":1793,"trunc":true,"n":263,"kinds":{"doc":53,"html":4,"code":4,"data":34,"img":150},"deliv":["prd","design","wireframe","mvp","userflow","testcase"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"no","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":5,"groups":4,"evidence":["用户流程图.html","线框图.html","发布会大纲.md"],"last":"10-25 11:17"},{"uid":"83b36d8413e3","mask":"ha***du","code":"P49","topic":"APS排产优化","known":true,"stage":"goal","sync":128,"docf":30,"lines":5091,"trunc":true,"n":102,"kinds":{"doc":23,"html":5,"code":55,"data":0,"img":11},"deliv":["prd","design","wireframe","mvp","userflow","testcase"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":5,"groups":4,"evidence":["index.html","APS排产优化_方案_v1.pptx","APS系统_PRD_v1.md"],"last":"10-25 11:26"},{"uid":"1f3debee2a79","mask":"si***ig","code":"","topic":"未定","known":false,"stage":"goal","sync":164,"docf":56,"lines":19615,"trunc":false,"n":415,"kinds":{"doc":27,"html":2,"code":45,"data":115,"img":220},"deliv":["prd","design","wireframe","mvp","userflow","testcase"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":5,"groups":4,"evidence":["index.html","PRD-v005.md","PRD-v006.md"],"last":"10-25 11:26"},{"uid":"54d0822dadf4","mask":"ji***25","code":"","topic":"未定","known":false,"stage":"goal","sync":57,"docf":50,"lines":11086,"trunc":false,"n":150,"kinds":{"doc":42,"html":7,"code":46,"data":2,"img":36},"deliv":["prd","design","wireframe","mvp","userflow","testcase"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":5,"groups":4,"evidence":["index.html","CHANGELOG.md","MVP范围-v1.md"],"last":"10-25 11:25"},{"uid":"757de9c7c7b1","mask":"ms***td","code":"","topic":"未定","known":false,"stage":"goal","sync":205,"docf":286,"lines":4719,"trunc":true,"n":97,"kinds":{"doc":19,"html":9,"code":10,"data":1,"img":53},"deliv":["prd","design","wireframe","mvp","userflow","selfcheck"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"no","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"?","selftest":"?"},"ck_yes":7,"ck_unk":4,"groups":4,"evidence":["index.html","UI流程.html","AI修模分析与改善复用 .pptx"],"last":"10-25 11:32"},{"uid":"d315c3749994","mask":"xi***ar","code":"","topic":"自定义课题：企业AI中台·Agent调用与监控","known":true,"stage":"goal","sync":91,"docf":11,"lines":1542,"trunc":false,"n":44,"kinds":{"doc":23,"html":1,"code":17,"data":0,"img":0},"deliv":["prd","design","wireframe","mvp","userflow","testcase"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":5,"groups":4,"evidence":["index.html","桥接原型-v0.1.md","PRD.md"],"last":"10-25 11:33"},{"uid":"285368012df4","mask":"ch***17","code":"P4","topic":"8D报告辅助生成","known":true,"stage":"goal","sync":86,"docf":75,"lines":6216,"trunc":false,"n":149,"kinds":{"doc":70,"html":13,"code":24,"data":2,"img":36},"deliv":["wireframe","mvp","userflow","testcase","qa"],"day1":2,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"?","edge":"?","error":"?","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":5,"ck_unk":7,"groups":4,"evidence":["editor.html","index.html","8D辅助生成系统_产品定义_V1.0.docx"],"last":"10-24 23:40"},{"uid":"9c20d632d1b7","mask":"we***hi","code":"","topic":"未定","known":false,"stage":"goal","sync":157,"docf":87,"lines":8583,"trunc":false,"n":137,"kinds":{"doc":54,"html":6,"code":47,"data":7,"img":3},"deliv":["prd","design","mvp","testcase","selfcheck"],"day1":3,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"no","wire":"no","proto":"no","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":4,"ck_unk":5,"groups":4,"evidence":["cadre.html","index.html","Round1_完成报告_v1.0.md"],"last":"10-25 09:39"},{"uid":"22b2a4d71e6f","mask":"ly***ub","code":"","topic":"未定","known":false,"stage":"goal","sync":214,"docf":346,"lines":18862,"trunc":true,"n":70,"kinds":{"doc":29,"html":2,"code":35,"data":0,"img":0},"deliv":["news","prd","design","wireframe","mvp","userflow","qa"],"day1":5,"ck":{"eval":"no","news":"yes","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"no","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":9,"ck_unk":2,"groups":3,"evidence":["index.html","10-DOD-分级交付门-v1.0.md","11-质检报告模板-v1.0.md"],"last":"10-25 10:41"},{"uid":"079d9648464e","mask":"yo***16","code":"P52","topic":"呆滞库存处置Agent","known":true,"stage":"goal","sync":311,"docf":196,"lines":12705,"trunc":true,"n":61,"kinds":{"doc":24,"html":3,"code":2,"data":2,"img":29},"deliv":["prd","design","wireframe","mvp","userflow"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":2,"groups":3,"evidence":["01-用户流程图-v1.html","02-线框图-v1.html","00-交付说明-v1.md"],"last":"10-25 11:16"},{"uid":"0c70631db66b","mask":"zs***ke","code":"P5","topic":"月度质量分析报告","known":true,"stage":"goal","sync":81,"docf":89,"lines":9628,"trunc":false,"n":70,"kinds":{"doc":17,"html":8,"code":6,"data":1,"img":33},"deliv":["prd","design","wireframe","mvp","userflow"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":2,"groups":3,"evidence":["index.html","技术路线_v002.html","MVP_SCOPE.md"],"last":"10-25 11:09"},{"uid":"11c629f072f1","mask":"26***ss","code":"","topic":"未定","known":false,"stage":"goal","sync":129,"docf":238,"lines":9008,"trunc":true,"n":146,"kinds":{"doc":22,"html":7,"code":30,"data":19,"img":64},"deliv":["prd","design","wireframe","mvp","userflow"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":2,"groups":3,"evidence":["Phase1_Excel导入版.html","phase1_template.html","P11产品宣传PPT_苹果发布会风格_5页版.pdf"],"last":"10-25 11:26"},{"uid":"27a1010126c9","mask":"ch***12","code":"","topic":"未定","known":false,"stage":"goal","sync":102,"docf":204,"lines":1187,"trunc":true,"n":46,"kinds":{"doc":20,"html":4,"code":3,"data":3,"img":16},"deliv":["prd","design","wireframe","mvp","userflow"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":2,"groups":3,"evidence":["AI校招工作台-交互原型.html","校招用户流程与数据漏斗.html","PRD.md"],"last":"10-25 10:37"},{"uid":"2c8c4759e56c","mask":"le***ck","code":"","topic":"自定义课题：企业AI中台·Agent调用与监控","known":true,"stage":"proto","sync":371,"docf":148,"lines":17421,"trunc":true,"n":699,"kinds":{"doc":16,"html":13,"code":26,"data":112,"img":216},"deliv":["news","prd","design","wireframe","mvp","userflow"],"day1":5,"ck":{"eval":"no","news":"yes","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":2,"groups":3,"evidence":["DTMAP_数字孪生工厂与多智能体协同平台.html","index.html","交付说明.md"],"last":"10-25 11:31"},{"uid":"438c4d3d3181","mask":"pe***jh","code":"P36","topic":"成本核算与报价助手","known":true,"stage":"goal","sync":71,"docf":31,"lines":5065,"trunc":false,"n":44,"kinds":{"doc":19,"html":6,"code":2,"data":17,"img":0},"deliv":["prd","design","wireframe","mvp","userflow","testcase","qa"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":2,"groups":3,"evidence":["05-线框图-v0.1.html","05-线框图-v0.2.html","04-用户流程图-v0.1.md"],"last":"10-24 21:27"},{"uid":"6f4d5d20ea29","mask":"zs***03","code":"P31","topic":"精小智·新员工入职搭子","known":true,"stage":"proto","sync":190,"docf":33,"lines":4287,"trunc":false,"n":216,"kinds":{"doc":33,"html":4,"code":5,"data":14,"img":133},"deliv":["prd","design","wireframe","mvp","userflow"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":2,"groups":3,"evidence":["index.html","GitHub可借鉴代码清单-v1.0.md","PPT大纲.md"],"last":"10-25 10:06"},{"uid":"8486baa0165b","mask":"sh***ng","code":"P54","topic":"行政服务一体化与接待驾驶舱","known":true,"stage":"proto","sync":152,"docf":88,"lines":20042,"trunc":false,"n":123,"kinds":{"doc":34,"html":5,"code":50,"data":10,"img":17},"deliv":["prd","design","wireframe","mvp","userflow"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":2,"groups":3,"evidence":["index.html","design_spec.md","智迎one-产品发布-5页-v001.md"],"last":"10-25 11:29"},{"uid":"dd371d2ba678","mask":"cz***04","code":"P12","topic":"报价单OCR与比价","known":true,"stage":"goal","sync":215,"docf":150,"lines":43384,"trunc":true,"n":163,"kinds":{"doc":60,"html":6,"code":53,"data":4,"img":37},"deliv":["prd","design","wireframe","mvp","userflow"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":2,"groups":3,"evidence":["m0_wireframe.html","03_用户流程图.html","Must完成记录_2026-10-24.md"],"last":"10-25 10:12"},{"uid":"fe993a42cb2a","mask":"xy***82","code":"","topic":"自定义课题：战略解码·人岗匹配·绩效贯通","known":true,"stage":"goal","sync":100,"docf":92,"lines":3328,"trunc":false,"n":75,"kinds":{"doc":16,"html":7,"code":3,"data":0,"img":48},"deliv":["prd","design","wireframe","mvp","userflow"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":8,"ck_unk":2,"groups":3,"evidence":["index.html","01_端到端旅程.html","01_产品定义与PPT大纲.md"],"last":"10-25 11:32"},{"uid":"2177205c0885","mask":"ch***20","code":"P10","topic":"器件参数比对与替代推荐","known":true,"stage":"goal","sync":64,"docf":38,"lines":4310,"trunc":false,"n":38,"kinds":{"doc":12,"html":3,"code":4,"data":13,"img":6},"deliv":["prd","design","wireframe","mvp","userflow"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":2,"groups":3,"evidence":["交互原型.html","线框图.html","ldo_extraction_notes.md"],"last":"10-25 11:23"},{"uid":"8e31625a809b","mask":"ya***43","code":"","topic":"未定","known":false,"stage":"goal","sync":208,"docf":68,"lines":17690,"trunc":true,"n":170,"kinds":{"doc":21,"html":8,"code":78,"data":12,"img":40},"deliv":["prd","design","wireframe","mvp","testcase"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"no","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":2,"groups":3,"evidence":["flow.html","index.html","01-宣传方案对齐稿.md"],"last":"10-25 11:23"},{"uid":"cf14e8d6867f","mask":"yu***26","code":"P37","topic":"丢单分析与复盘","known":true,"stage":"goal","sync":121,"docf":113,"lines":10001,"trunc":false,"n":55,"kinds":{"doc":18,"html":21,"code":0,"data":0,"img":14},"deliv":["prd","design","wireframe","userflow"],"day1":3,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"no","deploy":"no","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":1,"groups":3,"evidence":["index.html","丢单原因字典_V1.html","商务丢单复盘_发布会_3页_V1.pdf"],"last":"10-25 11:09"},{"uid":"e86cf20f8f49","mask":"he***86","code":"P54","topic":"行政服务一体化与接待驾驶舱","known":true,"stage":"goal","sync":21,"docf":13,"lines":13309,"trunc":true,"n":117,"kinds":{"doc":11,"html":3,"code":14,"data":8,"img":78},"deliv":["prd","design","wireframe","mvp","userflow"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"no","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":2,"groups":3,"evidence":["01-用户流程图.html","02-线框图.html","PPT大纲.md"],"last":"10-24 22:31"},{"uid":"f3fd44fc057c","mask":"hu***ar","code":"","topic":"未定","known":false,"stage":"proto","sync":90,"docf":18,"lines":0,"trunc":true,"n":81,"kinds":{"doc":12,"html":7,"code":18,"data":7,"img":6},"deliv":["news","prd","design","wireframe","mvp"],"day1":5,"ck":{"eval":"no","news":"yes","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"no","wire":"no","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":7,"ck_unk":2,"groups":3,"evidence":["index.html","驾驶舱原型.html","AI深度分析示例-2026YTD9.md"],"last":"10-24 19:36"},{"uid":"19c5530e0f30","mask":"do***yu","code":"P17","topic":"合同条款比对与风险提示","known":true,"stage":"proto","sync":34,"docf":106,"lines":501,"trunc":false,"n":64,"kinds":{"doc":37,"html":26,"code":1,"data":0,"img":0},"deliv":["prd","design","wireframe","mvp","userflow"],"day1":4,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"yes","proto":"yes","src":"yes","deploy":"?","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":6,"ck_unk":2,"groups":3,"evidence":["审计报告-体验设计与原型_v001.md","审计报告-体验设计与原型_v002.md","00_索引.md"],"last":"10-24 20:12"},{"uid":"555c86488c15","mask":"ca***26","code":"P35","topic":"细分市场洞察与线索挖掘","known":true,"stage":"doc","sync":58,"docf":78,"lines":0,"trunc":false,"n":129,"kinds":{"doc":73,"html":0,"code":0,"data":9,"img":41},"deliv":["prd","design","userflow"],"day1":2,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"no","proto":"no","src":"no","deploy":"no","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":5,"ck_unk":1,"groups":3,"evidence":["PRD_项目窗口雷达.docx","PRD_项目窗口雷达.md"],"last":"10-24 18:05"},{"uid":"19b11bbb0e75","mask":"ka***35","code":"P21","topic":"招投标方案辅助撰写与风险词检查","known":true,"stage":"goal","sync":97,"docf":42,"lines":10642,"trunc":true,"n":29,"kinds":{"doc":8,"html":2,"code":13,"data":3,"img":0},"deliv":["prd","design","mvp"],"day1":3,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"no","wire":"no","proto":"no","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":4,"ck_unk":2,"groups":3,"evidence":["index.html","PRD-v0.1.md","PRD-v0.2.md"],"last":"10-25 10:32"},{"uid":"4a95eb7f973a","mask":"xi***26","code":"","topic":"未定","known":false,"stage":"doc","sync":14,"docf":15,"lines":0,"trunc":false,"n":10,"kinds":{"doc":10,"html":0,"code":0,"data":0,"img":0},"deliv":["design","selfcheck"],"day1":1,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"yes","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"?","selftest":"?"},"ck_yes":2,"ck_unk":2,"groups":3,"evidence":["version.md","自动化测试方案.md"],"last":"10-25 10:56"},{"uid":"28a76df56184","mask":"yu***27","code":"","topic":"自定义课题：数据安全监控平台","known":true,"stage":"goal","sync":237,"docf":560,"lines":11763,"trunc":true,"n":22,"kinds":{"doc":11,"html":11,"code":0,"data":0,"img":0},"deliv":["prd","design","wireframe","userflow"],"day1":3,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"yes","design":"yes","userflow":"yes","wire":"yes","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":5,"ck_unk":1,"groups":2,"evidence":["DoD-一天版.html","MoSCoW-一天版.html","DoD-一天版.md"],"last":"10-24 23:37"},{"uid":"95f7c82deb82","mask":"li***85","code":"","topic":"未定","known":false,"stage":"doc","sync":10,"docf":20,"lines":1985,"trunc":false,"n":6,"kinds":{"doc":5,"html":0,"code":1,"data":0,"img":0},"deliv":["news","mvp"],"day1":2,"ck":{"eval":"no","news":"yes","ppt":"yes","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"yes","deploy":"?","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":3,"ck_unk":1,"groups":2,"evidence":["经营数据驾驶舱_新闻稿_v002.pdf","经营数据驾驶舱_新闻稿_v002.pptx","build-deck.js"],"last":"10-25 11:18"},{"uid":"9b2d7121940d","mask":"ji***ng","code":"P5","topic":"月度质量分析报告","known":true,"stage":"proto","sync":39,"docf":11,"lines":0,"trunc":false,"n":23,"kinds":{"doc":22,"html":1,"code":0,"data":0,"img":0},"deliv":["prd","design","userflow"],"day1":2,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"yes","userflow":"yes","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":3,"ck_unk":1,"groups":2,"evidence":["PRD-月度质量分析看板.md","PRD-月度质量分析看板_质量管理评审版_v0.3.md"],"last":"10-24 16:38"},{"uid":"b46f1472cdef","mask":"ni***23","code":"P49","topic":"APS排产优化","known":true,"stage":"proto","sync":16,"docf":10,"lines":2522,"trunc":false,"n":34,"kinds":{"doc":2,"html":3,"code":21,"data":4,"img":0},"deliv":["mvp"],"day1":1,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"yes","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":3,"ck_unk":1,"groups":2,"evidence":["index.html","app.js","data.js"],"last":"10-25 09:58"},{"uid":"dc39c50fab96","mask":"ya***lt","code":"P49","topic":"APS排产优化","known":true,"stage":"goal","sync":7,"docf":12,"lines":5390,"trunc":false,"n":97,"kinds":{"doc":3,"html":2,"code":55,"data":1,"img":4},"deliv":["mvp"],"day1":1,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"yes","wire":"no","proto":"no","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":3,"ck_unk":1,"groups":2,"evidence":["index.html","login.html","登录与系统管理_v029.md"],"last":"10-25 09:22"},{"uid":"09790458f821","mask":"zh***sh","code":"P26","topic":"营销日周动态汇总与风险预警","known":true,"stage":"doc","sync":16,"docf":14,"lines":650,"trunc":false,"n":12,"kinds":{"doc":2,"html":0,"code":3,"data":0,"img":7},"deliv":["mvp"],"day1":1,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"yes","deploy":"?","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":2,"ck_unk":1,"groups":2,"evidence":["营销日周动态汇总与风险预警_2026-10-24.pdf","营销日周动态汇总与风险预警_2026-10-24.pptx"],"last":"10-25 08:53"},{"uid":"111b60db84ce","mask":"wa***ch","code":"","topic":"未定","known":false,"stage":"goal","sync":21,"docf":19,"lines":3425,"trunc":false,"n":53,"kinds":{"doc":13,"html":2,"code":27,"data":2,"img":2},"deliv":["mvp","qa"],"day1":1,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"?","failist":"?","bounds":"?","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":2,"ck_unk":4,"groups":2,"evidence":["index.html","快照说明.md","config.py"],"last":"10-25 10:46"},{"uid":"f05d55607b50","mask":"25***68","code":"","topic":"未定","known":false,"stage":"doc","sync":16,"docf":7,"lines":1002,"trunc":false,"n":12,"kinds":{"doc":2,"html":0,"code":1,"data":0,"img":9},"deliv":["mvp"],"day1":1,"ck":{"eval":"no","news":"no","ppt":"yes","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"yes","deploy":"?","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":2,"ck_unk":1,"groups":2,"evidence":["HY咖啡新产品发布会.pptx","HY咖啡新产品发布会_预览.pdf","build.js"],"last":"10-24 13:09"},{"uid":"fe77fc4045a3","mask":"fr***51","code":"P14","topic":"申购单汇总与重复审核","known":true,"stage":"proto","sync":6,"docf":39,"lines":0,"trunc":true,"n":662,"kinds":{"doc":83,"html":10,"code":255,"data":293,"img":0},"deliv":["mvp","selfcheck"],"day1":1,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"yes","deploy":"?","readme":"yes","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"?","selftest":"?"},"ck_yes":2,"ck_unk":3,"groups":2,"evidence":["index.html","CHANGELOG.md","RELEASE.md"],"last":"10-25 09:20"},{"uid":"848a1d17ee9f","mask":"zy***97","code":"P13","topic":"库存健康度与呆滞分析","known":true,"stage":"doc","sync":21,"docf":28,"lines":1583,"trunc":true,"n":3,"kinds":{"doc":3,"html":0,"code":0,"data":0,"img":0},"deliv":["design"],"day1":1,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"yes","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":1,"ck_unk":0,"groups":1,"evidence":["发布会3分钟-v001.md","发布会投资人版-v001.md"],"last":"10-24 12:01"},{"uid":"eeb1c2b8d23a","mask":"ji***ji","code":"P3","topic":"生产日报汇总与异常播报","known":true,"stage":"doc","sync":8,"docf":2,"lines":0,"trunc":false,"n":1,"kinds":{"doc":1,"html":0,"code":0,"data":0,"img":0},"deliv":["prd"],"day1":1,"ck":{"eval":"no","news":"no","ppt":"no","prd":"yes","moscow":"?","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":1,"ck_unk":1,"groups":1,"evidence":["PRD.md"],"last":"10-24 14:03"},{"uid":"2270fee7f3c4","mask":"lx***ng","code":"","topic":"未定","known":false,"stage":"none","sync":2,"docf":4,"lines":0,"trunc":false,"n":0,"kinds":{"doc":0,"html":0,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":[],"last":"10-24 11:36"},{"uid":"24faa7dbc53d","mask":"gz***20","code":"P25","topic":"企业知识库与智能检索","known":true,"stage":"goal","sync":5,"docf":596,"lines":0,"trunc":true,"n":0,"kinds":{"doc":0,"html":0,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":["final_quality_check.py","finalize_inputs.py","test_access.py"],"last":"10-24 17:03"},{"uid":"36fa53edad21","mask":"hd***ys","code":"","topic":"未定","known":false,"stage":"none","sync":4,"docf":5,"lines":0,"trunc":false,"n":0,"kinds":{"doc":0,"html":0,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":[],"last":"10-24 11:08"},{"uid":"38642279b891","mask":"zh***ex","code":"P38","topic":"经营驾驶舱","known":true,"stage":"none","sync":4,"docf":3,"lines":0,"trunc":false,"n":0,"kinds":{"doc":0,"html":0,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":[],"last":"10-24 10:43"},{"uid":"454241d28fe8","mask":"fe***49","code":"P46","topic":"信息披露数据核对","known":true,"stage":"none","sync":7,"docf":4,"lines":0,"trunc":false,"n":0,"kinds":{"doc":0,"html":0,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":[],"last":"10-24 11:05"},{"uid":"4ec3e3090dce","mask":"te***13","code":"","topic":"未定","known":false,"stage":"none","sync":0,"docf":0,"lines":0,"trunc":false,"n":0,"kinds":{"doc":0,"html":0,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":[],"last":"10-23 00:52"},{"uid":"9268e8165bbe","mask":"wu***dk","code":"P49","topic":"APS排产优化","known":true,"stage":"none","sync":4,"docf":2,"lines":0,"trunc":false,"n":0,"kinds":{"doc":0,"html":0,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":[],"last":"10-24 11:25"},{"uid":"a897174ea1a8","mask":"zy***15","code":"P25","topic":"企业知识库与智能检索","known":true,"stage":"proto","sync":16,"docf":32,"lines":6667,"trunc":true,"n":4,"kinds":{"doc":2,"html":1,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":["竞品分析-20261024-v003.html","代码分析-20261024-v001.md","竞品分析-20261024-v002.md"],"last":"10-24 20:06"},{"uid":"bd7e74901611","mask":"ea***oo","code":"","topic":"未定","known":false,"stage":"none","sync":4,"docf":6,"lines":0,"trunc":false,"n":0,"kinds":{"doc":0,"html":0,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":[],"last":"10-24 11:08"},{"uid":"cef7b47e6ad0","mask":"mi***11","code":"","topic":"自定义课题：HR中枢平台","known":true,"stage":"doc","sync":3,"docf":74,"lines":10860,"trunc":false,"n":0,"kinds":{"doc":0,"html":0,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":["route.ts"],"last":"10-25 08:33"},{"uid":"ebe2142fc1ba","mask":"73***le","code":"","topic":"自定义课题：校招Agent·筛简历测评面试约面","known":true,"stage":"none","sync":8,"docf":2,"lines":0,"trunc":false,"n":0,"kinds":{"doc":0,"html":0,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":[],"last":"10-24 10:47"},{"uid":"f539adf34ab9","mask":"ha***26","code":"","topic":"未定","known":false,"stage":"none","sync":3,"docf":3,"lines":0,"trunc":false,"n":0,"kinds":{"doc":0,"html":0,"code":0,"data":0,"img":0},"deliv":[],"day1":0,"ck":{"eval":"no","news":"no","ppt":"no","prd":"no","moscow":"no","dod":"no","design":"no","userflow":"no","wire":"no","proto":"no","src":"no","deploy":"no","readme":"no","golden":"no","edge":"no","error":"no","hitrate":"no","failist":"no","bounds":"no","devsum":"no","reflect":"no","safety":"no","selftest":"no"},"ck_yes":0,"ck_unk":0,"groups":0,"evidence":[],"last":"10-24 11:04"}],"commits":{"window":{"start":"2026-10-24 09:00","end":"2026-10-25 18:00","start_utc":"2026-10-24T01:00:00Z","end_utc":"2026-10-25T10:00:00Z"},"summary":{"repos":75,"sync_total":7769,"sync_median":76,"sync_max":468,"sync_zero":1,"doc_total":8621,"doc_median":68,"doc_zero":1,"lines_total":597010,"lines_median":4719,"lines_zero":16,"truncated":36,"last_sync":"10-25 11:33","last_dawn":"04:55"},"hours":["10-24 09","10-24 10","10-24 11","10-24 12","10-24 13","10-24 14","10-24 15","10-24 16","10-24 17","10-24 18","10-24 19","10-24 20","10-24 21","10-24 22","10-24 23","10-25 00","10-25 01","10-25 02","10-25 03","10-25 04","10-25 05","10-25 06","10-25 07","10-25 08","10-25 09","10-25 10","10-25 11","10-25 12","10-25 13","10-25 14","10-25 15","10-25 16","10-25 17"],"org_hours":{"10-25 11":386,"10-25 10":445,"10-25 09":403,"10-25 08":207,"10-25 06":5,"10-25 03":138,"10-25 02":132,"10-25 01":167,"10-25 00":180,"10-24 23":468,"10-24 22":451,"10-24 21":579,"10-24 20":493,"10-24 19":416,"10-24 18":471,"10-24 16":458,"10-24 14":293,"10-24 13":345,"10-24 11":323,"10-24 10":251,"10-24 12":279,"10-24 15":365,"10-24 17":457,"10-25 07":5,"10-25 04":52},"collected_at":"2026-10-25 11:59","failed":0},"checklist":[{"id":"01","name":"立项包","day":"24","items":[{"no":1,"k":"eval","label":"选题评估表","yes":2,"unk":0,"miss":73,"pct":3,"unkpct":0},{"no":2,"k":"news","label":"新闻稿","yes":12,"unk":0,"miss":63,"pct":16,"unkpct":0},{"no":3,"k":"ppt","label":"发布 PPT","yes":37,"unk":0,"miss":38,"pct":49,"unkpct":0},{"no":4,"k":"prd","label":"PRD","yes":52,"unk":0,"miss":23,"pct":69,"unkpct":0},{"no":5,"k":"moscow","label":"MoSCoW 分档","yes":0,"unk":52,"miss":75,"pct":0,"unkpct":69},{"no":6,"k":"dod","label":"DoD 完成定义","yes":15,"unk":0,"miss":60,"pct":20,"unkpct":0}],"yes":118,"unk":52,"cells":450,"pct":26},{"id":"02","name":"方案与原型","day":"24","items":[{"no":7,"k":"design","label":"开发方案","yes":54,"unk":0,"miss":21,"pct":72,"unkpct":0},{"no":8,"k":"userflow","label":"用户流程图","yes":50,"unk":0,"miss":25,"pct":67,"unkpct":0},{"no":9,"k":"wire","label":"线框图","yes":47,"unk":0,"miss":28,"pct":63,"unkpct":0},{"no":10,"k":"proto","label":"可点击原型","yes":44,"unk":0,"miss":31,"pct":59,"unkpct":0}],"yes":195,"unk":0,"cells":300,"pct":65},{"id":"03","name":"可运行系统","day":"25","items":[{"no":11,"k":"src","label":"源代码","yes":56,"unk":0,"miss":19,"pct":75,"unkpct":0},{"no":12,"k":"deploy","label":"部署链接","yes":0,"unk":56,"miss":75,"pct":0,"unkpct":75},{"no":13,"k":"readme","label":"README","yes":51,"unk":0,"miss":24,"pct":68,"unkpct":0}],"yes":107,"unk":56,"cells":225,"pct":48},{"id":"04","name":"测试用例集","day":"25","items":[{"no":14,"k":"golden","label":"黄金用例","yes":0,"unk":28,"miss":75,"pct":0,"unkpct":37},{"no":15,"k":"edge","label":"边界用例","yes":0,"unk":28,"miss":75,"pct":0,"unkpct":37},{"no":16,"k":"error","label":"异常用例","yes":0,"unk":28,"miss":75,"pct":0,"unkpct":37}],"yes":0,"unk":84,"cells":225,"pct":0},{"id":"05","name":"质检报告","day":"25","items":[{"no":17,"k":"hitrate","label":"命中率","yes":0,"unk":25,"miss":75,"pct":0,"unkpct":33},{"no":18,"k":"failist","label":"失败清单","yes":0,"unk":25,"miss":75,"pct":0,"unkpct":33},{"no":19,"k":"bounds","label":"已知边界","yes":0,"unk":25,"miss":75,"pct":0,"unkpct":33}],"yes":0,"unk":75,"cells":225,"pct":0},{"id":"06","name":"答辩材料","day":"25","items":[{"no":20,"k":"devsum","label":"开发总结","yes":5,"unk":0,"miss":70,"pct":7,"unkpct":0},{"no":21,"k":"reflect","label":"收获感想打算","yes":0,"unk":5,"miss":75,"pct":0,"unkpct":7},{"no":22,"k":"safety","label":"安全自检","yes":0,"unk":10,"miss":75,"pct":0,"unkpct":13},{"no":23,"k":"selftest","label":"测试自检","yes":0,"unk":10,"miss":75,"pct":0,"unkpct":13}],"yes":5,"unk":25,"cells":300,"pct":2}],"checklist_n":23,"checklist_avg":5.7,"checklist_full":0,"checklist_zero":12,"checklist_day1_n":10,"deliverables":{"defs":[{"k":"news","label":"新闻稿"},{"k":"prd","label":"PRD"},{"k":"design","label":"方案/设计"},{"k":"wireframe","label":"原型/线框"},{"k":"mvp","label":"MVP 代码"},{"k":"userflow","label":"用户流程图"},{"k":"testcase","label":"测试用例"},{"k":"qa","label":"质检/验收"},{"k":"selfcheck","label":"体验自查"}],"day1":["news","prd","design","wireframe","mvp"],"coverage":[{"k":"news","label":"新闻稿","n":6,"pct":12},{"k":"prd","label":"PRD","n":28,"pct":54},{"k":"design","label":"方案/设计","n":27,"pct":52},{"k":"wireframe","label":"原型/线框","n":27,"pct":52},{"k":"mvp","label":"MVP 代码","n":28,"pct":54},{"k":"userflow","label":"用户流程图","n":27,"pct":52},{"k":"testcase","label":"测试用例","n":16,"pct":31},{"k":"qa","label":"质检/验收","n":13,"pct":25},{"k":"selfcheck","label":"体验自查","n":5,"pct":10}],"five_dist":[{"n":0,"topics":21},{"n":1,"topics":3},{"n":2,"topics":1},{"n":3,"topics":3},{"n":4,"topics":18},{"n":5,"topics":6}],"full_day1":[{"code":"P8","topic":"非标方案辅助生成"},{"code":"P22","topic":"项目主计划拆解与甘特图"},{"code":"P23","topic":"项目台账更新与报告生成"},{"code":"P33","topic":"专利通·专利申报助手"},{"code":"P42","topic":"生产物料到货智能预警与自动跟催"},{"code":"","topic":"自定义课题：企业AI中台·Agent调用与监控"}],"needs":[{"code":"P25","topic":"企业知识库与智能检索","have":0,"lack":["news","prd","design","wireframe","mvp"]},{"code":"P14","topic":"申购单汇总与重复审核","have":1,"lack":["news","prd","design","wireframe"]},{"code":"P26","topic":"营销日周动态汇总与风险预警","have":1,"lack":["news","prd","design","wireframe"]},{"code":"P3","topic":"生产日报汇总与异常播报","have":1,"lack":["news","design","wireframe","mvp"]},{"code":"P4","topic":"8D报告辅助生成","have":2,"lack":["news","prd","design"]},{"code":"","topic":"自定义课题：数据安全监控平台","have":3,"lack":["news","mvp"]},{"code":"P21","topic":"招投标方案辅助撰写与风险词检查","have":3,"lack":["news","wireframe"]},{"code":"P37","topic":"丢单分析与复盘","have":3,"lack":["news","mvp"]}],"needs_total":8},"warnings":[],"reconcile":{"unmapped_org":["2593986068","2657187963-oss","chaiyu112","eason-loo","eeliu611","hanwei26","hd4zgwkhb4-sys","hemuwisp","huangxz-star","jayhan2026","jinfei7125","juliali0501","liuchao-1985","lvyuxi2025","lxk-ailearning","lynn-luo-hub","msyhsqtd","qian6273","simupig","wangjianping26","wangju66ai","wangqianfeng-tech","weijie-jingzhi","xiawenjie2026","xubo901","yanxiao123243","yanzhengling"],"missing_org":["hanlin","lvyuxi2026","meiweijia","xubo0910","zhao6273"],"pending_invites":["jinfei26","meiweijia"],"failed_invites":[],"bad_user":[{"name":"张X","value":"耶耶耶"}]}};
+
+const STNAME = {none:'未开始', doc:'文档', proto:'原型', goal:'可演示'};
+const STCLS  = {none:'st-none', doc:'st-doc', proto:'st-proto', goal:'st-goal'};
+const STCOL  = {none:'var(--none)', doc:'#8b94a8', proto:'var(--blue)', goal:'var(--green)'};
+const MIXCOL = {doc:'#2f6feb', img:'#e0a02e', html:'#7b61ff', code:'#17a673', data:'#3d9bb5'};
+const MIXNAME= {doc:'文档', img:'图片', html:'HTML', code:'代码', data:'数据'};
+
+const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pct = (n,d) => d ? Math.round(n/d*100) : 0;
+const $ = id => document.getElementById(id);
+
+function render(){
+  const K = DATA.kpi, F = DATA.funnel, M = DATA.mix, G = DATA.gaps;
+
+  const collected = DATA.collected_at || DATA.snapshot_at;
+  $('snap').textContent = collected;
+  const t0 = new Date(collected.replace(' ', 'T'));
+  const mins = Math.round((Date.now() - t0) / 60000);
+  $('ago').textContent = isNaN(mins) ? '' : (mins < 2 ? '（刚刚）' : `（${mins} 分钟前）`);
+
+  /* 数据超过 20 分钟没更新，实时标变黄，别让人误以为在跳 */
+  const live = $('live');
+  if (live && location.protocol.startsWith('http')) {
+    const stale = !isNaN(mins) && mins > 20;
+    live.classList.toggle('off', stale);
+    $('livetext').textContent = stale ? `数据 ${mins} 分钟前` : '实时监控';
+  }
+
+  /* KPI */
+  const kpis = [
+    [K.topics, '班级课题', ''],
+    [K.repos, '学员仓', 'go', '#/students', '点开看每个学员的进度'],
+    [K.with_output, '已有产出的课题', ''],
+  ];
+  $('kpis').innerHTML = kpis.map(([n,label,cls,href,tip])=>
+    `<div class="kpi ${cls}"${href
+      ? ` onclick="location.hash='${href}'" title="${esc(tip||'')}"`
+      : ''}><b>${n}</b><span>${label}</span></div>`).join('');
+
+  /* 结论 */
+  const reachedIdea = F[2].n, reachedDesign = F[3].n, reachedBuild = F[4].n;
+  $('lead').innerHTML =
+    `<b>${K.topics}</b> 个课题里，<b>${K.with_output}</b> 个已经在产出包放了东西：` +
+    `<b>${reachedIdea}</b> 个有立项包、<b>${reachedDesign}</b> 个有方案与原型、<b>${reachedBuild}</b> 个有可运行系统。` +
+    `按学习手册任务清单，全班 ${K.repos} 个仓人均识别 <b>${DATA.checklist_avg}</b> / ${DATA.checklist_n} 项。`;
+
+  /* 漏斗 */
+  $('funnel').innerHTML = F.map((f,i)=>{
+    const w = Math.max(2, f.n / F[0].n * 100);
+    const drop = i ? F[i-1].n - f.n : 0;
+    const col = ['#8b94a8','#6f8fc9','#5b82d8','#2f6feb','#17a673'][i];
+    return `<div class="fr">
+      <span class="lb">${f.label}</span>
+      <span class="tk"><i style="width:${w}%;background:${col}"></i></span>
+      <span class="n">${f.n}${drop>0?`<span class="drop">−${drop}</span>`:''}</span>
+    </div>`;
+  }).join('');
+
+  /* GitHub 活跃度 · 逐小时 */
+  const CM = DATA.commits || {};
+  const CS = CM.summary || {};
+  if (!CM.hours || !CM.hours.length) {
+    const card = $('hrchart').closest('section');
+    if (card) card.style.display = 'none';
+    $('hrkpi').style.display = 'none';
+  } else {
+    const W = CM.window || {};
+    $('hrcap').innerHTML =
+      `<b>${esc(W.start || '')}</b> → <b>${esc(W.end || '')}</b>，全班 ${CS.repos || 0} 个仓的提交按小时叠加。` +
+      `同步次数＝推到 GitHub 的 commit 数，watcher 只在文件真有改动时才提交。` +
+      `文档数＝窗口内改过的文档文件数，同一文件算一次，已排除 AI 对话记录与工具生成文件。` +
+      `代码行数＝代码文件每次同步的新增行累加，不含图片/PPT，不含 public、assets、vendor 下的第三方库；` +
+      `同一文件反复改写会重复计数，所以它衡量的是<b>提交规模</b>，不是最终代码量。` +
+      (CM.collected_at ? `数据截至 <b>${esc(CM.collected_at)}</b>，右侧<b>斜纹</b>是窗口里还没走到的时段。` : '');
+    const hs = CM.hours, oh = CM.org_hours || {};
+    const vals = hs.map(h => oh[h] || 0);
+    const mx = Math.max(1, ...vals);
+    let pkH = '', pkV = 0;
+    hs.forEach((h, i) => { if (vals[i] > pkV) { pkV = vals[i]; pkH = h; } });
+
+    $('hrkpi').innerHTML =
+      `<span><b>${(CS.sync_total || 0).toLocaleString('en-US')}</b><em>同步合计 · 次</em></span>` +
+      `<span><b>${CS.sync_median || 0}</b><em>每仓中位 · 次</em></span>` +
+      `<span><b>${(CS.doc_total || 0).toLocaleString('en-US')}</b><em>文档 · 份</em></span>` +
+      `<span><b>${(CS.lines_total || 0).toLocaleString('en-US')}</b><em>代码 · 行</em></span>` +
+      `<span><b>${pkV || 0} 次</b><em>峰值${pkH ? ' · ' + pkH.replace('-', '/') + ' 时' : ''}</em></span>` +
+      `<span><b>${esc(CS.last_dawn || '—')}</b><em>25 日凌晨最晚更新</em></span>`;
+    const night = h => { const x = +h.split(' ')[1]; return x >= 20 || x < 8; };
+    // 采集时刻之后的小时是「还没到」，不是「没人提交」
+    const col = CM.collected_at || '';
+    const nowKey = col.length >= 13 ? col.slice(5, 10) + ' ' + col.slice(11, 13) : '';
+    let bars = '', xlab = '';
+    hs.forEach((h, i) => {
+      if (i && h.slice(0, 5) !== hs[i - 1].slice(0, 5)) {
+        bars += '<span class="hrsep"></span>';
+        xlab += '<span class="hrsep"></span>';
+      }
+      if (nowKey && h > nowKey) {
+        bars += `<i class="future" style="height:100%" title="${h.replace('-', '/')} 时 · 尚未到达"></i>`;
+        xlab += `<span>${+h.split(' ')[1] % 4 === 0 ? h.split(' ')[1] : ''}</span>`;
+        return;
+      }
+      const v = vals[i];
+      let cls = v ? 'on' : '';
+      if (v === mx) cls += ' pk';
+      if (night(h)) cls += ' night';
+      bars += `<i class="${cls.trim()}" style="height:${v ? Math.max(3, Math.round(v / mx * 100)) : 0}%"`
+            + ` title="${h.replace('-', '/')} 时 · ${v} 次"></i>`;
+      const hh = +h.split(' ')[1];
+      let lab = hh % 4 === 0 ? String(hh).padStart(2, '0') : '';
+      if (i === 0) lab = '24日';
+      else if (h.startsWith('10-25') && hh === 0) lab = '25日';
+      xlab += `<span class="${i === 0 || (h.startsWith('10-25') && hh === 0) ? 'dx' : ''}">${lab}</span>`;
+    });
+    $('hrchart').innerHTML =
+      `<div class="hrbars">${bars}</div><div class="hrx">${xlab}</div>` +
+      `<div class="hrkey"><span><b style="background:#2f6d4f"></b>峰值小时</span>` +
+      `<span><b style="background:#4a7fb5"></b>白天 08–20 时</span>` +
+      `<span><b style="background:#8ba7c9"></b>夜间 20–08 时</span>` +
+      `<span><b style="background:repeating-linear-gradient(45deg,#f7f8fb 0 4px,#edf0f5 4px 8px)"></b>尚未到达</span>` +
+      `<span>悬停柱子看具体小时与次数</span></div>`;
+  }
+
+  /* 学习手册任务清单 · 全班逐项，按 1–23 顺序 */
+  const CK = DATA.checklist;
+  if (CK && CK.length) {
+    const n = (DATA.students || []).length || 1;
+    const total = DATA.checklist_n || 23;
+    $('delivcap').innerHTML =
+      `按学习手册的<b>六件产出物 → ${total} 项</b>逐条统计，按任务顺序排。` +
+      `分母是全班 <b>${n}</b> 个仓（覆盖 ${K.people} 人；${K.multi} 个多人课题共用一仓，一人交算全组）。` +
+      `<b style="color:#12795a">绿</b>＝产出包里识别到文件；` +
+      `<b style="color:#a5761c">黄</b>＝有对应文件、但要素写在正文里，文件名判不出来，需人工核。` +
+      `只认文件名，不读内容。`;
+    $('ckkpi').innerHTML =
+      `<span>人均已识别 <b>${DATA.checklist_avg}</b> / ${total} 项</span>` +
+      `<span>24 日 ${DATA.checklist_day1_n} 项全齐 <b class="a">${DATA.checklist_full}</b> 人</span>` +
+      `<span>一项未识别 <b>${DATA.checklist_zero}</b> 人</span>` +
+      `<span>产出包非空 <b>${(DATA.students || []).filter(s => s.n > 0).length}</b> 仓</span>`;
+
+    const bar = it => {
+      const g = it.yes / n * 100, u = it.unk / n * 100;
+      return `<span class="tk"><i class="g" style="width:${g}%"></i><i class="u" style="width:${u}%"></i></span>`;
+    };
+    const day25 = CK.filter(g => g.day === '25').reduce((a, g) => a + g.items.length, 0);
+    let html = '', prevDay = null;
+    CK.forEach(g => {
+      if (prevDay === '24' && g.day === '25')
+        html += `<div class="ckgap">以下 ${day25} 项 · 25 日纳入计分</div>`;
+      prevDay = g.day;
+      html += `<div class="ckg"><div class="gh"><b>${g.id} ${esc(g.name)}</b>` +
+        `<span class="gd">${g.day} 日</span>` +
+        `<span class="gc">组覆盖 ${g.pct}% · ${g.yes}/${g.cells} 格` +
+        `${g.unk ? ` · 待核 ${g.unk}` : ''}</span></div>` +
+        g.items.map(it => `<div class="ckt ${it.yes ? '' : 'zero'}">
+          <span class="no">${it.no}</span><span class="lb">${esc(it.label)}</span>${bar(it)}
+          <span class="n"><b>${it.yes}</b>/${n}</span>
+          <span class="pc">${it.yes ? it.pct + '%' : it.unk ? '待核 ' + it.unk : '0%'}</span>
+        </div>`).join('') + `</div>`;
+    });
+    $('ckfull').innerHTML = html;
+  }
+
+  /* 组表 */
+  $('groups').innerHTML = DATA.groups.map(g=>{
+    const tot = g.n || 1;
+    const bar = ['goal','proto','doc','none'].map(k=>
+      `<i style="width:${g[k]/tot*100}%;background:${STCOL[k]}" title="${STNAME[k]} ${g[k]}"></i>`).join('');
+    return `<tr>
+      <td class="g">${esc(g.g)}</td>
+      <td class="num">${g.n}</td>
+      <td class="num">${g.people}</td>
+      <td class="num">${g.with_out}</td>
+      <td class="num">${g.files}</td>
+      <td class="num">${g.code}</td>
+      <td class="seg"><span class="stack">${bar}</span></td>
+    </tr>`;
+  }).join('');
+
+  /* 线索 */
+  $('clues').innerHTML = DATA.clues.map(c=>{
+    const ev = c.evidence.map(e=>`<span title="${esc(e)}">${esc(e)}</span>`).join('');
+    const parts = [['文',c.doc],['图',c.img],['HTML',c.html],['码',c.code_n],['数',c.data]]
+      .filter(x=>x[1]).map(x=>`${x[0]}${x[1]}`).join(' ');
+    return `<div class="cl">
+      <span class="code">${esc(c.code||'—')}</span>
+      <span class="name" title="${esc(c.topic)}">${esc(c.topic)}</span>
+      <span class="st ${STCLS[c.stage]}">${STNAME[c.stage]}</span>
+      <span class="cnt"><b>${c.files}</b> 件<br><span class="sub2">${parts}</span></span>
+      <span class="ev">${ev || '<span>（无可展示文件名）</span>'}</span>
+      <span class="t">${esc(c.last||'—')}</span>
+    </div>`;
+  }).join('');
+
+  /* 页脚 */
+  $('foot').innerHTML =
+    `口径：<b>课题口径</b>按名单上的 ${K.topics} 个课题聚合；<b>组织口径</b>为 ${K.repos} 个学员仓（已排除助教账号）。` +
+    `两个数不同，是因为 ${G.unmapped} 个账号还没对上名单。<br>` +
+    `段位为自动推断：<b>文档</b>＝产出包下有 md/pdf/pptx；<b>原型</b>＝产出包下有 html 且不是 PPT 页或 PRD 导出页；` +
+    `<b>可演示</b>＝有产品代码＋测试记录。只看文件名与路径，不读文件内容。<br>` +
+    `「可演示」只说明仓里有可运行产物，<b>不代表现场能跑通</b>——现场能否跑通由助教确认。<br>` +
+    `交付物识别只看<b>文件名关键词</b>（PRD/需求文档、线框/原型、用户流程图、新闻稿等），<b>不做内容判定</b>：` +
+    `文件名起得随意就会漏判，所以它量的是「有没有交」，不是「交得好不好」。MVP 代码要求有真实产品代码，PPT 生成脚本不算。` +
+    (DATA.warnings && DATA.warnings.length ? `<br><span class="warnline">异常：${DATA.warnings.map(esc).join('；')}</span>` : '');
+}
+
+render();
+
+/* file:// 打开时明确置灰，不要假装在线 */
+if (!location.protocol.startsWith('http')) {
+  const live = $('live');
+  if (live) {
+    live.classList.add('off');
+    $('livetext').textContent = '本地文件 · 不自动刷新';
+  }
+}
+
+/* 实时轮询：走本地服务时每 30 秒拉一次 data.json，数据变了就地重绘 */
+if (location.protocol.startsWith('http')) {
+  let lastCheck = Date.now();
+  setInterval(async () => {
+    try {
+      const r = await fetch('data.json?t=' + Date.now(), {cache:'no-store'});
+      if (!r.ok) return;
+      const d = await r.json();
+      lastCheck = Date.now();
+      const key = x => x.collected_at || x.snapshot_at;
+      if (key(d) && key(d) !== key(DATA)) {
+        const y = window.scrollY;
+        DATA = d;
+        render();
+        if (location.hash.startsWith('#/')) route();   // 停在子页面时同步重绘
+        window.scrollTo(0, y);
+        const live = $('live');
+        if (live) {
+          live.classList.add('flash');
+          setTimeout(()=>live.classList.remove('flash'), 1600);
+        }
+      }
+    } catch(e) {}
+  }, 30000);
+}
+
+/* ---- 学员子页面：hash 路由 #/students → #/s/<user> ---- */
+const SUB = $('sub');
+
+function openSub(html){
+  SUB.innerHTML = `<div class="wrap">${html}</div>`;
+  SUB.hidden = false;
+  document.documentElement.style.overflow = 'hidden';
+}
+function closeSub(){
+  SUB.hidden = true;
+  SUB.innerHTML = '';
+  document.documentElement.style.overflow = '';
+}
+
+const stBadge = s => `<span class="st ${STCLS[s]||'st-none'}">${STNAME[s]||'未开始'}</span>`;
+const gdots = n => `<span class="dots">${[0,1,2,3,4,5].map(i=>
+  `<i class="${i<n ? 'ok' : ''}"></i>`).join('')}</span>`;
+
+/* 全班清单：每项有多少人的产出包里识别到 */
+function ckSummary(){
+  const n = (DATA.students || []).length;
+  return (DATA.checklist || []).map(g => {
+    let unkShown = false;      // 同一组待核数相同，只标一次，免得三个“待核5”刷屏
+    const pills = g.items.map(i => {
+      const r = n ? i.yes / n : 0;
+      const cls = i.yes === 0 ? '' : r >= .6 ? 'hi' : r >= .25 ? 'mid' : '';
+      const unk = i.unk && !unkShown ? (unkShown = true, `<em>待核${i.unk}</em>`) : '';
+      return `<span class="cp ${cls}">${esc(i.label)} <b>${i.yes}</b>${unk}</span>`;
+    }).join('');
+    return `<div class="gline"><span class="gcd">${g.id} ${esc(g.name)}</span>
+      <span class="gday">${g.day} 日</span><span class="cps">${pills}</span></div>`;
+  }).join('');
+}
+
+function showList(){
+  const S = DATA.students || [];
+  const full = S.filter(s => (s.groups||0) >= 6).length;
+  const zero = S.filter(s => !s.ck_yes).length;
+  const cards = S.map(s => `
+    <div class="scard" onclick="location.hash='#/s/${s.uid}'">
+      <div class="top"><span class="cd">${esc(s.code||'自定义')}${s.mask ? ' · '+esc(s.mask) : ''}</span>${stBadge(s.stage)}</div>
+      <div class="nm">${esc(s.topic)}</div>
+      <div class="bot"><span>代码 <b>${(s.lines||0).toLocaleString('en-US')}</b> 行 · 提交 <b>${s.sync||0}</b> 次</span>${gdots(s.groups||0)}</div>
+    </div>`).join('');
+  openSub(`
+    <div class="subbar"><a onclick="location.hash=''">← 返回总览</a>
+      <span class="path">/ <b>学员明细</b> · ${S.length} 个仓</span></div>
+    <h1 style="font-size:20px;margin-bottom:5px">学员明细</h1>
+    <p class="cap" style="margin-bottom:12px">
+      口径按学习手册的任务清单：<b>六件产出物 → 23 项</b>（立项包 · 方案与原型 · 可运行系统 ·
+      测试用例集 · 质检报告 · 答辩材料）。点任意一张进个人页逐项看。
+      清单只按文件名判，要素写在正文里的那几项标<b>待核</b>，不算没交也不算交了。
+      账号做了脱敏（前2后2），够区分同题多人的仓。
+    </p>
+    <section class="card" style="margin-bottom:14px">
+      <h2>全班清单 · 每项识别到几人</h2>
+      <p class="cap" style="margin-bottom:4px">
+        分母 ${S.length} 个仓。<b>待核</b>＝有对应文件但要素在正文里，需人工看。
+      </p>
+      ${ckSummary()}
+    </section>
+    <p class="cap" style="margin-bottom:14px">
+      六件都有迹象 <b>${full}</b> 人 · 一项都没识别到 <b>${zero}</b> 人
+    </p>
+    <div class="sgrid">${cards}</div>
+  `);
+}
+
+function showStudent(uid){
+  const s = (DATA.students || []).find(x => x.uid === uid);
+  if (!s){
+    openSub(`<div class="subbar"><a onclick="location.hash=''">← 返回总览</a></div>
+      <p class="cap">找不到这个学员仓，可能已重命名，或本轮数据里没有。</p>`);
+    return;
+  }
+  // 只画三个里程碑：未开始不是一个里程碑，全灰就是未开始
+  const ORDER = ['doc','proto','goal'];
+  const cur = s.stage === 'none' ? -1 : ORDER.indexOf(s.stage);
+  const stepHtml = ORDER.map((k,i) => `
+    <div class="step ${i < cur ? 'on' : i === cur ? 'now' : ''}">
+      <i></i><span>${STNAME[k]}</span>
+    </div>`).join('');
+
+  const ck = s.ck || {};
+  const ckHtml = (DATA.checklist || []).map(g => {
+    const items = g.items.map(i => {
+      const st = ck[i.k] || 'no';
+      const cls = st === 'yes' ? 'yes' : st === '?' ? 'q' : 'no';
+      const mk = st === 'yes' ? '✓' : st === '?' ? '?' : '·';
+      const tip = st === 'yes' ? '产出包里识别到' : st === '?' ? '要素在正文里，需人工核' : '未识别到';
+      return `<span class="ci ${cls}" title="${tip}"><i>${mk}</i>${esc(i.label)}</span>`;
+    }).join('');
+    const d = g.items.filter(i => ck[i.k] === 'yes').length;
+    const q = g.items.filter(i => ck[i.k] === '?').length;
+    return `<div class="ckg"><div class="gh"><b>${g.id} ${esc(g.name)}</b>
+      <span class="gd">${g.day} 日</span>
+      <span class="gc">已识别 ${d}/${g.items.length}${q ? ` · 待核 ${q}` : ''}</span></div>
+      <div class="cis">${items}</div></div>`;
+  }).join('');
+
+  const ev = (s.evidence || []).length
+    ? s.evidence.map(e => `<code>${esc(e)}</code>`).join(' ')
+    : '—';
+
+  openSub(`
+    <div class="subbar"><a onclick="location.hash='#/students'">← 学员明细</a>
+      <span class="path">/ <b>${esc(s.code || '自定义课题')}</b></span></div>
+
+    <div class="shero">
+      <div class="h"><b>${esc(s.code || '自定义课题')}</b>${stBadge(s.stage)}</div>
+      <div class="t">${esc(s.topic)}</div>
+      <div class="steps">${stepHtml}</div>
+      <div class="smeta">
+        <span>账号 <b>${esc(s.mask || '')}</b></span>
+        <span>阶段判定依据 ${ev}</span>
+        ${s.known ? '' : '<span style="color:#a5761c">名单上没对上这个账号</span>'}
+      </div>
+    </div>
+
+    <div class="syncrow">
+      <div class="sq"><b>${s.sync || 0}</b><span>GitHub 同步次数</span></div>
+      <div class="sq"><b>${(s.lines || 0).toLocaleString('en-US')}</b><span>代码行数</span></div>
+      <div class="sq"><b>${s.docf || 0}</b><span>文档同步数量</span></div>
+    </div>
+    ${s.trunc ? '<p class="cap" style="margin:-6px 0 14px;color:#a5761c">该仓单次同步的改动文件过多，统计在 300 个文件处截断，实际数字可能更大。</p>' : ''}
+
+    <section class="card">
+      <h2>学习手册任务清单</h2>
+      <div class="ckstat">
+        <span>已识别 <b class="y">${s.ck_yes || 0}</b> / ${DATA.checklist_n || 23} 项</span>
+        <span>待核 <b class="q">${s.ck_unk || 0}</b> 项</span>
+        <span>六件产出物有进展 <b>${s.groups || 0}</b> / 6</span>
+      </div>
+      <p class="cap" style="margin-bottom:2px">
+        <b>✓</b> 产出包里找到对应文件　<b>?</b> 要素写在正文里，文件名判不出来，需人工核　<b>·</b> 未识别到。
+        <b>待核不等于没交</b>，也不等于交了；件数不上这一页，避免把截图堆当产出。
+      </p>
+      ${ckHtml}
+    </section>
+  `);
+}
+
+function route(){
+  const h = location.hash;
+  if (h === '#/students') showList();
+  else if (h.startsWith('#/s/')) showStudent(decodeURIComponent(h.slice(4)));
+  else closeSub();
+}
+window.addEventListener('hashchange', route);
+route();
+</script>
 </body>
 </html>
