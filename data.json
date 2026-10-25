@@ -1,18 +1,18 @@
 {
- "collected_at": "2026-10-25 11:35",
- "snapshot_at": "2026-10-25 12:00",
+ "collected_at": "2026-10-25 12:35",
+ "snapshot_at": "2026-10-25 12:36",
  "kpi": {
   "topics": 52,
   "people": 76,
   "repos": 75,
-  "org_files": 20090,
-  "topic_files": 16028,
+  "org_files": 23871,
+  "topic_files": 19708,
   "with_output": 32,
   "zero_topics": 20,
-  "median": 94,
+  "median": 97,
   "today_push": 66,
   "unmapped": 25,
-  "unmapped_files": 4062,
+  "unmapped_files": 4163,
   "multi": 16,
   "partial": 6
  },
@@ -50,11 +50,11 @@
   "goal": 25
  },
  "mix": {
-  "doc": 2967,
-  "img": 4161,
-  "html": 422,
-  "code": 2083,
-  "data": 4707
+  "doc": 3311,
+  "img": 4625,
+  "html": 485,
+  "code": 2410,
+  "data": 5322
  },
  "buckets": [
   {
@@ -84,7 +84,7 @@
    "n": 3,
    "people": 6,
    "with_out": 3,
-   "files": 3444,
+   "files": 6546,
    "none": 0,
    "doc": 0,
    "proto": 0,
@@ -96,7 +96,7 @@
    "n": 4,
    "people": 7,
    "with_out": 2,
-   "files": 3374,
+   "files": 3484,
    "none": 2,
    "doc": 0,
    "proto": 0,
@@ -108,7 +108,7 @@
    "n": 8,
    "people": 8,
    "with_out": 4,
-   "files": 2403,
+   "files": 2461,
    "none": 4,
    "doc": 0,
    "proto": 0,
@@ -120,7 +120,7 @@
    "n": 5,
    "people": 7,
    "with_out": 4,
-   "files": 1826,
+   "files": 1850,
    "none": 2,
    "doc": 0,
    "proto": 1,
@@ -132,12 +132,24 @@
    "n": 7,
    "people": 9,
    "with_out": 6,
-   "files": 1496,
+   "files": 1661,
    "none": 1,
    "doc": 1,
    "proto": 0,
    "goal": 5,
    "code": 5
+  },
+  {
+   "g": "APS排产优化",
+   "n": 2,
+   "people": 7,
+   "with_out": 1,
+   "files": 924,
+   "none": 1,
+   "doc": 0,
+   "proto": 0,
+   "goal": 1,
+   "code": 1
   },
   {
    "g": "供应链采购",
@@ -152,23 +164,11 @@
    "code": 2
   },
   {
-   "g": "APS排产优化",
-   "n": 2,
-   "people": 7,
-   "with_out": 1,
-   "files": 750,
-   "none": 1,
-   "doc": 0,
-   "proto": 0,
-   "goal": 1,
-   "code": 1
-  },
-  {
    "g": "质量管理",
    "n": 4,
    "people": 7,
    "with_out": 3,
-   "files": 729,
+   "files": 747,
    "none": 1,
    "doc": 0,
    "proto": 0,
@@ -180,7 +180,7 @@
    "n": 7,
    "people": 8,
    "with_out": 4,
-   "files": 650,
+   "files": 670,
    "none": 3,
    "doc": 1,
    "proto": 0,
@@ -192,7 +192,7 @@
    "n": 7,
    "people": 8,
    "with_out": 3,
-   "files": 531,
+   "files": 540,
    "none": 3,
    "doc": 1,
    "proto": 2,
@@ -252,55 +252,73 @@
    }
   ],
   "unmapped": 25,
-  "unmapped_files": 4062,
+  "unmapped_files": 4163,
   "zero_repos": 11
  },
  "clues": [
-  {
-   "code": "P15",
-   "topic": "开票对账自动核对",
-   "group": "财务",
-   "stage": "goal",
-   "files": 3213,
-   "doc": 373,
-   "html": 11,
-   "code_n": 529,
-   "data": 1556,
-   "img": 558,
-   "evidence": [
-    "prototype.html",
-    "wireframe.html",
-    "客户对账系统PRD-v001.docx"
-   ],
-   "last": "10-25 11:23"
-  },
   {
    "code": "P42",
    "topic": "生产物料到货智能预警与自动跟催",
    "group": "物料",
    "stage": "goal",
-   "files": 2986,
-   "doc": 392,
-   "html": 36,
-   "code_n": 293,
-   "data": 966,
-   "img": 1105,
+   "files": 3344,
+   "doc": 475,
+   "html": 44,
+   "code_n": 333,
+   "data": 1058,
+   "img": 1179,
    "evidence": [
     "用户流程图.html",
     "线框图.html",
     "发布会大纲.md"
    ],
-   "last": "10-25 11:25"
+   "last": "10-25 12:31"
+  },
+  {
+   "code": "P15",
+   "topic": "开票对账自动核对",
+   "group": "财务",
+   "stage": "goal",
+   "files": 3319,
+   "doc": 386,
+   "html": 13,
+   "code_n": 540,
+   "data": 1598,
+   "img": 590,
+   "evidence": [
+    "prototype.html",
+    "wireframe.html",
+    "客户对账系统PRD-v001.docx"
+   ],
+   "last": "10-25 12:33"
+  },
+  {
+   "code": "P13",
+   "topic": "库存健康度与呆滞分析",
+   "group": "物料",
+   "stage": "goal",
+   "files": 3140,
+   "doc": 156,
+   "html": 55,
+   "code_n": 129,
+   "data": 498,
+   "img": 369,
+   "evidence": [
+    "login_page_unauth.html",
+    "index_initial_1440.html",
+    "个人总结汇报.md"
+   ],
+   "last": "10-25 12:31"
   },
   {
    "code": "P8",
    "topic": "非标方案辅助生成",
    "group": "研发设计与工艺技术",
    "stage": "goal",
-   "files": 1810,
-   "doc": 298,
+   "files": 1812,
+   "doc": 299,
    "html": 26,
-   "code_n": 145,
+   "code_n": 146,
    "data": 346,
    "img": 654,
    "evidence": [
@@ -308,7 +326,7 @@
     "ui_dom_confirm_0.8.0.html",
     "2026-10-24-环境自检.md"
    ],
-   "last": "10-25 11:29"
+   "last": "10-25 12:25"
   },
   {
    "code": "P48",
@@ -329,36 +347,54 @@
    "topic": "APS排产优化",
    "group": "APS排产优化",
    "stage": "goal",
-   "files": 750,
-   "doc": 131,
-   "html": 23,
-   "code_n": 206,
-   "data": 169,
-   "img": 130,
+   "files": 924,
+   "doc": 171,
+   "html": 28,
+   "code_n": 284,
+   "data": 171,
+   "img": 142,
    "evidence": [
     "index.html",
     "APS排产优化_方案_v1.pptx",
     "APS系统_PRD_v1.md"
    ],
-   "last": "10-25 11:26"
+   "last": "10-25 12:32"
+  },
+  {
+   "code": "P35",
+   "topic": "细分市场洞察与线索挖掘",
+   "group": "营销管理",
+   "stage": "goal",
+   "files": 819,
+   "doc": 414,
+   "html": 25,
+   "code_n": 71,
+   "data": 118,
+   "img": 87,
+   "evidence": [
+    "README.html",
+    "flow.html",
+    "PRD_汽车传动客户需求智能洞察与订单匹配系统_V1.1.docx"
+   ],
+   "last": "10-25 12:20"
   },
   {
    "code": "",
    "topic": "自定义课题：企业AI中台·Agent调用与监控",
    "group": "营销管理",
    "stage": "goal",
-   "files": 743,
+   "files": 702,
    "doc": 39,
-   "html": 14,
-   "code_n": 43,
-   "data": 112,
+   "html": 15,
+   "code_n": 39,
+   "data": 93,
    "img": 216,
    "evidence": [
     "index.html",
     "桥接原型-v0.1.md",
     "PRD.md"
    ],
-   "last": "10-25 11:33"
+   "last": "10-25 12:15"
   },
   {
    "code": "P14",
@@ -379,50 +415,32 @@
    "last": "10-25 09:20"
   },
   {
-   "code": "P35",
-   "topic": "细分市场洞察与线索挖掘",
-   "group": "营销管理",
-   "stage": "goal",
-   "files": 613,
-   "doc": 361,
-   "html": 17,
-   "code_n": 44,
-   "data": 107,
-   "img": 48,
-   "evidence": [
-    "原型_v001.html",
-    "原型_v002.html",
-    "PRD_v001.md"
-   ],
-   "last": "10-25 11:33"
-  },
-  {
    "code": "P33",
    "topic": "专利通·专利申报助手",
    "group": "研发设计与工艺技术",
    "stage": "goal",
-   "files": 533,
-   "doc": 177,
-   "html": 13,
-   "code_n": 134,
+   "files": 589,
+   "doc": 193,
+   "html": 15,
+   "code_n": 170,
    "data": 87,
-   "img": 91,
+   "img": 93,
    "evidence": [
     "index.html",
     "线框图.html",
     "发布方案大纲.md"
    ],
-   "last": "10-25 10:35"
+   "last": "10-25 12:18"
   },
   {
    "code": "P7",
    "topic": "检验数据判异与SPC预警",
    "group": "质量管理",
    "stage": "goal",
-   "files": 487,
-   "doc": 85,
+   "files": 503,
+   "doc": 100,
    "html": 3,
-   "code_n": 23,
+   "code_n": 24,
    "data": 11,
    "img": 339,
    "evidence": [
@@ -430,43 +448,43 @@
     "index.html",
     "sync-chain-test.md"
    ],
-   "last": "10-25 10:54"
-  },
-  {
-   "code": "P13",
-   "topic": "库存健康度与呆滞分析",
-   "group": "物料",
-   "stage": "goal",
-   "files": 397,
-   "doc": 57,
-   "html": 20,
-   "code_n": 15,
-   "data": 12,
-   "img": 65,
-   "evidence": [
-    "template.html",
-    "UI界面样例_v001.html",
-    "冒烟记录.md"
-   ],
-   "last": "10-25 11:26"
+   "last": "10-25 12:32"
   },
   {
    "code": "P22",
    "topic": "项目主计划拆解与甘特图",
    "group": "项目管理",
    "stage": "goal",
-   "files": 349,
-   "doc": 97,
-   "html": 10,
-   "code_n": 23,
+   "files": 363,
+   "doc": 107,
+   "html": 12,
+   "code_n": 24,
    "data": 27,
-   "img": 180,
+   "img": 181,
    "evidence": [
     "index.html",
     "可点击原型说明.md",
-    "DESIGN.md"
+    "AI开发总结报告.docx"
    ],
-   "last": "10-25 11:33"
+   "last": "10-25 12:34"
+  },
+  {
+   "code": "P54",
+   "topic": "行政服务一体化与接待驾驶舱",
+   "group": "人力资源与员工服务",
+   "stage": "proto",
+   "files": 249,
+   "doc": 47,
+   "html": 8,
+   "code_n": 71,
+   "data": 18,
+   "img": 95,
+   "evidence": [
+    "index.html",
+    "design_spec.md",
+    "智迎one-产品发布-5页-v001.md"
+   ],
+   "last": "10-25 12:33"
   },
   {
    "code": "P44",
@@ -487,24 +505,6 @@
    "last": "10-25 11:04"
   },
   {
-   "code": "P54",
-   "topic": "行政服务一体化与接待驾驶舱",
-   "group": "人力资源与员工服务",
-   "stage": "proto",
-   "files": 240,
-   "doc": 45,
-   "html": 8,
-   "code_n": 64,
-   "data": 18,
-   "img": 95,
-   "evidence": [
-    "index.html",
-    "design_spec.md",
-    "智迎one-产品发布-5页-v001.md"
-   ],
-   "last": "10-25 11:29"
-  },
-  {
    "code": "P31",
    "topic": "精小智·新员工入职搭子",
    "group": "人力资源与员工服务",
@@ -523,6 +523,42 @@
    "last": "10-25 10:06"
   },
   {
+   "code": "P47",
+   "topic": "投资者全流程管理",
+   "group": "投资合规",
+   "stage": "goal",
+   "files": 170,
+   "doc": 34,
+   "html": 13,
+   "code_n": 51,
+   "data": 6,
+   "img": 51,
+   "evidence": [
+    "index.html",
+    "交付1-用户流程图-V1.0.html",
+    "安全扫描报告.md"
+   ],
+   "last": "10-25 12:31"
+  },
+  {
+   "code": "P39",
+   "topic": "投资管理工作台",
+   "group": "财务",
+   "stage": "goal",
+   "files": 165,
+   "doc": 57,
+   "html": 18,
+   "code_n": 3,
+   "data": 44,
+   "img": 31,
+   "evidence": [
+    "WebReportTemplate.html",
+    "probe_b1c26cefe5a740d28ac5ccaad435e1d8.html",
+    "MVP-1.1网页版范围与DoD.md"
+   ],
+   "last": "10-25 11:57"
+  },
+  {
    "code": "P12",
    "topic": "报价单OCR与比价",
    "group": "供应链采购",
@@ -538,25 +574,7 @@
     "03_用户流程图.html",
     "Must完成记录_2026-10-24.md"
    ],
-   "last": "10-25 10:12"
-  },
-  {
-   "code": "P39",
-   "topic": "投资管理工作台",
-   "group": "财务",
-   "stage": "goal",
-   "files": 161,
-   "doc": 53,
-   "html": 18,
-   "code_n": 3,
-   "data": 44,
-   "img": 31,
-   "evidence": [
-    "WebReportTemplate.html",
-    "probe_b1c26cefe5a740d28ac5ccaad435e1d8.html",
-    "MVP-1.1网页版范围与DoD.md"
-   ],
-   "last": "10-25 11:23"
+   "last": "10-25 11:47"
   },
   {
    "code": "P4",
@@ -577,30 +595,12 @@
    "last": "10-24 23:40"
   },
   {
-   "code": "P47",
-   "topic": "投资者全流程管理",
-   "group": "投资合规",
-   "stage": "goal",
-   "files": 146,
-   "doc": 32,
-   "html": 13,
-   "code_n": 38,
-   "data": 5,
-   "img": 51,
-   "evidence": [
-    "index.html",
-    "交付1-用户流程图-V1.0.html",
-    "安全扫描报告.md"
-   ],
-   "last": "10-25 11:27"
-  },
-  {
    "code": "P5",
    "topic": "月度质量分析报告",
    "group": "质量管理",
    "stage": "goal",
-   "files": 93,
-   "doc": 39,
+   "files": 95,
+   "doc": 41,
    "html": 9,
    "code_n": 6,
    "data": 1,
@@ -610,7 +610,7 @@
     "技术路线_v002.html",
     "MVP_SCOPE.md"
    ],
-   "last": "10-25 11:09"
+   "last": "10-25 11:55"
   },
   {
    "code": "",
@@ -628,7 +628,7 @@
     "01_端到端旅程.html",
     "01_产品定义与PPT大纲.md"
    ],
-   "last": "10-25 11:32"
+   "last": "10-25 11:39"
   },
   {
    "code": "P17",
@@ -649,12 +649,30 @@
    "last": "10-24 20:12"
   },
   {
+   "code": "P23",
+   "topic": "项目台账更新与报告生成",
+   "group": "项目管理",
+   "stage": "goal",
+   "files": 63,
+   "doc": 19,
+   "html": 2,
+   "code_n": 22,
+   "data": 3,
+   "img": 13,
+   "evidence": [
+    "index.html",
+    "交互原型.html",
+    "PRD-MoSCoW-DoD.md"
+   ],
+   "last": "10-25 12:24"
+  },
+  {
    "code": "P52",
    "topic": "呆滞库存处置Agent",
    "group": "物料",
    "stage": "goal",
-   "files": 61,
-   "doc": 24,
+   "files": 62,
+   "doc": 25,
    "html": 3,
    "code_n": 2,
    "data": 2,
@@ -664,25 +682,7 @@
     "02-线框图-v1.html",
     "00-交付说明-v1.md"
    ],
-   "last": "10-25 11:16"
-  },
-  {
-   "code": "P23",
-   "topic": "项目台账更新与报告生成",
-   "group": "项目管理",
-   "stage": "goal",
-   "files": 57,
-   "doc": 16,
-   "html": 2,
-   "code_n": 20,
-   "data": 3,
-   "img": 13,
-   "evidence": [
-    "index.html",
-    "交互原型.html",
-    "PRD-MoSCoW-DoD.md"
-   ],
-   "last": "10-24 21:22"
+   "last": "10-25 12:25"
   },
   {
    "code": "P37",
@@ -807,7 +807,7 @@
     "finalize_inputs.py",
     "test_access.py"
    ],
-   "last": "10-24 20:06"
+   "last": "10-25 12:12"
   },
   {
    "code": "P3",
@@ -828,21 +828,214 @@
  ],
  "students": [
   {
+   "uid": "93078f0d2073",
+   "mask": "en***ao",
+   "code": "P7",
+   "topic": "检验数据判异与SPC预警",
+   "known": true,
+   "stage": "goal",
+   "sync": 26,
+   "docf": 78,
+   "lines": 12461,
+   "trunc": true,
+   "n": 503,
+   "kinds": {
+    "doc": 100,
+    "html": 3,
+    "code": 24,
+    "data": 11,
+    "img": 339
+   },
+   "deliv": [
+    "news",
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow",
+    "testcase"
+   ],
+   "day1": 5,
+   "ck": {
+    "eval": "yes",
+    "news": "yes",
+    "ppt": "yes",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "yes",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "yes",
+    "src": "yes",
+    "deploy": "?",
+    "readme": "yes",
+    "golden": "?",
+    "edge": "?",
+    "error": "?",
+    "hitrate": "?",
+    "failist": "?",
+    "bounds": "?",
+    "devsum": "yes",
+    "reflect": "?",
+    "safety": "no",
+    "selftest": "no"
+   },
+   "ck_yes": 12,
+   "ck_unk": 9,
+   "groups": 6,
+   "evidence": [
+    "demo-data.md",
+    "index.html",
+    "sync-chain-test.md"
+   ],
+   "last": "10-25 12:32"
+  },
+  {
+   "uid": "555c86488c15",
+   "mask": "ca***26",
+   "code": "P35",
+   "topic": "细分市场洞察与线索挖掘",
+   "known": true,
+   "stage": "goal",
+   "sync": 64,
+   "docf": 139,
+   "lines": 0,
+   "trunc": false,
+   "n": 335,
+   "kinds": {
+    "doc": 126,
+    "html": 8,
+    "code": 27,
+    "data": 20,
+    "img": 80
+   },
+   "deliv": [
+    "news",
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow",
+    "testcase"
+   ],
+   "day1": 5,
+   "ck": {
+    "eval": "yes",
+    "news": "yes",
+    "ppt": "yes",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "no",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "yes",
+    "src": "yes",
+    "deploy": "?",
+    "readme": "yes",
+    "golden": "?",
+    "edge": "?",
+    "error": "?",
+    "hitrate": "?",
+    "failist": "?",
+    "bounds": "?",
+    "devsum": "yes",
+    "reflect": "?",
+    "safety": "no",
+    "selftest": "no"
+   },
+   "ck_yes": 11,
+   "ck_unk": 9,
+   "groups": 6,
+   "evidence": [
+    "README.html",
+    "flow.html",
+    "PRD_汽车传动客户需求智能洞察与订单匹配系统_V1.1.docx"
+   ],
+   "last": "10-25 12:20"
+  },
+  {
+   "uid": "83df9489b5c5",
+   "mask": "qq***00",
+   "code": "P33",
+   "topic": "专利通·专利申报助手",
+   "known": true,
+   "stage": "goal",
+   "sync": 63,
+   "docf": 130,
+   "lines": 2489,
+   "trunc": true,
+   "n": 589,
+   "kinds": {
+    "doc": 193,
+    "html": 15,
+    "code": 170,
+    "data": 87,
+    "img": 93
+   },
+   "deliv": [
+    "news",
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow",
+    "testcase",
+    "qa"
+   ],
+   "day1": 5,
+   "ck": {
+    "eval": "yes",
+    "news": "yes",
+    "ppt": "yes",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "no",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "yes",
+    "src": "yes",
+    "deploy": "?",
+    "readme": "yes",
+    "golden": "?",
+    "edge": "?",
+    "error": "?",
+    "hitrate": "?",
+    "failist": "?",
+    "bounds": "?",
+    "devsum": "yes",
+    "reflect": "?",
+    "safety": "?",
+    "selftest": "?"
+   },
+   "ck_yes": 11,
+   "ck_unk": 11,
+   "groups": 6,
+   "evidence": [
+    "index.html",
+    "线框图.html",
+    "发布方案大纲.md"
+   ],
+   "last": "10-25 12:18"
+  },
+  {
    "uid": "a06a9ab58e17",
    "mask": "ch***04",
    "code": "P22",
    "topic": "项目主计划拆解与甘特图",
    "known": true,
    "stage": "goal",
-   "sync": 182,
-   "docf": 110,
+   "sync": 192,
+   "docf": 118,
    "lines": 11443,
    "trunc": false,
-   "n": 288,
+   "n": 299,
    "kinds": {
-    "doc": 81,
+    "doc": 91,
     "html": 2,
-    "code": 20,
+    "code": 21,
     "data": 16,
     "img": 161
    },
@@ -889,9 +1082,203 @@
    "evidence": [
     "index.html",
     "可点击原型说明.md",
-    "DESIGN.md"
+    "AI开发总结报告.docx"
    ],
-   "last": "10-25 11:33"
+   "last": "10-25 12:34"
+  },
+  {
+   "uid": "10e8f58a5f09",
+   "mask": "so***10",
+   "code": "P42",
+   "topic": "生产物料到货智能预警与自动跟催",
+   "known": true,
+   "stage": "goal",
+   "sync": 471,
+   "docf": 324,
+   "lines": 56104,
+   "trunc": true,
+   "n": 3054,
+   "kinds": {
+    "doc": 418,
+    "html": 40,
+    "code": 328,
+    "data": 1012,
+    "img": 1029
+   },
+   "deliv": [
+    "news",
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow",
+    "testcase",
+    "qa"
+   ],
+   "day1": 5,
+   "ck": {
+    "eval": "no",
+    "news": "yes",
+    "ppt": "yes",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "yes",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "yes",
+    "src": "yes",
+    "deploy": "?",
+    "readme": "yes",
+    "golden": "?",
+    "edge": "?",
+    "error": "?",
+    "hitrate": "?",
+    "failist": "?",
+    "bounds": "?",
+    "devsum": "no",
+    "reflect": "no",
+    "safety": "?",
+    "selftest": "?"
+   },
+   "ck_yes": 10,
+   "ck_unk": 10,
+   "groups": 6,
+   "evidence": [
+    "P42-用户流程与线框图.html",
+    "P42用户流程与线框图.html",
+    "PPT大纲.md"
+   ],
+   "last": "10-25 12:31"
+  },
+  {
+   "uid": "2c8c4759e56c",
+   "mask": "le***ck",
+   "code": "",
+   "topic": "自定义课题：企业AI中台·Agent调用与监控",
+   "known": true,
+   "stage": "goal",
+   "sync": 386,
+   "docf": 152,
+   "lines": 17423,
+   "trunc": true,
+   "n": 658,
+   "kinds": {
+    "doc": 16,
+    "html": 14,
+    "code": 22,
+    "data": 93,
+    "img": 216
+   },
+   "deliv": [
+    "news",
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow",
+    "testcase",
+    "qa"
+   ],
+   "day1": 5,
+   "ck": {
+    "eval": "yes",
+    "news": "yes",
+    "ppt": "no",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "no",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "yes",
+    "src": "yes",
+    "deploy": "?",
+    "readme": "yes",
+    "golden": "?",
+    "edge": "?",
+    "error": "?",
+    "hitrate": "?",
+    "failist": "?",
+    "bounds": "?",
+    "devsum": "yes",
+    "reflect": "?",
+    "safety": "no",
+    "selftest": "no"
+   },
+   "ck_yes": 10,
+   "ck_unk": 9,
+   "groups": 6,
+   "evidence": [
+    "DTMAP_数字孪生工厂与多智能体协同平台.html",
+    "index.html",
+    "交付说明.md"
+   ],
+   "last": "10-25 12:15"
+  },
+  {
+   "uid": "9d688d39aaf9",
+   "mask": "su***yu",
+   "code": "P15",
+   "topic": "开票对账自动核对",
+   "known": true,
+   "stage": "goal",
+   "sync": 154,
+   "docf": 357,
+   "lines": 28015,
+   "trunc": true,
+   "n": 373,
+   "kinds": {
+    "doc": 75,
+    "html": 4,
+    "code": 45,
+    "data": 105,
+    "img": 132
+   },
+   "deliv": [
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow",
+    "testcase",
+    "qa"
+   ],
+   "day1": 4,
+   "ck": {
+    "eval": "no",
+    "news": "no",
+    "ppt": "yes",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "yes",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "yes",
+    "src": "yes",
+    "deploy": "?",
+    "readme": "yes",
+    "golden": "?",
+    "edge": "?",
+    "error": "?",
+    "hitrate": "?",
+    "failist": "?",
+    "bounds": "?",
+    "devsum": "yes",
+    "reflect": "?",
+    "safety": "no",
+    "selftest": "no"
+   },
+   "ck_yes": 10,
+   "ck_unk": 9,
+   "groups": 6,
+   "evidence": [
+    "index.html",
+    "dom-empty.html",
+    "PRD-Round3-v001.md"
+   ],
+   "last": "10-25 12:33"
   },
   {
    "uid": "dd19add4079b",
@@ -900,7 +1287,7 @@
    "topic": "开票对账自动核对",
    "known": true,
    "stage": "goal",
-   "sync": 171,
+   "sync": 172,
    "docf": 87,
    "lines": 20015,
    "trunc": true,
@@ -955,7 +1342,7 @@
     "wireframe.html",
     "客户对账系统PRD-v001.docx"
    ],
-   "last": "10-25 11:23"
+   "last": "10-25 12:10"
   },
   {
    "uid": "2f1171dcb5cd",
@@ -1089,38 +1476,38 @@
    "last": "10-25 11:02"
   },
   {
-   "uid": "83df9489b5c5",
-   "mask": "qq***00",
-   "code": "P33",
-   "topic": "专利通·专利申报助手",
+   "uid": "35a20e34fbda",
+   "mask": "zk***28",
+   "code": "P49",
+   "topic": "APS排产优化",
    "known": true,
    "stage": "goal",
-   "sync": 59,
-   "docf": 122,
-   "lines": 2489,
+   "sync": 78,
+   "docf": 326,
+   "lines": 8271,
    "trunc": true,
-   "n": 533,
+   "n": 311,
    "kinds": {
-    "doc": 177,
-    "html": 13,
-    "code": 134,
-    "data": 87,
-    "img": 91
+    "doc": 94,
+    "html": 11,
+    "code": 54,
+    "data": 96,
+    "img": 38
    },
    "deliv": [
-    "news",
     "prd",
     "design",
     "wireframe",
     "mvp",
     "userflow",
     "testcase",
-    "qa"
+    "qa",
+    "selfcheck"
    ],
-   "day1": 5,
+   "day1": 4,
    "ck": {
     "eval": "no",
-    "news": "yes",
+    "news": "no",
     "ppt": "yes",
     "prd": "yes",
     "moscow": "?",
@@ -1138,20 +1525,148 @@
     "hitrate": "?",
     "failist": "?",
     "bounds": "?",
-    "devsum": "no",
-    "reflect": "no",
+    "devsum": "yes",
+    "reflect": "?",
     "safety": "?",
     "selftest": "?"
    },
    "ck_yes": 9,
-   "ck_unk": 10,
+   "ck_unk": 11,
    "groups": 6,
    "evidence": [
-    "index.html",
-    "线框图.html",
-    "发布方案大纲.md"
+    "APS用户流程图与线框图-v0.1.html",
+    "APS网页版原型-v0.1.html",
+    "APS用户体验设计-v0.1.md"
    ],
-   "last": "10-25 10:35"
+   "last": "10-25 12:32"
+  },
+  {
+   "uid": "6765146fd326",
+   "mask": "he***26",
+   "code": "P39",
+   "topic": "投资管理工作台",
+   "known": true,
+   "stage": "goal",
+   "sync": 203,
+   "docf": 104,
+   "lines": 8457,
+   "trunc": false,
+   "n": 165,
+   "kinds": {
+    "doc": 57,
+    "html": 18,
+    "code": 3,
+    "data": 44,
+    "img": 31
+   },
+   "deliv": [
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow",
+    "testcase",
+    "qa"
+   ],
+   "day1": 4,
+   "ck": {
+    "eval": "no",
+    "news": "no",
+    "ppt": "yes",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "yes",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "yes",
+    "src": "yes",
+    "deploy": "?",
+    "readme": "no",
+    "golden": "?",
+    "edge": "?",
+    "error": "?",
+    "hitrate": "?",
+    "failist": "?",
+    "bounds": "?",
+    "devsum": "yes",
+    "reflect": "?",
+    "safety": "no",
+    "selftest": "no"
+   },
+   "ck_yes": 9,
+   "ck_unk": 9,
+   "groups": 6,
+   "evidence": [
+    "WebReportTemplate.html",
+    "probe_b1c26cefe5a740d28ac5ccaad435e1d8.html",
+    "MVP-1.1网页版范围与DoD.md"
+   ],
+   "last": "10-25 11:57"
+  },
+  {
+   "uid": "b339a3a54974",
+   "mask": "ja***26",
+   "code": "",
+   "topic": "未定",
+   "known": false,
+   "stage": "goal",
+   "sync": 97,
+   "docf": 215,
+   "lines": 11758,
+   "trunc": true,
+   "n": 369,
+   "kinds": {
+    "doc": 194,
+    "html": 59,
+    "code": 63,
+    "data": 15,
+    "img": 22
+   },
+   "deliv": [
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow",
+    "testcase",
+    "selfcheck"
+   ],
+   "day1": 4,
+   "ck": {
+    "eval": "no",
+    "news": "no",
+    "ppt": "yes",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "no",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "yes",
+    "src": "yes",
+    "deploy": "?",
+    "readme": "yes",
+    "golden": "?",
+    "edge": "?",
+    "error": "?",
+    "hitrate": "?",
+    "failist": "?",
+    "bounds": "?",
+    "devsum": "yes",
+    "reflect": "?",
+    "safety": "?",
+    "selftest": "?"
+   },
+   "ck_yes": 9,
+   "ck_unk": 11,
+   "groups": 6,
+   "evidence": [
+    "acceptance-harness.html",
+    "index.html",
+    "自检记录.md"
+   ],
+   "last": "10-25 12:14"
   },
   {
    "uid": "d76221ca49a9",
@@ -1160,8 +1675,8 @@
    "topic": "细分市场洞察与线索挖掘",
    "known": true,
    "stage": "goal",
-   "sync": 245,
-   "docf": 358,
+   "sync": 255,
+   "docf": 376,
    "lines": 13948,
    "trunc": true,
    "n": 484,
@@ -1228,13 +1743,13 @@
    "docf": 98,
    "lines": 6986,
    "trunc": false,
-   "n": 394,
+   "n": 2073,
    "kinds": {
-    "doc": 54,
-    "html": 20,
-    "code": 15,
-    "data": 12,
-    "img": 65
+    "doc": 59,
+    "html": 25,
+    "code": 21,
+    "data": 22,
+    "img": 73
    },
    "deliv": [
     "prd",
@@ -1276,29 +1791,29 @@
    "groups": 6,
    "evidence": [
     "template.html",
-    "UI界面样例_v001.html",
-    "冒烟记录.md"
+    "冒烟记录.md",
+    "PRD_v001.md"
    ],
-   "last": "10-25 11:26"
+   "last": "10-25 12:31"
   },
   {
-   "uid": "b339a3a54974",
-   "mask": "ja***26",
+   "uid": "f81c6e19e376",
+   "mask": "lv***25",
    "code": "",
    "topic": "未定",
    "known": false,
    "stage": "goal",
-   "sync": 96,
-   "docf": 214,
-   "lines": 11758,
+   "sync": 216,
+   "docf": 148,
+   "lines": 3376,
    "trunc": true,
-   "n": 368,
+   "n": 323,
    "kinds": {
-    "doc": 193,
-    "html": 59,
-    "code": 63,
-    "data": 15,
-    "img": 22
+    "doc": 52,
+    "html": 115,
+    "code": 18,
+    "data": 55,
+    "img": 60
    },
    "deliv": [
     "prd",
@@ -1307,16 +1822,80 @@
     "mvp",
     "userflow",
     "testcase",
-    "selfcheck"
+    "qa"
    ],
    "day1": 4,
    "ck": {
     "eval": "no",
     "news": "no",
+    "ppt": "no",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "yes",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "no",
+    "src": "yes",
+    "deploy": "?",
+    "readme": "yes",
+    "golden": "?",
+    "edge": "?",
+    "error": "?",
+    "hitrate": "?",
+    "failist": "?",
+    "bounds": "?",
+    "devsum": "yes",
+    "reflect": "?",
+    "safety": "no",
+    "selftest": "no"
+   },
+   "ck_yes": 8,
+   "ck_unk": 9,
+   "groups": 6,
+   "evidence": [
+    "index.html",
+    "00_PRD.md",
+    "01_竞品分析报告.md"
+   ],
+   "last": "10-25 12:30"
+  },
+  {
+   "uid": "b46f1472cdef",
+   "mask": "ni***23",
+   "code": "P49",
+   "topic": "APS排产优化",
+   "known": true,
+   "stage": "proto",
+   "sync": 21,
+   "docf": 31,
+   "lines": 6434,
+   "trunc": false,
+   "n": 79,
+   "kinds": {
+    "doc": 20,
+    "html": 6,
+    "code": 36,
+    "data": 4,
+    "img": 8
+   },
+   "deliv": [
+    "news",
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow",
+    "testcase"
+   ],
+   "day1": 5,
+   "ck": {
+    "eval": "yes",
+    "news": "yes",
     "ppt": "yes",
     "prd": "yes",
     "moscow": "?",
-    "dod": "no",
+    "dod": "yes",
     "design": "yes",
     "userflow": "yes",
     "wire": "yes",
@@ -1327,42 +1906,42 @@
     "golden": "?",
     "edge": "?",
     "error": "?",
-    "hitrate": "?",
-    "failist": "?",
-    "bounds": "?",
-    "devsum": "no",
-    "reflect": "no",
+    "hitrate": "no",
+    "failist": "no",
+    "bounds": "no",
+    "devsum": "yes",
+    "reflect": "?",
     "safety": "?",
     "selftest": "?"
    },
-   "ck_yes": 8,
-   "ck_unk": 10,
-   "groups": 6,
+   "ck_yes": 12,
+   "ck_unk": 8,
+   "groups": 5,
    "evidence": [
-    "acceptance-harness.html",
     "index.html",
-    "自检记录.md"
+    "测试地图.md",
+    "测试执行摘要.md"
    ],
-   "last": "10-25 11:21"
+   "last": "10-25 12:15"
   },
   {
-   "uid": "10e8f58a5f09",
-   "mask": "so***10",
-   "code": "P42",
-   "topic": "生产物料到货智能预警与自动跟催",
+   "uid": "0286c10f3b42",
+   "mask": "ye***hi",
+   "code": "P23",
+   "topic": "项目台账更新与报告生成",
    "known": true,
    "stage": "goal",
-   "sync": 468,
-   "docf": 323,
-   "lines": 56104,
-   "trunc": true,
-   "n": 2723,
+   "sync": 74,
+   "docf": 29,
+   "lines": 5547,
+   "trunc": false,
+   "n": 63,
    "kinds": {
-    "doc": 339,
-    "html": 32,
-    "code": 289,
-    "data": 932,
-    "img": 955
+    "doc": 19,
+    "html": 2,
+    "code": 22,
+    "data": 3,
+    "img": 13
    },
    "deliv": [
     "news",
@@ -1371,13 +1950,76 @@
     "wireframe",
     "mvp",
     "userflow",
-    "testcase",
     "qa"
    ],
    "day1": 5,
    "ck": {
     "eval": "no",
     "news": "yes",
+    "ppt": "yes",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "yes",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "yes",
+    "src": "yes",
+    "deploy": "?",
+    "readme": "yes",
+    "golden": "no",
+    "edge": "no",
+    "error": "no",
+    "hitrate": "?",
+    "failist": "?",
+    "bounds": "?",
+    "devsum": "yes",
+    "reflect": "?",
+    "safety": "no",
+    "selftest": "no"
+   },
+   "ck_yes": 11,
+   "ck_unk": 6,
+   "groups": 5,
+   "evidence": [
+    "index.html",
+    "交互原型.html",
+    "PRD-MoSCoW-DoD.md"
+   ],
+   "last": "10-25 12:24"
+  },
+  {
+   "uid": "848a1d17ee9f",
+   "mask": "zy***97",
+   "code": "P13",
+   "topic": "库存健康度与呆滞分析",
+   "known": true,
+   "stage": "goal",
+   "sync": 21,
+   "docf": 28,
+   "lines": 1583,
+   "trunc": true,
+   "n": 1067,
+   "kinds": {
+    "doc": 97,
+    "html": 30,
+    "code": 108,
+    "data": 476,
+    "img": 296
+   },
+   "deliv": [
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow",
+    "testcase",
+    "qa"
+   ],
+   "day1": 4,
+   "ck": {
+    "eval": "yes",
+    "news": "no",
     "ppt": "yes",
     "prd": "yes",
     "moscow": "?",
@@ -1404,11 +2046,11 @@
    "ck_unk": 8,
    "groups": 5,
    "evidence": [
-    "P42-用户流程与线框图.html",
-    "P42用户流程与线框图.html",
-    "PPT大纲.md"
+    "login_page_unauth.html",
+    "index_initial_1440.html",
+    "个人总结汇报.md"
    ],
-   "last": "10-25 11:25"
+   "last": "10-25 11:59"
   },
   {
    "uid": "8ccc9384b45c",
@@ -1541,23 +2183,23 @@
    "last": "10-25 10:51"
   },
   {
-   "uid": "9d688d39aaf9",
-   "mask": "su***yu",
-   "code": "P15",
-   "topic": "开票对账自动核对",
+   "uid": "368074e3a904",
+   "mask": "fl***00",
+   "code": "P42",
+   "topic": "生产物料到货智能预警与自动跟催",
    "known": true,
    "stage": "goal",
-   "sync": 146,
-   "docf": 354,
-   "lines": 24731,
+   "sync": 153,
+   "docf": 29,
+   "lines": 1793,
    "trunc": true,
-   "n": 267,
+   "n": 290,
    "kinds": {
-    "doc": 62,
-    "html": 2,
-    "code": 34,
-    "data": 63,
-    "img": 100
+    "doc": 57,
+    "html": 4,
+    "code": 5,
+    "data": 46,
+    "img": 150
    },
    "deliv": [
     "prd",
@@ -1565,8 +2207,7 @@
     "wireframe",
     "mvp",
     "userflow",
-    "testcase",
-    "qa"
+    "testcase"
    ],
    "day1": 4,
    "ck": {
@@ -1579,49 +2220,49 @@
     "design": "yes",
     "userflow": "yes",
     "wire": "yes",
-    "proto": "yes",
+    "proto": "no",
     "src": "yes",
     "deploy": "?",
     "readme": "yes",
     "golden": "?",
     "edge": "?",
     "error": "?",
-    "hitrate": "?",
-    "failist": "?",
-    "bounds": "?",
-    "devsum": "no",
-    "reflect": "no",
+    "hitrate": "no",
+    "failist": "no",
+    "bounds": "no",
+    "devsum": "yes",
+    "reflect": "?",
     "safety": "no",
     "selftest": "no"
    },
    "ck_yes": 9,
-   "ck_unk": 8,
+   "ck_unk": 6,
    "groups": 5,
    "evidence": [
-    "index.html",
-    "体验设计与原型说明-v001.md",
-    "PRD-Round3-v001.md"
+    "用户流程图.html",
+    "线框图.html",
+    "发布会大纲.md"
    ],
-   "last": "10-25 11:11"
+   "last": "10-25 12:14"
   },
   {
-   "uid": "35a20e34fbda",
-   "mask": "zk***28",
+   "uid": "83b36d8413e3",
+   "mask": "ha***du",
    "code": "P49",
    "topic": "APS排产优化",
    "known": true,
    "stage": "goal",
-   "sync": 76,
-   "docf": 326,
-   "lines": 8271,
+   "sync": 143,
+   "docf": 34,
+   "lines": 4622,
    "trunc": true,
-   "n": 287,
+   "n": 110,
    "kinds": {
-    "doc": 79,
-    "html": 11,
-    "code": 49,
-    "data": 96,
-    "img": 38
+    "doc": 27,
+    "html": 5,
+    "code": 58,
+    "data": 1,
+    "img": 11
    },
    "deliv": [
     "prd",
@@ -1629,8 +2270,7 @@
     "wireframe",
     "mvp",
     "userflow",
-    "testcase",
-    "selfcheck"
+    "testcase"
    ],
    "day1": 4,
    "ck": {
@@ -1653,84 +2293,20 @@
     "hitrate": "no",
     "failist": "no",
     "bounds": "no",
-    "devsum": "no",
-    "reflect": "no",
+    "devsum": "yes",
+    "reflect": "?",
     "safety": "?",
     "selftest": "?"
    },
-   "ck_yes": 8,
-   "ck_unk": 7,
-   "groups": 5,
-   "evidence": [
-    "APS用户流程图与线框图-v0.1.html",
-    "APS网页版原型-v0.1.html",
-    "APS用户体验设计-v0.1.md"
-   ],
-   "last": "10-25 11:00"
-  },
-  {
-   "uid": "6765146fd326",
-   "mask": "he***26",
-   "code": "P39",
-   "topic": "投资管理工作台",
-   "known": true,
-   "stage": "goal",
-   "sync": 202,
-   "docf": 101,
-   "lines": 8457,
-   "trunc": false,
-   "n": 161,
-   "kinds": {
-    "doc": 53,
-    "html": 18,
-    "code": 3,
-    "data": 44,
-    "img": 31
-   },
-   "deliv": [
-    "prd",
-    "design",
-    "wireframe",
-    "mvp",
-    "userflow",
-    "testcase",
-    "qa"
-   ],
-   "day1": 4,
-   "ck": {
-    "eval": "no",
-    "news": "no",
-    "ppt": "yes",
-    "prd": "yes",
-    "moscow": "?",
-    "dod": "yes",
-    "design": "yes",
-    "userflow": "yes",
-    "wire": "yes",
-    "proto": "yes",
-    "src": "yes",
-    "deploy": "?",
-    "readme": "no",
-    "golden": "?",
-    "edge": "?",
-    "error": "?",
-    "hitrate": "?",
-    "failist": "?",
-    "bounds": "?",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 8,
+   "ck_yes": 9,
    "ck_unk": 8,
    "groups": 5,
    "evidence": [
-    "WebReportTemplate.html",
-    "probe_b1c26cefe5a740d28ac5ccaad435e1d8.html",
-    "MVP-1.1网页版范围与DoD.md"
+    "index.html",
+    "APS排产优化_方案_v1.pptx",
+    "APS系统_PRD_v1.md"
    ],
-   "last": "10-25 11:23"
+   "last": "10-25 12:10"
   },
   {
    "uid": "b18b1a93edb1",
@@ -1739,17 +2315,17 @@
    "topic": "未定",
    "known": false,
    "stage": "proto",
-   "sync": 186,
-   "docf": 334,
-   "lines": 2678,
+   "sync": 200,
+   "docf": 310,
+   "lines": 2942,
    "trunc": true,
-   "n": 851,
+   "n": 905,
    "kinds": {
-    "doc": 195,
-    "html": 73,
+    "doc": 199,
+    "html": 75,
     "code": 4,
-    "data": 238,
-    "img": 259
+    "data": 244,
+    "img": 297
    },
    "deliv": [
     "prd",
@@ -1793,7 +2369,7 @@
     "selftest-dom.html",
     "ACCEPTANCE-REPORT.md"
    ],
-   "last": "10-25 11:26"
+   "last": "10-25 12:17"
   },
   {
    "uid": "f4d5b0f99fe8",
@@ -1802,16 +2378,16 @@
    "topic": "未定",
    "known": false,
    "stage": "goal",
-   "sync": 207,
-   "docf": 281,
-   "lines": 33154,
+   "sync": 213,
+   "docf": 286,
+   "lines": 34875,
    "trunc": true,
-   "n": 685,
+   "n": 692,
    "kinds": {
-    "doc": 99,
+    "doc": 101,
     "html": 5,
-    "code": 91,
-    "data": 107,
+    "code": 94,
+    "data": 108,
     "img": 370
    },
    "deliv": [
@@ -1857,7 +2433,7 @@
     "technology-roadmap.html",
     "MVP验收与测试记录.md"
    ],
-   "last": "10-25 10:41"
+   "last": "10-25 12:23"
   },
   {
    "uid": "2cdbbd1249f8",
@@ -1866,17 +2442,17 @@
    "topic": "项目主计划拆解与甘特图",
    "known": true,
    "stage": "goal",
-   "sync": 75,
+   "sync": 89,
    "docf": 46,
    "lines": 5545,
    "trunc": false,
-   "n": 61,
+   "n": 64,
    "kinds": {
     "doc": 16,
-    "html": 8,
+    "html": 10,
     "code": 3,
     "data": 11,
-    "img": 19
+    "img": 20
    },
    "deliv": [
     "prd",
@@ -1917,10 +2493,10 @@
    "groups": 5,
    "evidence": [
     "index.html",
-    "自动化测试.html",
+    "单元测试.html",
     "MoSCoW.md"
    ],
-   "last": "10-25 11:32"
+   "last": "10-25 12:11"
   },
   {
    "uid": "4b9dff032f9f",
@@ -1929,16 +2505,16 @@
    "topic": "投资者全流程管理",
    "known": true,
    "stage": "goal",
-   "sync": 184,
-   "docf": 70,
-   "lines": 12348,
+   "sync": 195,
+   "docf": 73,
+   "lines": 13045,
    "trunc": false,
-   "n": 146,
+   "n": 170,
    "kinds": {
-    "doc": 32,
+    "doc": 34,
     "html": 13,
-    "code": 38,
-    "data": 5,
+    "code": 51,
+    "data": 6,
     "img": 51
    },
    "deliv": [
@@ -1984,7 +2560,7 @@
     "交付1-用户流程图-V1.0.html",
     "安全扫描报告.md"
    ],
-   "last": "10-25 11:27"
+   "last": "10-25 12:31"
   },
   {
    "uid": "562e898b57ca",
@@ -1993,8 +2569,8 @@
    "topic": "对外宣传资料审核",
    "known": true,
    "stage": "goal",
-   "sync": 177,
-   "docf": 365,
+   "sync": 185,
+   "docf": 355,
    "lines": 4255,
    "trunc": true,
    "n": 1612,
@@ -2051,76 +2627,13 @@
    "last": "10-25 09:32"
   },
   {
-   "uid": "93078f0d2073",
-   "mask": "en***ao",
-   "code": "P7",
-   "topic": "检验数据判异与SPC预警",
-   "known": true,
-   "stage": "goal",
-   "sync": 20,
-   "docf": 62,
-   "lines": 12233,
-   "trunc": true,
-   "n": 487,
-   "kinds": {
-    "doc": 85,
-    "html": 3,
-    "code": 23,
-    "data": 11,
-    "img": 339
-   },
-   "deliv": [
-    "prd",
-    "design",
-    "wireframe",
-    "mvp",
-    "userflow",
-    "testcase"
-   ],
-   "day1": 4,
-   "ck": {
-    "eval": "no",
-    "news": "no",
-    "ppt": "no",
-    "prd": "yes",
-    "moscow": "?",
-    "dod": "no",
-    "design": "yes",
-    "userflow": "yes",
-    "wire": "yes",
-    "proto": "yes",
-    "src": "yes",
-    "deploy": "?",
-    "readme": "yes",
-    "golden": "?",
-    "edge": "?",
-    "error": "?",
-    "hitrate": "?",
-    "failist": "?",
-    "bounds": "?",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 7,
-   "ck_unk": 8,
-   "groups": 5,
-   "evidence": [
-    "demo-data.md",
-    "index.html",
-    "sync-chain-test.md"
-   ],
-   "last": "10-25 10:54"
-  },
-  {
    "uid": "b93515cb6713",
    "mask": "ch***91",
    "code": "P49",
    "topic": "APS排产优化",
    "known": true,
    "stage": "goal",
-   "sync": 16,
+   "sync": 17,
    "docf": 3,
    "lines": 358,
    "trunc": true,
@@ -2173,103 +2686,38 @@
     "APS交互原型_v001.html",
     "candidate.pptx"
    ],
-   "last": "10-25 10:49"
+   "last": "10-25 11:57"
   },
   {
-   "uid": "f81c6e19e376",
-   "mask": "lv***25",
-   "code": "",
-   "topic": "未定",
-   "known": false,
-   "stage": "goal",
-   "sync": 216,
-   "docf": 148,
-   "lines": 3376,
-   "trunc": true,
-   "n": 319,
-   "kinds": {
-    "doc": 48,
-    "html": 115,
-    "code": 18,
-    "data": 55,
-    "img": 60
-   },
-   "deliv": [
-    "prd",
-    "design",
-    "wireframe",
-    "mvp",
-    "userflow",
-    "testcase",
-    "qa"
-   ],
-   "day1": 4,
-   "ck": {
-    "eval": "no",
-    "news": "no",
-    "ppt": "no",
-    "prd": "yes",
-    "moscow": "?",
-    "dod": "yes",
-    "design": "yes",
-    "userflow": "yes",
-    "wire": "yes",
-    "proto": "no",
-    "src": "yes",
-    "deploy": "?",
-    "readme": "yes",
-    "golden": "?",
-    "edge": "?",
-    "error": "?",
-    "hitrate": "?",
-    "failist": "?",
-    "bounds": "?",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 7,
-   "ck_unk": 8,
-   "groups": 5,
-   "evidence": [
-    "index.html",
-    "00_PRD.md",
-    "01_竞品分析报告.md"
-   ],
-   "last": "10-25 11:21"
-  },
-  {
-   "uid": "0286c10f3b42",
-   "mask": "ye***hi",
-   "code": "P23",
-   "topic": "项目台账更新与报告生成",
+   "uid": "079d9648464e",
+   "mask": "yo***16",
+   "code": "P52",
+   "topic": "呆滞库存处置Agent",
    "known": true,
    "stage": "goal",
-   "sync": 71,
-   "docf": 24,
-   "lines": 4072,
-   "trunc": false,
-   "n": 57,
+   "sync": 314,
+   "docf": 192,
+   "lines": 12408,
+   "trunc": true,
+   "n": 62,
    "kinds": {
-    "doc": 16,
-    "html": 2,
-    "code": 20,
-    "data": 3,
-    "img": 13
+    "doc": 25,
+    "html": 3,
+    "code": 2,
+    "data": 2,
+    "img": 29
    },
    "deliv": [
-    "news",
     "prd",
     "design",
     "wireframe",
     "mvp",
     "userflow"
    ],
-   "day1": 5,
+   "day1": 4,
    "ck": {
     "eval": "no",
-    "news": "yes",
+    "news": "no",
     "ppt": "yes",
     "prd": "yes",
     "moscow": "?",
@@ -2280,27 +2728,152 @@
     "proto": "yes",
     "src": "yes",
     "deploy": "?",
+    "readme": "no",
+    "golden": "no",
+    "edge": "no",
+    "error": "no",
+    "hitrate": "no",
+    "failist": "no",
+    "bounds": "no",
+    "devsum": "yes",
+    "reflect": "?",
+    "safety": "no",
+    "selftest": "no"
+   },
+   "ck_yes": 9,
+   "ck_unk": 3,
+   "groups": 4,
+   "evidence": [
+    "01-用户流程图-v1.html",
+    "02-线框图-v1.html",
+    "00-交付说明-v1.md"
+   ],
+   "last": "10-25 12:25"
+  },
+  {
+   "uid": "0c70631db66b",
+   "mask": "zs***ke",
+   "code": "P5",
+   "topic": "月度质量分析报告",
+   "known": true,
+   "stage": "goal",
+   "sync": 81,
+   "docf": 89,
+   "lines": 9628,
+   "trunc": false,
+   "n": 72,
+   "kinds": {
+    "doc": 19,
+    "html": 8,
+    "code": 6,
+    "data": 1,
+    "img": 33
+   },
+   "deliv": [
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow"
+   ],
+   "day1": 4,
+   "ck": {
+    "eval": "no",
+    "news": "no",
+    "ppt": "yes",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "no",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "yes",
+    "src": "yes",
+    "deploy": "?",
     "readme": "yes",
     "golden": "no",
     "edge": "no",
     "error": "no",
-    "hitrate": "?",
-    "failist": "?",
-    "bounds": "?",
-    "devsum": "no",
-    "reflect": "no",
+    "hitrate": "no",
+    "failist": "no",
+    "bounds": "no",
+    "devsum": "yes",
+    "reflect": "?",
     "safety": "no",
     "selftest": "no"
    },
-   "ck_yes": 10,
-   "ck_unk": 5,
+   "ck_yes": 9,
+   "ck_unk": 3,
    "groups": 4,
    "evidence": [
     "index.html",
-    "交互原型.html",
-    "PRD-MoSCoW-DoD.md"
+    "技术路线_v002.html",
+    "MVP_SCOPE.md"
    ],
-   "last": "10-24 21:22"
+   "last": "10-25 11:55"
+  },
+  {
+   "uid": "11c629f072f1",
+   "mask": "26***ss",
+   "code": "",
+   "topic": "未定",
+   "known": false,
+   "stage": "goal",
+   "sync": 141,
+   "docf": 141,
+   "lines": 6044,
+   "trunc": true,
+   "n": 156,
+   "kinds": {
+    "doc": 25,
+    "html": 10,
+    "code": 34,
+    "data": 19,
+    "img": 64
+   },
+   "deliv": [
+    "prd",
+    "design",
+    "wireframe",
+    "mvp",
+    "userflow",
+    "testcase"
+   ],
+   "day1": 4,
+   "ck": {
+    "eval": "no",
+    "news": "no",
+    "ppt": "yes",
+    "prd": "yes",
+    "moscow": "?",
+    "dod": "no",
+    "design": "yes",
+    "userflow": "yes",
+    "wire": "yes",
+    "proto": "yes",
+    "src": "yes",
+    "deploy": "?",
+    "readme": "yes",
+    "golden": "no",
+    "edge": "no",
+    "error": "no",
+    "hitrate": "no",
+    "failist": "no",
+    "bounds": "no",
+    "devsum": "yes",
+    "reflect": "?",
+    "safety": "no",
+    "selftest": "no"
+   },
+   "ck_yes": 9,
+   "ck_unk": 3,
+   "groups": 4,
+   "evidence": [
+    "Phase1_Excel导入版.html",
+    "_wo_test.html",
+    "P11产品宣传PPT_苹果发布会风格_5页版.pdf"
+   ],
+   "last": "10-25 12:04"
   },
   {
    "uid": "f3c16161e149",
@@ -2309,15 +2882,15 @@
    "topic": "非标方案辅助生成",
    "known": true,
    "stage": "goal",
-   "sync": 415,
+   "sync": 418,
    "docf": 404,
-   "lines": 15716,
+   "lines": 15808,
    "trunc": true,
-   "n": 1810,
+   "n": 1812,
    "kinds": {
-    "doc": 298,
+    "doc": 299,
     "html": 26,
-    "code": 145,
+    "code": 146,
     "data": 346,
     "img": 654
    },
@@ -2366,96 +2939,32 @@
     "ui_dom_confirm_0.8.0.html",
     "2026-10-24-环境自检.md"
    ],
-   "last": "10-25 11:29"
+   "last": "10-25 12:25"
   },
   {
-   "uid": "368074e3a904",
-   "mask": "fl***00",
-   "code": "P42",
-   "topic": "生产物料到货智能预警与自动跟催",
-   "known": true,
+   "uid": "8e31625a809b",
+   "mask": "ya***43",
+   "code": "",
+   "topic": "未定",
+   "known": false,
    "stage": "goal",
-   "sync": 141,
-   "docf": 31,
-   "lines": 1793,
+   "sync": 221,
+   "docf": 75,
+   "lines": 17981,
    "trunc": true,
-   "n": 263,
-   "kinds": {
-    "doc": 53,
-    "html": 4,
-    "code": 4,
-    "data": 34,
-    "img": 150
-   },
-   "deliv": [
-    "prd",
-    "design",
-    "wireframe",
-    "mvp",
-    "userflow",
-    "testcase"
-   ],
-   "day1": 4,
-   "ck": {
-    "eval": "no",
-    "news": "no",
-    "ppt": "yes",
-    "prd": "yes",
-    "moscow": "?",
-    "dod": "yes",
-    "design": "yes",
-    "userflow": "yes",
-    "wire": "yes",
-    "proto": "no",
-    "src": "yes",
-    "deploy": "?",
-    "readme": "yes",
-    "golden": "?",
-    "edge": "?",
-    "error": "?",
-    "hitrate": "no",
-    "failist": "no",
-    "bounds": "no",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 8,
-   "ck_unk": 5,
-   "groups": 4,
-   "evidence": [
-    "用户流程图.html",
-    "线框图.html",
-    "发布会大纲.md"
-   ],
-   "last": "10-25 11:17"
-  },
-  {
-   "uid": "83b36d8413e3",
-   "mask": "ha***du",
-   "code": "P49",
-   "topic": "APS排产优化",
-   "known": true,
-   "stage": "goal",
-   "sync": 128,
-   "docf": 30,
-   "lines": 5091,
-   "trunc": true,
-   "n": 102,
+   "n": 176,
    "kinds": {
     "doc": 23,
-    "html": 5,
-    "code": 55,
-    "data": 0,
-    "img": 11
+    "html": 8,
+    "code": 81,
+    "data": 12,
+    "img": 41
    },
    "deliv": [
     "prd",
     "design",
     "wireframe",
     "mvp",
-    "userflow",
     "testcase"
    ],
    "day1": 4,
@@ -2467,32 +2976,32 @@
     "moscow": "?",
     "dod": "no",
     "design": "yes",
-    "userflow": "yes",
+    "userflow": "no",
     "wire": "yes",
     "proto": "yes",
     "src": "yes",
     "deploy": "?",
     "readme": "yes",
-    "golden": "?",
-    "edge": "?",
-    "error": "?",
+    "golden": "no",
+    "edge": "no",
+    "error": "no",
     "hitrate": "no",
     "failist": "no",
     "bounds": "no",
-    "devsum": "no",
-    "reflect": "no",
+    "devsum": "yes",
+    "reflect": "?",
     "safety": "no",
     "selftest": "no"
    },
    "ck_yes": 8,
-   "ck_unk": 5,
+   "ck_unk": 3,
    "groups": 4,
    "evidence": [
+    "flow.html",
     "index.html",
-    "APS排产优化_方案_v1.pptx",
-    "APS系统_PRD_v1.md"
+    "01-宣传方案对齐稿.md"
    ],
-   "last": "10-25 11:26"
+   "last": "10-25 12:34"
   },
   {
    "uid": "1f3debee2a79",
@@ -2505,13 +3014,13 @@
    "docf": 56,
    "lines": 19615,
    "trunc": false,
-   "n": 415,
+   "n": 430,
    "kinds": {
-    "doc": 27,
+    "doc": 32,
     "html": 2,
-    "code": 45,
-    "data": 115,
-    "img": 220
+    "code": 48,
+    "data": 119,
+    "img": 223
    },
    "deliv": [
     "prd",
@@ -2555,7 +3064,7 @@
     "PRD-v005.md",
     "PRD-v006.md"
    ],
-   "last": "10-25 11:26"
+   "last": "10-25 12:33"
   },
   {
    "uid": "54d0822dadf4",
@@ -2627,8 +3136,8 @@
    "topic": "未定",
    "known": false,
    "stage": "goal",
-   "sync": 205,
-   "docf": 286,
+   "sync": 213,
+   "docf": 313,
    "lines": 4719,
    "trunc": true,
    "n": 97,
@@ -2681,7 +3190,7 @@
     "UI流程.html",
     "AI修模分析与改善复用 .pptx"
    ],
-   "last": "10-25 11:32"
+   "last": "10-25 12:30"
   },
   {
    "uid": "d315c3749994",
@@ -2744,7 +3253,7 @@
     "桥接原型-v0.1.md",
     "PRD.md"
    ],
-   "last": "10-25 11:33"
+   "last": "10-25 11:44"
   },
   {
    "uid": "285368012df4",
@@ -2815,16 +3324,16 @@
    "topic": "未定",
    "known": false,
    "stage": "goal",
-   "sync": 157,
-   "docf": 87,
-   "lines": 8583,
+   "sync": 168,
+   "docf": 88,
+   "lines": 8585,
    "trunc": false,
-   "n": 137,
+   "n": 139,
    "kinds": {
-    "doc": 54,
+    "doc": 55,
     "html": 6,
     "code": 47,
-    "data": 7,
+    "data": 8,
     "img": 3
    },
    "deliv": [
@@ -2868,7 +3377,7 @@
     "index.html",
     "Round1_完成报告_v1.0.md"
    ],
-   "last": "10-25 09:39"
+   "last": "10-25 12:31"
   },
   {
    "uid": "22b2a4d71e6f",
@@ -2877,13 +3386,13 @@
    "topic": "未定",
    "known": false,
    "stage": "goal",
-   "sync": 214,
-   "docf": 346,
+   "sync": 215,
+   "docf": 347,
    "lines": 18862,
    "trunc": true,
-   "n": 70,
+   "n": 71,
    "kinds": {
-    "doc": 29,
+    "doc": 30,
     "html": 2,
     "code": 35,
     "data": 0,
@@ -2932,193 +3441,7 @@
     "10-DOD-分级交付门-v1.0.md",
     "11-质检报告模板-v1.0.md"
    ],
-   "last": "10-25 10:41"
-  },
-  {
-   "uid": "079d9648464e",
-   "mask": "yo***16",
-   "code": "P52",
-   "topic": "呆滞库存处置Agent",
-   "known": true,
-   "stage": "goal",
-   "sync": 311,
-   "docf": 196,
-   "lines": 12705,
-   "trunc": true,
-   "n": 61,
-   "kinds": {
-    "doc": 24,
-    "html": 3,
-    "code": 2,
-    "data": 2,
-    "img": 29
-   },
-   "deliv": [
-    "prd",
-    "design",
-    "wireframe",
-    "mvp",
-    "userflow"
-   ],
-   "day1": 4,
-   "ck": {
-    "eval": "no",
-    "news": "no",
-    "ppt": "yes",
-    "prd": "yes",
-    "moscow": "?",
-    "dod": "yes",
-    "design": "yes",
-    "userflow": "yes",
-    "wire": "yes",
-    "proto": "yes",
-    "src": "yes",
-    "deploy": "?",
-    "readme": "no",
-    "golden": "no",
-    "edge": "no",
-    "error": "no",
-    "hitrate": "no",
-    "failist": "no",
-    "bounds": "no",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 8,
-   "ck_unk": 2,
-   "groups": 3,
-   "evidence": [
-    "01-用户流程图-v1.html",
-    "02-线框图-v1.html",
-    "00-交付说明-v1.md"
-   ],
-   "last": "10-25 11:16"
-  },
-  {
-   "uid": "0c70631db66b",
-   "mask": "zs***ke",
-   "code": "P5",
-   "topic": "月度质量分析报告",
-   "known": true,
-   "stage": "goal",
-   "sync": 81,
-   "docf": 89,
-   "lines": 9628,
-   "trunc": false,
-   "n": 70,
-   "kinds": {
-    "doc": 17,
-    "html": 8,
-    "code": 6,
-    "data": 1,
-    "img": 33
-   },
-   "deliv": [
-    "prd",
-    "design",
-    "wireframe",
-    "mvp",
-    "userflow"
-   ],
-   "day1": 4,
-   "ck": {
-    "eval": "no",
-    "news": "no",
-    "ppt": "yes",
-    "prd": "yes",
-    "moscow": "?",
-    "dod": "no",
-    "design": "yes",
-    "userflow": "yes",
-    "wire": "yes",
-    "proto": "yes",
-    "src": "yes",
-    "deploy": "?",
-    "readme": "yes",
-    "golden": "no",
-    "edge": "no",
-    "error": "no",
-    "hitrate": "no",
-    "failist": "no",
-    "bounds": "no",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 8,
-   "ck_unk": 2,
-   "groups": 3,
-   "evidence": [
-    "index.html",
-    "技术路线_v002.html",
-    "MVP_SCOPE.md"
-   ],
-   "last": "10-25 11:09"
-  },
-  {
-   "uid": "11c629f072f1",
-   "mask": "26***ss",
-   "code": "",
-   "topic": "未定",
-   "known": false,
-   "stage": "goal",
-   "sync": 129,
-   "docf": 238,
-   "lines": 9008,
-   "trunc": true,
-   "n": 146,
-   "kinds": {
-    "doc": 22,
-    "html": 7,
-    "code": 30,
-    "data": 19,
-    "img": 64
-   },
-   "deliv": [
-    "prd",
-    "design",
-    "wireframe",
-    "mvp",
-    "userflow"
-   ],
-   "day1": 4,
-   "ck": {
-    "eval": "no",
-    "news": "no",
-    "ppt": "yes",
-    "prd": "yes",
-    "moscow": "?",
-    "dod": "no",
-    "design": "yes",
-    "userflow": "yes",
-    "wire": "yes",
-    "proto": "yes",
-    "src": "yes",
-    "deploy": "?",
-    "readme": "yes",
-    "golden": "no",
-    "edge": "no",
-    "error": "no",
-    "hitrate": "no",
-    "failist": "no",
-    "bounds": "no",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 8,
-   "ck_unk": 2,
-   "groups": 3,
-   "evidence": [
-    "Phase1_Excel导入版.html",
-    "phase1_template.html",
-    "P11产品宣传PPT_苹果发布会风格_5页版.pdf"
-   ],
-   "last": "10-25 11:26"
+   "last": "10-25 12:11"
   },
   {
    "uid": "27a1010126c9",
@@ -3181,69 +3504,6 @@
     "PRD.md"
    ],
    "last": "10-25 10:37"
-  },
-  {
-   "uid": "2c8c4759e56c",
-   "mask": "le***ck",
-   "code": "",
-   "topic": "自定义课题：企业AI中台·Agent调用与监控",
-   "known": true,
-   "stage": "proto",
-   "sync": 371,
-   "docf": 148,
-   "lines": 17421,
-   "trunc": true,
-   "n": 699,
-   "kinds": {
-    "doc": 16,
-    "html": 13,
-    "code": 26,
-    "data": 112,
-    "img": 216
-   },
-   "deliv": [
-    "news",
-    "prd",
-    "design",
-    "wireframe",
-    "mvp",
-    "userflow"
-   ],
-   "day1": 5,
-   "ck": {
-    "eval": "no",
-    "news": "yes",
-    "ppt": "no",
-    "prd": "yes",
-    "moscow": "?",
-    "dod": "no",
-    "design": "yes",
-    "userflow": "yes",
-    "wire": "yes",
-    "proto": "yes",
-    "src": "yes",
-    "deploy": "?",
-    "readme": "yes",
-    "golden": "no",
-    "edge": "no",
-    "error": "no",
-    "hitrate": "no",
-    "failist": "no",
-    "bounds": "no",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 8,
-   "ck_unk": 2,
-   "groups": 3,
-   "evidence": [
-    "DTMAP_数字孪生工厂与多智能体协同平台.html",
-    "index.html",
-    "交付说明.md"
-   ],
-   "last": "10-25 11:31"
   },
   {
    "uid": "438c4d3d3181",
@@ -3378,15 +3638,15 @@
    "topic": "行政服务一体化与接待驾驶舱",
    "known": true,
    "stage": "proto",
-   "sync": 152,
+   "sync": 158,
    "docf": 88,
-   "lines": 20042,
+   "lines": 22750,
    "trunc": false,
-   "n": 123,
+   "n": 132,
    "kinds": {
-    "doc": 34,
+    "doc": 36,
     "html": 5,
-    "code": 50,
+    "code": 57,
     "data": 10,
     "img": 17
    },
@@ -3431,7 +3691,7 @@
     "design_spec.md",
     "智迎one-产品发布-5页-v001.md"
    ],
-   "last": "10-25 11:29"
+   "last": "10-25 12:33"
   },
   {
    "uid": "dd371d2ba678",
@@ -3493,7 +3753,7 @@
     "03_用户流程图.html",
     "Must完成记录_2026-10-24.md"
    ],
-   "last": "10-25 10:12"
+   "last": "10-25 11:47"
   },
   {
    "uid": "fe993a42cb2a",
@@ -3555,7 +3815,7 @@
     "01_端到端旅程.html",
     "01_产品定义与PPT大纲.md"
    ],
-   "last": "10-25 11:32"
+   "last": "10-25 11:39"
   },
   {
    "uid": "2177205c0885",
@@ -3616,68 +3876,6 @@
     "交互原型.html",
     "线框图.html",
     "ldo_extraction_notes.md"
-   ],
-   "last": "10-25 11:23"
-  },
-  {
-   "uid": "8e31625a809b",
-   "mask": "ya***43",
-   "code": "",
-   "topic": "未定",
-   "known": false,
-   "stage": "goal",
-   "sync": 208,
-   "docf": 68,
-   "lines": 17690,
-   "trunc": true,
-   "n": 170,
-   "kinds": {
-    "doc": 21,
-    "html": 8,
-    "code": 78,
-    "data": 12,
-    "img": 40
-   },
-   "deliv": [
-    "prd",
-    "design",
-    "wireframe",
-    "mvp",
-    "testcase"
-   ],
-   "day1": 4,
-   "ck": {
-    "eval": "no",
-    "news": "no",
-    "ppt": "yes",
-    "prd": "yes",
-    "moscow": "?",
-    "dod": "no",
-    "design": "yes",
-    "userflow": "no",
-    "wire": "yes",
-    "proto": "yes",
-    "src": "yes",
-    "deploy": "?",
-    "readme": "yes",
-    "golden": "no",
-    "edge": "no",
-    "error": "no",
-    "hitrate": "no",
-    "failist": "no",
-    "bounds": "no",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 7,
-   "ck_unk": 2,
-   "groups": 3,
-   "evidence": [
-    "flow.html",
-    "index.html",
-    "01-宣传方案对齐稿.md"
    ],
    "last": "10-25 11:23"
   },
@@ -3929,65 +4127,6 @@
    "last": "10-24 20:12"
   },
   {
-   "uid": "555c86488c15",
-   "mask": "ca***26",
-   "code": "P35",
-   "topic": "细分市场洞察与线索挖掘",
-   "known": true,
-   "stage": "doc",
-   "sync": 58,
-   "docf": 78,
-   "lines": 0,
-   "trunc": false,
-   "n": 129,
-   "kinds": {
-    "doc": 73,
-    "html": 0,
-    "code": 0,
-    "data": 9,
-    "img": 41
-   },
-   "deliv": [
-    "prd",
-    "design",
-    "userflow"
-   ],
-   "day1": 2,
-   "ck": {
-    "eval": "no",
-    "news": "no",
-    "ppt": "yes",
-    "prd": "yes",
-    "moscow": "?",
-    "dod": "no",
-    "design": "yes",
-    "userflow": "yes",
-    "wire": "no",
-    "proto": "no",
-    "src": "no",
-    "deploy": "no",
-    "readme": "yes",
-    "golden": "no",
-    "edge": "no",
-    "error": "no",
-    "hitrate": "no",
-    "failist": "no",
-    "bounds": "no",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 5,
-   "ck_unk": 1,
-   "groups": 3,
-   "evidence": [
-    "PRD_项目窗口雷达.docx",
-    "PRD_项目窗口雷达.md"
-   ],
-   "last": "10-24 18:05"
-  },
-  {
    "uid": "19b11bbb0e75",
    "mask": "ka***35",
    "code": "P21",
@@ -4177,9 +4316,9 @@
    "docf": 20,
    "lines": 1985,
    "trunc": false,
-   "n": 6,
+   "n": 7,
    "kinds": {
-    "doc": 5,
+    "doc": 6,
     "html": 0,
     "code": 1,
     "data": 0,
@@ -4187,15 +4326,16 @@
    },
    "deliv": [
     "news",
+    "prd",
     "mvp"
    ],
-   "day1": 2,
+   "day1": 3,
    "ck": {
     "eval": "no",
     "news": "yes",
     "ppt": "yes",
-    "prd": "no",
-    "moscow": "no",
+    "prd": "yes",
+    "moscow": "?",
     "dod": "no",
     "design": "no",
     "userflow": "no",
@@ -4215,15 +4355,15 @@
     "safety": "no",
     "selftest": "no"
    },
-   "ck_yes": 3,
-   "ck_unk": 1,
+   "ck_yes": 4,
+   "ck_unk": 2,
    "groups": 2,
    "evidence": [
+    "经营数据驾驶舱_PRD_v1.0.md",
     "经营数据驾驶舱_新闻稿_v002.pdf",
-    "经营数据驾驶舱_新闻稿_v002.pptx",
     "build-deck.js"
    ],
-   "last": "10-25 11:18"
+   "last": "10-25 11:46"
   },
   {
    "uid": "9b2d7121940d",
@@ -4285,64 +4425,6 @@
    "last": "10-24 16:38"
   },
   {
-   "uid": "b46f1472cdef",
-   "mask": "ni***23",
-   "code": "P49",
-   "topic": "APS排产优化",
-   "known": true,
-   "stage": "proto",
-   "sync": 16,
-   "docf": 10,
-   "lines": 2522,
-   "trunc": false,
-   "n": 34,
-   "kinds": {
-    "doc": 2,
-    "html": 3,
-    "code": 21,
-    "data": 4,
-    "img": 0
-   },
-   "deliv": [
-    "mvp"
-   ],
-   "day1": 1,
-   "ck": {
-    "eval": "no",
-    "news": "no",
-    "ppt": "no",
-    "prd": "no",
-    "moscow": "no",
-    "dod": "no",
-    "design": "no",
-    "userflow": "no",
-    "wire": "no",
-    "proto": "yes",
-    "src": "yes",
-    "deploy": "?",
-    "readme": "yes",
-    "golden": "no",
-    "edge": "no",
-    "error": "no",
-    "hitrate": "no",
-    "failist": "no",
-    "bounds": "no",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 3,
-   "ck_unk": 1,
-   "groups": 2,
-   "evidence": [
-    "index.html",
-    "app.js",
-    "data.js"
-   ],
-   "last": "10-25 09:58"
-  },
-  {
    "uid": "dc39c50fab96",
    "mask": "ya***lt",
    "code": "P49",
@@ -4353,13 +4435,13 @@
    "docf": 12,
    "lines": 5390,
    "trunc": false,
-   "n": 97,
+   "n": 194,
    "kinds": {
-    "doc": 3,
-    "html": 2,
-    "code": 55,
-    "data": 1,
-    "img": 4
+    "doc": 6,
+    "html": 4,
+    "code": 110,
+    "data": 2,
+    "img": 8
    },
    "deliv": [
     "mvp"
@@ -4398,7 +4480,7 @@
     "login.html",
     "登录与系统管理_v029.md"
    ],
-   "last": "10-25 09:22"
+   "last": "10-25 11:40"
   },
   {
    "uid": "09790458f821",
@@ -4632,63 +4714,6 @@
     "RELEASE.md"
    ],
    "last": "10-25 09:20"
-  },
-  {
-   "uid": "848a1d17ee9f",
-   "mask": "zy***97",
-   "code": "P13",
-   "topic": "库存健康度与呆滞分析",
-   "known": true,
-   "stage": "doc",
-   "sync": 21,
-   "docf": 28,
-   "lines": 1583,
-   "trunc": true,
-   "n": 3,
-   "kinds": {
-    "doc": 3,
-    "html": 0,
-    "code": 0,
-    "data": 0,
-    "img": 0
-   },
-   "deliv": [
-    "design"
-   ],
-   "day1": 1,
-   "ck": {
-    "eval": "no",
-    "news": "no",
-    "ppt": "no",
-    "prd": "no",
-    "moscow": "no",
-    "dod": "no",
-    "design": "yes",
-    "userflow": "no",
-    "wire": "no",
-    "proto": "no",
-    "src": "no",
-    "deploy": "no",
-    "readme": "no",
-    "golden": "no",
-    "edge": "no",
-    "error": "no",
-    "hitrate": "no",
-    "failist": "no",
-    "bounds": "no",
-    "devsum": "no",
-    "reflect": "no",
-    "safety": "no",
-    "selftest": "no"
-   },
-   "ck_yes": 1,
-   "ck_unk": 0,
-   "groups": 1,
-   "evidence": [
-    "发布会3分钟-v001.md",
-    "发布会投资人版-v001.md"
-   ],
-   "last": "10-24 12:01"
   },
   {
    "uid": "eeb1c2b8d23a",
@@ -5121,7 +5146,7 @@
    "topic": "企业知识库与智能检索",
    "known": true,
    "stage": "proto",
-   "sync": 16,
+   "sync": 17,
    "docf": 32,
    "lines": 6667,
    "trunc": true,
@@ -5168,7 +5193,7 @@
     "代码分析-20261024-v001.md",
     "竞品分析-20261024-v002.md"
    ],
-   "last": "10-24 20:06"
+   "last": "10-25 12:12"
   },
   {
    "uid": "bd7e74901611",
@@ -5390,18 +5415,18 @@
   },
   "summary": {
    "repos": 75,
-   "sync_total": 7769,
-   "sync_median": 76,
-   "sync_max": 468,
+   "sync_total": 7983,
+   "sync_median": 81,
+   "sync_max": 471,
    "sync_zero": 1,
-   "doc_total": 8621,
-   "doc_median": 68,
+   "doc_total": 8681,
+   "doc_median": 74,
    "doc_zero": 1,
-   "lines_total": 597010,
-   "lines_median": 4719,
+   "lines_total": 607956,
+   "lines_median": 5065,
    "lines_zero": 16,
    "truncated": 36,
-   "last_sync": "10-25 11:33",
+   "last_sync": "10-25 12:34",
    "last_dawn": "04:55"
   },
   "hours": [
@@ -5440,7 +5465,8 @@
    "10-25 17"
   ],
   "org_hours": {
-   "10-25 11": 386,
+   "10-25 12": 161,
+   "10-25 11": 439,
    "10-25 10": 445,
    "10-25 09": 403,
    "10-25 08": 207,
@@ -5466,7 +5492,7 @@
    "10-25 07": 5,
    "10-25 04": 52
   },
-  "collected_at": "2026-10-25 11:59",
+  "collected_at": "2026-10-25 12:33",
   "failed": 0
  },
  "checklist": [
@@ -5479,40 +5505,40 @@
      "no": 1,
      "k": "eval",
      "label": "选题评估表",
-     "yes": 2,
+     "yes": 8,
      "unk": 0,
-     "miss": 73,
-     "pct": 3,
+     "miss": 67,
+     "pct": 11,
      "unkpct": 0
     },
     {
      "no": 2,
      "k": "news",
      "label": "新闻稿",
-     "yes": 12,
+     "yes": 15,
      "unk": 0,
-     "miss": 63,
-     "pct": 16,
+     "miss": 60,
+     "pct": 20,
      "unkpct": 0
     },
     {
      "no": 3,
      "k": "ppt",
      "label": "发布 PPT",
-     "yes": 37,
+     "yes": 40,
      "unk": 0,
-     "miss": 38,
-     "pct": 49,
+     "miss": 35,
+     "pct": 53,
      "unkpct": 0
     },
     {
      "no": 4,
      "k": "prd",
      "label": "PRD",
-     "yes": 52,
+     "yes": 55,
      "unk": 0,
-     "miss": 23,
-     "pct": 69,
+     "miss": 20,
+     "pct": 73,
      "unkpct": 0
     },
     {
@@ -5520,26 +5546,26 @@
      "k": "moscow",
      "label": "MoSCoW 分档",
      "yes": 0,
-     "unk": 52,
+     "unk": 55,
      "miss": 75,
      "pct": 0,
-     "unkpct": 69
+     "unkpct": 73
     },
     {
      "no": 6,
      "k": "dod",
      "label": "DoD 完成定义",
-     "yes": 15,
+     "yes": 18,
      "unk": 0,
-     "miss": 60,
-     "pct": 20,
+     "miss": 57,
+     "pct": 24,
      "unkpct": 0
     }
    ],
-   "yes": 118,
-   "unk": 52,
+   "yes": 136,
+   "unk": 55,
    "cells": 450,
-   "pct": 26
+   "pct": 30
   },
   {
    "id": "02",
@@ -5550,16 +5576,26 @@
      "no": 7,
      "k": "design",
      "label": "开发方案",
-     "yes": 54,
+     "yes": 55,
      "unk": 0,
-     "miss": 21,
-     "pct": 72,
+     "miss": 20,
+     "pct": 73,
      "unkpct": 0
     },
     {
      "no": 8,
      "k": "userflow",
      "label": "用户流程图",
+     "yes": 52,
+     "unk": 0,
+     "miss": 23,
+     "pct": 69,
+     "unkpct": 0
+    },
+    {
+     "no": 9,
+     "k": "wire",
+     "label": "线框图",
      "yes": 50,
      "unk": 0,
      "miss": 25,
@@ -5567,30 +5603,20 @@
      "unkpct": 0
     },
     {
-     "no": 9,
-     "k": "wire",
-     "label": "线框图",
-     "yes": 47,
-     "unk": 0,
-     "miss": 28,
-     "pct": 63,
-     "unkpct": 0
-    },
-    {
      "no": 10,
      "k": "proto",
      "label": "可点击原型",
-     "yes": 44,
+     "yes": 46,
      "unk": 0,
-     "miss": 31,
-     "pct": 59,
+     "miss": 29,
+     "pct": 61,
      "unkpct": 0
     }
    ],
-   "yes": 195,
+   "yes": 203,
    "unk": 0,
    "cells": 300,
-   "pct": 65
+   "pct": 68
   },
   {
    "id": "03",
@@ -5601,10 +5627,10 @@
      "no": 11,
      "k": "src",
      "label": "源代码",
-     "yes": 56,
+     "yes": 58,
      "unk": 0,
-     "miss": 19,
-     "pct": 75,
+     "miss": 17,
+     "pct": 77,
      "unkpct": 0
     },
     {
@@ -5612,26 +5638,26 @@
      "k": "deploy",
      "label": "部署链接",
      "yes": 0,
-     "unk": 56,
+     "unk": 58,
      "miss": 75,
      "pct": 0,
-     "unkpct": 75
+     "unkpct": 77
     },
     {
      "no": 13,
      "k": "readme",
      "label": "README",
-     "yes": 51,
+     "yes": 52,
      "unk": 0,
-     "miss": 24,
-     "pct": 68,
+     "miss": 23,
+     "pct": 69,
      "unkpct": 0
     }
    ],
-   "yes": 107,
-   "unk": 56,
+   "yes": 110,
+   "unk": 58,
    "cells": 225,
-   "pct": 48
+   "pct": 49
   },
   {
    "id": "04",
@@ -5643,34 +5669,34 @@
      "k": "golden",
      "label": "黄金用例",
      "yes": 0,
-     "unk": 28,
+     "unk": 32,
      "miss": 75,
      "pct": 0,
-     "unkpct": 37
+     "unkpct": 43
     },
     {
      "no": 15,
      "k": "edge",
      "label": "边界用例",
      "yes": 0,
-     "unk": 28,
+     "unk": 32,
      "miss": 75,
      "pct": 0,
-     "unkpct": 37
+     "unkpct": 43
     },
     {
      "no": 16,
      "k": "error",
      "label": "异常用例",
      "yes": 0,
-     "unk": 28,
+     "unk": 32,
      "miss": 75,
      "pct": 0,
-     "unkpct": 37
+     "unkpct": 43
     }
    ],
    "yes": 0,
-   "unk": 84,
+   "unk": 96,
    "cells": 225,
    "pct": 0
   },
@@ -5684,34 +5710,34 @@
      "k": "hitrate",
      "label": "命中率",
      "yes": 0,
-     "unk": 25,
+     "unk": 29,
      "miss": 75,
      "pct": 0,
-     "unkpct": 33
+     "unkpct": 39
     },
     {
      "no": 18,
      "k": "failist",
      "label": "失败清单",
      "yes": 0,
-     "unk": 25,
+     "unk": 29,
      "miss": 75,
      "pct": 0,
-     "unkpct": 33
+     "unkpct": 39
     },
     {
      "no": 19,
      "k": "bounds",
      "label": "已知边界",
      "yes": 0,
-     "unk": 25,
+     "unk": 29,
      "miss": 75,
      "pct": 0,
-     "unkpct": 33
+     "unkpct": 39
     }
    ],
    "yes": 0,
-   "unk": 75,
+   "unk": 87,
    "cells": 225,
    "pct": 0
   },
@@ -5724,10 +5750,10 @@
      "no": 20,
      "k": "devsum",
      "label": "开发总结",
-     "yes": 5,
+     "yes": 22,
      "unk": 0,
-     "miss": 70,
-     "pct": 7,
+     "miss": 53,
+     "pct": 29,
      "unkpct": 0
     },
     {
@@ -5735,40 +5761,40 @@
      "k": "reflect",
      "label": "收获感想打算",
      "yes": 0,
-     "unk": 5,
+     "unk": 22,
      "miss": 75,
      "pct": 0,
-     "unkpct": 7
+     "unkpct": 29
     },
     {
      "no": 22,
      "k": "safety",
      "label": "安全自检",
      "yes": 0,
-     "unk": 10,
+     "unk": 13,
      "miss": 75,
      "pct": 0,
-     "unkpct": 13
+     "unkpct": 17
     },
     {
      "no": 23,
      "k": "selftest",
      "label": "测试自检",
      "yes": 0,
-     "unk": 10,
+     "unk": 13,
      "miss": 75,
      "pct": 0,
-     "unkpct": 13
+     "unkpct": 17
     }
    ],
-   "yes": 5,
-   "unk": 25,
+   "yes": 22,
+   "unk": 48,
    "cells": 300,
-   "pct": 2
+   "pct": 7
   }
  ],
  "checklist_n": 23,
- "checklist_avg": 5.7,
+ "checklist_avg": 6.3,
  "checklist_full": 0,
  "checklist_zero": 12,
  "checklist_day1_n": 10,
@@ -5822,8 +5848,8 @@
    {
     "k": "news",
     "label": "新闻稿",
-    "n": 6,
-    "pct": 12
+    "n": 9,
+    "pct": 17
    },
    {
     "k": "prd",
@@ -5864,8 +5890,8 @@
    {
     "k": "qa",
     "label": "质检/验收",
-    "n": 13,
-    "pct": 25
+    "n": 16,
+    "pct": 31
    },
    {
     "k": "selfcheck",
@@ -5893,14 +5919,18 @@
    },
    {
     "n": 4,
-    "topics": 18
+    "topics": 15
    },
    {
     "n": 5,
-    "topics": 6
+    "topics": 9
    }
   ],
   "full_day1": [
+   {
+    "code": "P7",
+    "topic": "检验数据判异与SPC预警"
+   },
    {
     "code": "P8",
     "topic": "非标方案辅助生成"
@@ -5918,8 +5948,16 @@
     "topic": "专利通·专利申报助手"
    },
    {
+    "code": "P35",
+    "topic": "细分市场洞察与线索挖掘"
+   },
+   {
     "code": "P42",
     "topic": "生产物料到货智能预警与自动跟催"
+   },
+   {
+    "code": "P49",
+    "topic": "APS排产优化"
    },
    {
     "code": "",
